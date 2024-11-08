@@ -22,12 +22,6 @@ EditorUIManager::EditorUIManager(HWND hwnd)
 	ImGui_ImplWin32_Init(hwnd);
 	ImGui_ImplDX11_Init(GraphicsEngine::GetInstance()->GetDevice(), GraphicsEngine::GetInstance()->GetDeviceContext());
 
-	EToolBar* tb = new EToolBar();
-	m_UIScreenList["Tool Bar"] = tb;
-
-	/*HeirarcyUI* h = new HeirarcyUI();
-	m_UIScreenList["Heirarcy"] = h;*/
-
 	HierarchyUI* h = new HierarchyUI(); 
 	m_UIScreenList["Heirarchy"] = h; 
 

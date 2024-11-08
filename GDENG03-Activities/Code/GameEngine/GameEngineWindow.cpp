@@ -36,7 +36,7 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 
 
 	std::vector<AGameObject*> objsList;
-	int rowSize = 7; int colSize = 7;
+	int rowSize = 30; int colSize = 20;
 	float rowSpacing = 5.f; float colSpacing = 5.f;
 	int sphereNum = 0, cylinderNum = 0, coneNum = 0, cubeNum = 0;  
 
@@ -64,9 +64,9 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 			float z = i * colSpacing - (colSize / 2.f - 0.5f) * colSpacing;  
 			randObj->GetTransform()->Position = { x , 0, z };  
 
-			randNum = (i == 0) ? colSize * 4 : rand() % colSize * 4 + 1;  
+			randNum = (i == 0) ? rowSize * 4 : rand() % rowSize * 4 + 1;
 			int parentIndex = (randNum / 4) + (i - 1) * rowSize;
-			if (randNum == colSize * 4) GameObjectManager::GetInstance()->AddObject(randObj);
+			if (randNum == rowSize * 4) GameObjectManager::GetInstance()->AddObject(randObj);
 			else objsList[parentIndex]->AttachChild(randObj); 
 
 			objsList.push_back(randObj);
