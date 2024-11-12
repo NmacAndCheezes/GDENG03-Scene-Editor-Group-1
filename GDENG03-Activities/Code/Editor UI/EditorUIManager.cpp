@@ -4,9 +4,8 @@
 #include <Windows.h>
 #include "../GameEngine/Graphics/GraphicsEngine.h"
 #include "EToolBar.h"
-#include "HeirarcyUI.h"
 #include "InspectorUI.h"
-
+#include "DebugLogUI.h"
 #include "HierarchyUI.h"
 
 EditorUIManager* EditorUIManager::sharedInstance = nullptr;
@@ -27,6 +26,10 @@ EditorUIManager::EditorUIManager(HWND hwnd)
 
 	InspectorUI* i = new InspectorUI(h);
 	m_UIScreenList["Inspector"] = i;
+
+	DebugLogUI* d = new DebugLogUI();
+	m_UIScreenList["DebugLogUI"] = d;
+
 }
 
 void EditorUIManager::initialize(HWND hwnd)

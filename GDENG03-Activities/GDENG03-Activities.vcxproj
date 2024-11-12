@@ -68,6 +68,8 @@
     <ClCompile Include="Code\Editor UI\HeirarcyUI.cpp" />
     <ClCompile Include="Code\Editor UI\InspectorUI.cpp" />
     <ClCompile Include="Code\Editor UI\HierarchyUI.cpp" />
+    <ClCompile Include="Code\Editor UI\DebugLogUI.cpp" />
+    <ClCompile Include="Code\DebugLog\Debug.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Editor UI\AUIScreen.h" />
@@ -132,6 +134,8 @@
     <ClInclude Include="Code\Editor UI\HeirarcyUI.h" />
     <ClInclude Include="Code\Editor UI\InspectorUI.h" />
     <ClInclude Include="Code\Editor UI\HierarchyUI.h" />
+    <ClInclude Include="Code\Editor UI\DebugLogUI.h" />
+    <ClInclude Include="Code\DebugLog\Debug.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Code\Shaders\PixelShader.hlsl">
@@ -204,7 +208,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -232,7 +236,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_USE_MATH_DEFINES;%(PreprocessorDefinitions)_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>

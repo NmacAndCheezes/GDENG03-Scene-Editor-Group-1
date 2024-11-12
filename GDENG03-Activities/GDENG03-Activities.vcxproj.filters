@@ -201,6 +201,8 @@
     <ClCompile Include="Code\Editor UI\HierarchyUI.cpp">
       <Filter>EditorGUI</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Editor UI\DebugLogUI.cpp" />
+    <ClCompile Include="Code\DebugLog\Debug.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\WindowsMessageMap.h" />
@@ -387,6 +389,8 @@
     <ClInclude Include="Code\Editor UI\HierarchyUI.h">
       <Filter>EditorGUI</Filter>
     </ClInclude>
+    <ClInclude Include="Code\Editor UI\DebugLogUI.h" />
+    <ClInclude Include="Code\DebugLog\Debug.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Code\Shaders\PixelShader.hlsl">

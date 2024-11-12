@@ -1,6 +1,6 @@
 #include "CircleObject.h"
 #include "../../Managers/GameObjectManager.h"
-
+#include "../../../DebugLog/Debug.h"
 CircleObject::CircleObject() : AGameObject("CircleObj"), renderer(nullptr)
 {
 
@@ -24,4 +24,5 @@ void CircleObject::Initialize()
 	GameObjectManager::GetInstance()->BindRendererToShader(renderer); 
 
 	isInitialized = true;
+	
 }
