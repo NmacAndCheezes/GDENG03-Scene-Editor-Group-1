@@ -20,6 +20,7 @@ EditorUIManager::EditorUIManager(HWND hwnd)
 
 	ImGui_ImplWin32_Init(hwnd);
 	ImGui_ImplDX11_Init(GraphicsEngine::GetInstance()->GetDevice(), GraphicsEngine::GetInstance()->GetDeviceContext());
+	ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;// | ImGuiConfigFlags_ViewportsEnable;
 
 	HierarchyUI* h = new HierarchyUI(); 
 	m_UIScreenList["Heirarchy"] = h; 
@@ -43,14 +44,17 @@ void EditorUIManager::update()
 	ImGui_ImplDX11_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
-
+	
+	
 	for (auto i : m_UIScreenList)
 	{
 		if (!i.second->getIsActive()) continue;
 		i.second->update();
+		//ImGui::UpdatePlatformWindows();
 	}
 
 	ImGui::Render();
+	//ImGui::RenderPlatformWindowsDefault();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 }
 
