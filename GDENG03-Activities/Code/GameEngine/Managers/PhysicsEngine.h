@@ -20,6 +20,8 @@ public:
 
 	void RegisterRigidBody(RigidBody3D* rb);
 	void UnregisterRigidBody(RigidBody3D* rb);
+	rp3d::RigidBody* CreateRigidBody(Transform* transform);
+	void DestroyRigidBody(rp3d::RigidBody* rb);
 	rp3d::CollisionShape* CreatePrimitiveShape(EPrimitiveMeshTypes meshType, Vector3 scaling, unsigned int instanceID);
 
 private:
@@ -39,9 +41,4 @@ private:
 
 	std::unordered_map<unsigned int, rp3d::CollisionShape*> primitiveShapesTable;
 	std::unordered_map< EPrimitiveMeshTypes, rp3d::ConvexMesh*> convexMeshTable;
-
-
-
-	std::unordered_map<EPrimitiveMeshTypes, rp3d::CollisionShape*> temp;
-	std::vector<rp3d::ConvexMesh*> convexMeshList; 
 };

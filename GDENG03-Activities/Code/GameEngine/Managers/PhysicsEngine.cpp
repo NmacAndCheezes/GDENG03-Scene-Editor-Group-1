@@ -2,6 +2,7 @@
 #include "../MathUtils.h"
 #include "MeshManager.h"
 #include "GameEngine/Components/Transform.h"
+#include "GameEngine/GameObjects/AGameObject.h"
 
 
 #pragma region Singleton
@@ -24,11 +25,11 @@ bool PhysicsEngine::Init()
 	physicsCommon = new rp3d::PhysicsCommon();
 
 	rp3d::PhysicsWorld::WorldSettings settings;
-	settings.defaultVelocitySolverNbIterations = 50; 
-	settings.defaultPositionSolverNbIterations = 25;
+	settings.defaultVelocitySolverNbIterations = 150; 
+	settings.defaultPositionSolverNbIterations = 50;
 	settings.isSleepingEnabled = true;
 	settings.gravity = rp3d::Vector3(0, -9.81, 0);  
-	settings.restitutionVelocityThreshold = 0.05f;
+	settings.restitutionVelocityThreshold = 0.25f;
 	settings.defaultFrictionCoefficient = 0.7f;
 
 	physicsWorld = physicsCommon->createPhysicsWorld(settings);
@@ -70,6 +71,11 @@ bool PhysicsEngine::Release()
 
 void PhysicsEngine::UpdateWorld(float dt)
 {
+	for (auto& rb : rigidBodyList)
+	{
+		rb->EnablePhysics(rb->Enabled && rb->GetOwner()->Enabled);
+	}
+
 	physicsWorld->update(dt);
 }
 
@@ -77,8 +83,11 @@ void PhysicsEngine::UpdateRigidBodies(float factor)
 { 
 	for (auto& rb : rigidBodyList) 
 	{
-		rb->SetInterpolationFactor(factor);
-		rb->Perform(); 
+		if (rb->Enabled && rb->GetOwner()->Enabled)
+		{
+			rb->SetInterpolationFactor(factor); 
+			rb->Perform(); 
+		}
 	}
 }
 
@@ -93,12 +102,7 @@ void PhysicsEngine::RegisterRigidBody(RigidBody3D* rb)
 	auto itr = std::find(rigidBodyList.begin(), rigidBodyList.end(), rb);
 	if (itr != rigidBodyList.end()) return;
 
-	rp3d::Vector3 position = MathUtils::ConvertVector(rb->GetTransform()->Position);
-	rp3d::Quaternion orientation = MathUtils::ConvertQuaternion(rb->GetTransform()->GetOrientation());
-	rp3d::Transform rTransform = rp3d::Transform(position, orientation);
-
-	rp3d::RigidBody* newRB = physicsWorld->createRigidBody(rTransform);
-
+	rp3d::RigidBody* newRB = CreateRigidBody(rb->GetTransform());
 	if (rb->Init(newRB)) rigidBodyList.push_back(rb);
 	else physicsWorld->destroyRigidBody(newRB);
 }
@@ -112,6 +116,21 @@ void PhysicsEngine::UnregisterRigidBody(RigidBody3D* rb)
 
 	rigidBodyList.erase(itr); 
 	rigidBodyList.shrink_to_fit(); 
+}
+
+rp3d::RigidBody* PhysicsEngine::CreateRigidBody(Transform* transform)
+{
+	rp3d::Vector3 position = MathUtils::ConvertVector(transform->Position);
+	rp3d::Quaternion orientation = MathUtils::ConvertQuaternion(transform->GetOrientation());
+	rp3d::Transform rTransform = rp3d::Transform(position, orientation);
+
+	return physicsWorld->createRigidBody(rTransform);
+}
+
+void PhysicsEngine::DestroyRigidBody(rp3d::RigidBody* rb)
+{
+	if (rb == nullptr) return;
+	physicsWorld->destroyRigidBody(rb);
 }
 
 rp3d::CollisionShape* PhysicsEngine::CreatePrimitiveShape(EPrimitiveMeshTypes meshType, Vector3 scaling, unsigned int instanceID)
@@ -135,7 +154,7 @@ rp3d::CollisionShape* PhysicsEngine::CreatePrimitiveShape(EPrimitiveMeshTypes me
 		case EPrimitiveMeshTypes::Plane:
 		{
 			primitiveShapesTable[instanceID] = physicsCommon->createBoxShape( 
-				rp3d::Vector3(2.5f * scaling.x, 0.01f * scaling.y, 2.5f * scaling.z)
+				rp3d::Vector3(2.5f * scaling.x, 0.1f * scaling.y, 2.5f * scaling.z)
 			);
 			return primitiveShapesTable[instanceID]; 
 		}

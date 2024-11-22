@@ -53,17 +53,35 @@ public:
 	#pragma endregion
 
 	void UpdateTransform();
+	void EnablePhysics(bool flag);
 	void ApplyForce(const Vector3& force);
 	void ApplyForce(const Vector3& force, const Vector3& point);
 	void ApplyTorque(const Vector3& torque);
 
 
 private:
+	// rb references and trackers
 	rp3d::RigidBody* rb;
 	rp3d::Transform prevTransform;
 	float factor;
+	
+	// standard rb properties
+	float mass;
+	rp3d::BodyType currBodyType;
+	bool isGravityEnabled;
+	float linearDamping;
+	float angularDamping;
+	Vector3 linearLocks;
+	Vector3 angularLocks;
 
+	// other rb properties
+	bool isPhysicsEnabled;
+	rp3d::Vector3 currLinearVelocity;
+	rp3d::Vector3 currAngularVelocity;
+
+	// collider properties
 	EPrimitiveMeshTypes meshType;
 	rp3d::Collider* collider;
+	rp3d::CollisionShape* colliderShape;
 	rp3d::Transform meshTransform;
 };

@@ -41,13 +41,14 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 
 	// setup the objects
 	FreeCameraObject* freeCam = new FreeCameraObject(width, height);  
-	freeCam->GetTransform()->Position = { 0.0f, 10.0f, -40.0f }; 
+	freeCam->GetTransform()->Position = { 0.0f, -60.0f, -70.0f };
+	freeCam->GetTransform()->Rotate(50.0f, 0.0f, 0.0f);
 	GameObjectManager::GetInstance()->AddObject(freeCam); 
 
 
 	PhysicsObject* phy1 = new PhysicsObject(EPrimitiveMeshTypes::Plane);
-	phy1->GetTransform()->Position = Vector3(0.0f, -10.0f, 0.0f);
-	phy1->GetTransform()->LocalScale = Vector3(4.0f, 1.0f, 4.0f);
+	phy1->GetTransform()->Position = Vector3(0.0f, -160.0f, 0.0f);
+	phy1->GetTransform()->LocalScale = Vector3(7.0f, 1.0f, 7.0f);
 	GameObjectManager::GetInstance()->AddObject(phy1); 
 	phy1->GetRB()->BodyType = rp3d::BodyType::STATIC;
 
@@ -55,7 +56,7 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 	{ 
 		PhysicsObject* phy = new PhysicsObject(EPrimitiveMeshTypes::Cube); 
 		phy->GetTransform()->Position = Vector3(MathUtils::RandFloatWithRange(-3.f, 3.f), 
-			MathUtils::RandFloatWithRange(4.f, 15.f), 
+			MathUtils::RandFloatWithRange(-15.f, 15.f), 
 			MathUtils::RandFloatWithRange(-3.f, 3.f));
 
 		phy->GetTransform()->Rotate(MathUtils::RandFloatWithRange(15.f, 75.f), 
