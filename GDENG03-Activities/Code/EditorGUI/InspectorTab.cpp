@@ -78,7 +78,7 @@ void InspectorTab::RenderUI()
 	}
 	else
 	{
-		if (ImGui::Button("Delete RigidBody3D"))
+		if (ImGui::Button("Remove RigidBody3D"))
 		{
 			auto physicsList = selected->GetComponentsOfType(EComponentTypes::Physics);
 			bool hasRB = false;
