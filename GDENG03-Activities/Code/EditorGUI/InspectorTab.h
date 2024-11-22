@@ -17,11 +17,5 @@ protected:
 
 private:
 	HierarchyTab* hierarchy;
-
-	bool enabled;
-	char objName[128];
-	float position[3];
-	float eulerAngle[3];
-	float scale[3];
 };
 

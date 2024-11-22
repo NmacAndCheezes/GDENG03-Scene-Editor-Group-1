@@ -47,6 +47,11 @@ void RigidBody3D::Perform()
 	transform->Rotate(diffQuat);
 }
 
+void RigidBody3D::RenderUI()
+{
+
+}
+
 #pragma region Getters-Setters
 bool RigidBody3D::Init(rp3d::RigidBody* rb)
 {

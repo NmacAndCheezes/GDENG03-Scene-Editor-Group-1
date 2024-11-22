@@ -42,6 +42,7 @@ public:
 	AComponent* FindComponentByType(EComponentTypes type, std::string name);
 	std::vector<AComponent*> GetComponentsOfType(EComponentTypes type);
 	std::vector<AComponent*> GetComponentsInChildrenOfType(EComponentTypes type);
+	std::vector<AComponent*> GetAllComponents();
 
 private:
 	void SetParent(AGameObject* parent);

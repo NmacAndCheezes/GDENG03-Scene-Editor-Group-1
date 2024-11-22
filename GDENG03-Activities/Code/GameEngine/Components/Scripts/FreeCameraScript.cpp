@@ -47,6 +47,11 @@ void FreeCameraScript::Perform()
 	}
 }
 
+void FreeCameraScript::RenderUI()
+{
+
+}
+
 void FreeCameraScript::HandleMovement()
 {
 	Vector3 total = Vector3::Zero;

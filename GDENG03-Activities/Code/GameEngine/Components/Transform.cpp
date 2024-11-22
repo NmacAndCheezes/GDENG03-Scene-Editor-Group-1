@@ -54,6 +54,34 @@ void Transform::SetEnabled(bool flag)
 
 }
 
+void Transform::RenderUI()
+{
+	float position[3];
+	position[0] = localPos.x;
+	position[1] = localPos.y;
+	position[2] = localPos.z;
+
+	float eulerAngle[3];
+	eulerAngle[0] = localEulerAngles.x;
+	eulerAngle[1] = localEulerAngles.y;
+	eulerAngle[2] = localEulerAngles.z;
+
+	float scale[3];
+	scale[0] = localScale.x;
+	scale[1] = localScale.y;
+	scale[2] = localScale.z;
+
+	ImGui::DragFloat3("Position", position);
+	ImGui::DragFloat3("Rotation", eulerAngle);
+	ImGui::DragFloat3("Scale", scale);
+
+	Vector3 diffEuler = Vector3(eulerAngle) - localEulerAngles;
+
+	if (Vector3(position) != localPos)           SetLocalPosition(Vector3(position));
+	if (Vector3(eulerAngle) != localEulerAngles) Rotate(diffEuler); 
+	if (Vector3(scale) != localScale)            SetLocalScale(Vector3(scale)); 
+}
+
 TMatrix Transform::GetTransformationMatrix()
 {
 	return tMatrix;

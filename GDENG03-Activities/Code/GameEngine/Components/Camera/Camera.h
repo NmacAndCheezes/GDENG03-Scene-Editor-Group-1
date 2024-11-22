@@ -19,6 +19,7 @@ public:
 	bool Release();
 	void Clone(AComponent* copy) override;
 	void Perform() override;
+	void RenderUI() override;
 	void BindVPMatrixToPipeline();
 
 	Vector2 GetClippingPlane();

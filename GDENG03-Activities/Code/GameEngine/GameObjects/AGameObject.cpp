@@ -327,4 +327,8 @@ std::vector<AComponent*> AGameObject::GetComponentsInChildrenOfType(EComponentTy
 
 	return foundList;
 }
+std::vector<AComponent*> AGameObject::GetAllComponents()
+{
+	return componentList;
+}
 #pragma endregion

@@ -11,6 +11,7 @@ public:
 
 	void Clone(AComponent* copy) override;
 	void Perform() override;
+	void RenderUI() override;
 
 	void AddCamera(Camera* cam);
 

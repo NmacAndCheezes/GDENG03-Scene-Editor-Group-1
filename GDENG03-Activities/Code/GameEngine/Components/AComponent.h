@@ -1,12 +1,13 @@
 #pragma once
 #include <string>
 #include "EComponentTypes.h"
+#include "EditorGUI/IRenderableUI.h"
 
 
 class AGameObject;
 class Transform;
 
-class AComponent
+class AComponent : public IRenderableUI
 {
 public:
 	AComponent(std::string name, EComponentTypes type);
@@ -14,6 +15,7 @@ public:
 
 	virtual void Clone(AComponent* copy) = 0;
 	virtual void Perform() = 0;
+	virtual void RenderUI() = 0;
 
 	void AttachOwner(AGameObject* owner);
 	void DetachOwner();

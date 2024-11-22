@@ -65,6 +65,11 @@ void Camera::Perform()
 
 }
 
+void Camera::RenderUI()
+{
+
+}
+
 void Camera::BindVPMatrixToPipeline()
 {
 	if(transform == nullptr) return;

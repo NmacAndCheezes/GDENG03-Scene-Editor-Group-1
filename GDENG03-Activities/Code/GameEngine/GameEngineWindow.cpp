@@ -51,7 +51,7 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 	GameObjectManager::GetInstance()->AddObject(phy1); 
 	phy1->GetRB()->BodyType = rp3d::BodyType::STATIC;
 
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 10; i++)
 	{ 
 		PhysicsObject* phy = new PhysicsObject(EPrimitiveMeshTypes::Cube); 
 		phy->GetTransform()->Position = Vector3(MathUtils::RandFloatWithRange(-3.f, 3.f), 

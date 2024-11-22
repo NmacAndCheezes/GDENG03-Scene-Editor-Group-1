@@ -26,43 +26,26 @@ void InspectorTab::RenderUI()
     ImGui::Begin(name.c_str(), &isEnabled, flags); 
 
 	AGameObject* selected = hierarchy->GetSelectedObj();
-	Transform* t = selected->GetTransform();
-
-	enabled = selected->Enabled;
+	bool objEnabled = selected->Enabled;
+	char objName[128];
 	strcpy_s(objName, selected->Name.c_str());
 
-	position[0] = t->LocalPosition.x;
-	position[1] = t->LocalPosition.y;
-	position[2] = t->LocalPosition.z;
+	ImGui::Checkbox("##ObjEnabled", &objEnabled); ImGui::SameLine(); 
+	ImGui::InputText("##ObjName", objName, IM_ARRAYSIZE(objName)); 
 
-	eulerAngle[0] = t->GetLocalEulerAngles().x;
-	eulerAngle[1] = t->GetLocalEulerAngles().y;
-	eulerAngle[2] = t->GetLocalEulerAngles().z;
+	selected->Enabled = objEnabled; 
+	if (Keyboard::IsKeyPressed(VK_RETURN) && std::string(objName) != "") selected->Name = objName;
 
-	scale[0] = t->LocalScale.x;
-	scale[1] = t->LocalScale.y;
-	scale[2] = t->LocalScale.z;
-
-	ImGui::Checkbox("##ObjEnabled", &enabled); ImGui::SameLine();
-	ImGui::InputText("##ObjName", objName, IM_ARRAYSIZE(objName));
-
-	ImGui::AlignTextToFramePadding();
-	if (ImGui::TreeNodeEx("Transform Component", ImGuiTreeNodeFlags_AllowItemOverlap))
+	for (auto& component : selected->GetAllComponents())
 	{
-		ImGui::DragFloat3("Position", position); 
-		ImGui::DragFloat3("Rotation", eulerAngle); 
-		ImGui::DragFloat3("Scale", scale);
-		ImGui::TreePop(); 
+		ImGui::AlignTextToFramePadding();
+		ImGui::SetNextItemOpen(true);
+		if (ImGui::TreeNodeEx((component->GetName() + " Component").c_str(), ImGuiTreeNodeFlags_AllowItemOverlap))
+		{
+			component->RenderUI();
+			ImGui::TreePop(); 
+		}
 	}
-
-	Vector3 diffEuler = Vector3(eulerAngle) - t->GetLocalEulerAngles();
-
-	selected->Enabled = enabled;
-	if (Keyboard::IsKeyPressed(VK_RETURN) && std::string(objName) != "") selected->Name = objName; // reupdate gameobjectmanaer
-
-	if (Vector3(position) != t->LocalPosition)           t->SetLocalPosition(Vector3(position));
-	if (Vector3(eulerAngle) != t->GetLocalEulerAngles()) t->Rotate(diffEuler);
-	if (Vector3(scale) != t->LocalScale)                 t->SetLocalScale(Vector3(scale));
 
 	ImGui::End();
 }

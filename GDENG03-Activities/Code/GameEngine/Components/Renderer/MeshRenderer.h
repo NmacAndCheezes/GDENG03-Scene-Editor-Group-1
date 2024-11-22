@@ -9,6 +9,7 @@ public:
 	MeshRenderer(AMaterial* material);
 	~MeshRenderer();
 
+	void RenderUI() override;
 	void LoadPrimitive(EPrimitiveMeshTypes type, bool isRainbowed = false);
 	void LoadNonPrimitive(std::string modelName, bool isRainbowed = false);
 

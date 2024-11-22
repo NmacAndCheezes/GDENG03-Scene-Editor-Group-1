@@ -12,6 +12,7 @@ public:
 
 	void Clone(AComponent* copy) override;
 	void Perform() override;
+	void RenderUI() override;
 
 private:
 	void HandleMovement();

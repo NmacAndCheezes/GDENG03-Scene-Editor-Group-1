@@ -19,6 +19,11 @@ MeshRenderer::~MeshRenderer()
 
 }
 
+void MeshRenderer::RenderUI()
+{
+
+}
+
 void MeshRenderer::LoadPrimitive(EPrimitiveMeshTypes type, bool isRainbowed)
 {
 	auto vertices = MeshManager::GetInstance()->GetVertexDataFromMesh(type);

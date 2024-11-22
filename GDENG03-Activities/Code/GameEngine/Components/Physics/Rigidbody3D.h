@@ -15,6 +15,7 @@ public:
 
 	void Clone(AComponent* copy) override;
 	void Perform() override;
+	void RenderUI() override;
 
 	#pragma region Getters-Setters
 	bool Init(rp3d::RigidBody* rb);

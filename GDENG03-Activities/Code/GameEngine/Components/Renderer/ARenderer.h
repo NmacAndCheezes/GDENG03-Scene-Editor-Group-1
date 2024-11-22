@@ -17,6 +17,7 @@ public:
 
 	virtual void Clone(AComponent* copy) override;
 	virtual bool Release();
+	virtual void RenderUI() = 0;
 	void Perform() override;
 	LPCWSTR GetShaderType();
 	void SetMaterial(AMaterial* newMaterial);

@@ -53,6 +53,11 @@ void CameraController::Perform()
 	}
 }
 
+void CameraController::RenderUI()
+{
+
+}
+
 void CameraController::AddCamera(Camera* cam)
 {
 	if (camerasList.size() >= 10) return;
