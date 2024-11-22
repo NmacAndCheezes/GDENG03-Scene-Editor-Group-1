@@ -154,7 +154,7 @@ rp3d::CollisionShape* PhysicsEngine::CreatePrimitiveShape(EPrimitiveMeshTypes me
 		case EPrimitiveMeshTypes::Plane:
 		{
 			primitiveShapesTable[instanceID] = physicsCommon->createBoxShape( 
-				rp3d::Vector3(2.5f * scaling.x, 0.1f * scaling.y, 2.5f * scaling.z)
+				rp3d::Vector3(2.5f * scaling.x, 0.2f * scaling.y, 2.5f * scaling.z)
 			);
 			return primitiveShapesTable[instanceID]; 
 		}
