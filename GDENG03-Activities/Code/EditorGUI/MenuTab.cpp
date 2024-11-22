@@ -1,4 +1,6 @@
 #include "MenuTab.h"
+#include <EditorStates/EditorBackend.h>
+#include <GameEngine/Debug.h>
 
 MenuTab::MenuTab() : AUITab(EditorGUIManager::TabNames::MENU_TAB.data()) 
 {
@@ -18,6 +20,7 @@ void MenuTab::RenderUI()
         RenderTabsMenu();
         RenderToolsMenu();
         RenderAboutMenu();
+        RenderSceneStatesMenu();
 
 		ImGui::EndMainMenuBar();
 	}
@@ -103,5 +106,32 @@ void MenuTab::RenderAboutMenu()
         }
 
         ImGui::EndMenu(); 
+    }
+}
+
+void MenuTab::RenderSceneStatesMenu()
+{
+    if (ImGui::BeginMenu("Play/Pause"))
+    {
+        if (ImGui::MenuItem("Play"))
+        {
+            Debug::Log("Playing game");
+            EditorBackend::get()->setState(EditorBackend::PLAY);
+        }
+
+        if (ImGui::MenuItem("Pause"))
+        {
+            Debug::Log("Pausing game");
+            EditorBackend::get()->setState(EditorBackend::PAUSE);
+        }
+
+        if (ImGui::MenuItem("Stop"))
+        {
+            Debug::Log("Returning to edit mode");
+            EditorBackend::get()->setState(EditorBackend::EDIT);
+            // no functionality for the HO it will be implemented at the Scene Editor MO
+        }
+
+        ImGui::EndMenu();
     }
 }

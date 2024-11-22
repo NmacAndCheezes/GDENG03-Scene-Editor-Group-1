@@ -13,9 +13,10 @@
 #include "GameObjects/Primitives/PlaneObject.h"
 #include "GameObjects/ModelObject.h"
 #include "GameObjects/PhysicsObject.h"
+#include "Managers/PhysicsEngine.h"
 #include "MathUtils.h"
 
-
+#include "EditorStates/EditorBackend.h"
 
 GameEngineWindow::GameEngineWindow(int fps) : fps(fps), accumulator(0.f)
 {
@@ -30,6 +31,7 @@ GameEngineWindow::~GameEngineWindow()
 void GameEngineWindow::OnCreate(HWND hWnd)
 {
 	// initialize game engine
+	EditorBackend::initialize();
 	Debug::initialize();
 	GraphicsEngine::GetInstance()->Init();
 	GraphicsEngine::GetInstance()->SetViewport(width, height); 
@@ -128,7 +130,8 @@ void GameEngineWindow::OnUpdate()
 	}
 
 	float factor = accumulator / secsPerFrame;
-	PhysicsEngine::GetInstance()->UpdateRigidBodies(factor);
+	if(EditorBackend::get()->getState() == EditorBackend::PLAY)
+		PhysicsEngine::GetInstance()->UpdateRigidBodies(factor);
 
 	GameObjectManager::GetInstance()->Draw(); 
 	EditorGUIManager::GetInstance()->Render();
@@ -147,6 +150,7 @@ void GameEngineWindow::OnDestroy()
 	EditorGUIManager::Destroy(); 
 	GraphicsEngine::GetInstance()->Release();
 	Debug::destroy();
+	EditorBackend::destroy();
 }
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);

@@ -22,6 +22,7 @@
     <ClCompile Include="Code\EditorGUI\AUITab.cpp" />
     <ClCompile Include="Code\EditorGUI\DebugLogUI.cpp" />
     <ClCompile Include="Code\EditorGUI\HierarchyTab.cpp" />
+    <ClCompile Include="Code\EditorStates\EditorBackend.cpp" />
     <ClCompile Include="Code\GameEngine\Components\Scripts\CameraController.cpp" />
     <ClCompile Include="Code\GameEngine\Debug.cpp" />
     <ClCompile Include="Code\GameEngine\Graphics\CameraManager.cpp" />
@@ -80,6 +81,7 @@
     <ClInclude Include="Code\EditorGUI\AUITab.h" />
     <ClInclude Include="Code\EditorGUI\DebugLogUI.h" />
     <ClInclude Include="Code\EditorGUI\HierarchyTab.h" />
+    <ClInclude Include="Code\EditorStates\EditorBackend.h" />
     <ClInclude Include="Code\GameEngine\Components\Scripts\CameraController.h" />
     <ClInclude Include="Code\GameEngine\Debug.h" />
     <ClInclude Include="Code\GameEngine\Graphics\CameraManager.h" />

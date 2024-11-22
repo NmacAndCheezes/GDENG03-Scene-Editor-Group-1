@@ -15,4 +15,5 @@ private:
 	void RenderTabsMenu();
 	void RenderToolsMenu();
 	void RenderAboutMenu();
+	void RenderSceneStatesMenu();
 };
