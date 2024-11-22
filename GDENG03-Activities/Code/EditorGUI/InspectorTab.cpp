@@ -78,6 +78,23 @@ void InspectorTab::RenderUI()
 		}
 	}
 
+	// refactor next time
+	if (ImGui::Button("Remove RigidBody3D"))
+	{
+		auto physicsList = selected->GetComponentsOfType(EComponentTypes::Physics); 
+		RigidBody3D* rb = nullptr;
+		for (auto physicsComp : physicsList) 
+		{
+			if (dynamic_cast<RigidBody3D*>(physicsComp) != nullptr) rb = (RigidBody3D*)physicsComp;
+		}
+
+		if (rb)
+		{
+			PhysicsEngine::GetInstance()->UnregisterRigidBody(rb);
+			selected->DetachComponent(rb);
+		}
+	}
+
 	ImGui::Dummy(ImVec2(0.0f, 20.f));
 
 	ImGui::End();
