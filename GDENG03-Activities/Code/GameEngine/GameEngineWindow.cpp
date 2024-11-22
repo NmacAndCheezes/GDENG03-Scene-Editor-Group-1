@@ -43,17 +43,28 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 
 	// setup the objects
 	FreeCameraObject* freeCam = new FreeCameraObject(width, height);  
-	freeCam->GetTransform()->Position = { 0.0f, -60.0f, -70.0f };
+	freeCam->GetTransform()->Position = { 0.0f, 30.0f, -30.0f };
 	freeCam->GetTransform()->Rotate(50.0f, 0.0f, 0.0f);
 	GameObjectManager::GetInstance()->AddObject(freeCam); 
 
-
 	PhysicsObject* phy1 = new PhysicsObject(EPrimitiveMeshTypes::Plane);
-	phy1->GetTransform()->Position = Vector3(0.0f, -160.0f, 0.0f);
+	phy1->GetTransform()->Position = Vector3(0.0f, 0.0f, 0.0f);
 	phy1->GetTransform()->LocalScale = Vector3(7.0f, 1.0f, 7.0f);
 	GameObjectManager::GetInstance()->AddObject(phy1); 
 	phy1->GetRB()->BodyType = rp3d::BodyType::STATIC;
 
+	for (int i = 0; i < 10; i++)
+	{
+		CubeObject* cube = new CubeObject();
+		cube->GetTransform()->Position = Vector3(
+			MathUtils::RandFloatWithRange(-5.f, 5.f),
+			10.f,
+			MathUtils::RandFloatWithRange(-5.f, 5.f)
+			);
+
+		GameObjectManager::GetInstance()->AddObject(cube);
+	}
+#if 0
 	for (int i = 0; i < 10; i++)
 	{ 
 		PhysicsObject* phy = new PhysicsObject(EPrimitiveMeshTypes::Cube); 
@@ -72,8 +83,7 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 		GameObjectManager::GetInstance()->AddObject(phy); 
 		phy->GetRB()->BodyType = rp3d::BodyType::STATIC;
 	}
-
-
+#endif
 
 	/*std::vector<AGameObject*> objsList; 
 	int rowSize = 15; int colSize = 15; 
@@ -129,9 +139,12 @@ void GameEngineWindow::OnUpdate()
 		Keyboard::FlushCharBuffer();
 	}
 
-	float factor = accumulator / secsPerFrame;
-	if(EditorBackend::get()->getState() == EditorBackend::PLAY)
+	
+	if (EditorBackend::get()->getState() == EditorBackend::PLAY)
+	{
+		float factor = accumulator / secsPerFrame;
 		PhysicsEngine::GetInstance()->UpdateRigidBodies(factor);
+	}
 
 	GameObjectManager::GetInstance()->Draw(); 
 	EditorGUIManager::GetInstance()->Render();
