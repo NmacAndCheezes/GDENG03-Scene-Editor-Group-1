@@ -1,6 +1,7 @@
 #include "AGameObject.h"
 #include "../Components/Renderer/ARenderer.h"
 #include "../Managers/GameObjectManager.h"
+#include "../Debug.h"
 
 
 int AGameObject::currentID = 0;
@@ -17,6 +18,8 @@ AGameObject::AGameObject(std::string name)
 
 	transform = new Transform();
 	AttachComponent(transform);
+
+	Debug::Log("Initialized GameObject: " + name);
 }
 
 AGameObject::~AGameObject()
@@ -42,6 +45,8 @@ AGameObject::~AGameObject()
 	{
 		this->parent = NULL; 
 	}
+
+	Debug::Log("Destroyed GameObject: " + name);
 }
 #pragma endregion
 

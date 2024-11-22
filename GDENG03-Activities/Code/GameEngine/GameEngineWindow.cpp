@@ -1,4 +1,5 @@
 #include "GameEngineWindow.h"
+#include "Debug.h"
 #include "EngineTime.h"
 #include "EditorGUI/EditorGUIManager.h"
 #include "Managers/GameObjectManager.h"
@@ -29,6 +30,7 @@ GameEngineWindow::~GameEngineWindow()
 void GameEngineWindow::OnCreate(HWND hWnd)
 {
 	// initialize game engine
+	Debug::initialize();
 	GraphicsEngine::GetInstance()->Init();
 	GraphicsEngine::GetInstance()->SetViewport(width, height); 
 	swapChain = GraphicsEngine::GetInstance()->CreateSwapChain(hWnd, width, height); 
@@ -142,6 +144,7 @@ void GameEngineWindow::OnDestroy()
 	GameObjectManager::Destroy();
 	EditorGUIManager::Destroy(); 
 	GraphicsEngine::GetInstance()->Release();
+	Debug::destroy();
 }
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);

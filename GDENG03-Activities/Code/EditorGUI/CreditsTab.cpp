@@ -33,8 +33,8 @@ void CreditsTab::RenderUI()
 	ImGui::Image((ImTextureID)(intptr_t)dlsuLogo->GetTextureView(), ImVec2(dlsuLogo->GetWidth()/5.f, dlsuLogo->GetHeight()/5.f));
 	ImGui::Dummy(ImVec2(0.f, 5.f));
 
-	ImGui::Text("Scene Editor v.0.8.4");
-	ImGui::Text("Developed by: Aamir C. Akim");
+	ImGui::Text("Scene Editor v.0.8.5");
+	ImGui::Text("Developed by: Aamir C. Akim & Nathan Michael C. Macabanti");
 	ImGui::Dummy(ImVec2(0.f, 10.f));
 
 	ImGui::Text("Projects used as reference:");

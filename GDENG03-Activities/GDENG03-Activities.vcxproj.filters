@@ -219,6 +219,12 @@
     <ClCompile Include="Code\GameEngine\GameObjects\PhysicsObject.cpp">
       <Filter>GameEngine\GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Code\GameEngine\Debug.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\EditorGUI\DebugLogUI.cpp">
+      <Filter>EditorGUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\WindowsMessageMap.h" />
@@ -448,6 +454,12 @@
     </ClInclude>
     <ClInclude Include="Code\GameEngine\GameObjects\PhysicsObject.h">
       <Filter>GameEngine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameEngine\Debug.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\EditorGUI\DebugLogUI.h">
+      <Filter>EditorGUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

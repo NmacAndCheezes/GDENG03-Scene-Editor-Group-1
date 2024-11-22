@@ -20,8 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\EditorGUI\AUITab.cpp" />
+    <ClCompile Include="Code\EditorGUI\DebugLogUI.cpp" />
     <ClCompile Include="Code\EditorGUI\HierarchyTab.cpp" />
     <ClCompile Include="Code\GameEngine\Components\Scripts\CameraController.cpp" />
+    <ClCompile Include="Code\GameEngine\Debug.cpp" />
     <ClCompile Include="Code\GameEngine\Graphics\CameraManager.cpp" />
     <ClCompile Include="Code\GameEngine\GameObjects\CameraObject.cpp" />
     <ClCompile Include="Code\GameEngine\Components\Camera\Camera.cpp" />
@@ -76,8 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\EditorGUI\AUITab.h" />
+    <ClInclude Include="Code\EditorGUI\DebugLogUI.h" />
     <ClInclude Include="Code\EditorGUI\HierarchyTab.h" />
     <ClInclude Include="Code\GameEngine\Components\Scripts\CameraController.h" />
+    <ClInclude Include="Code\GameEngine\Debug.h" />
     <ClInclude Include="Code\GameEngine\Graphics\CameraManager.h" />
     <ClInclude Include="Code\GameEngine\GameObjects\Primitives\CircleObject.h" />
     <ClInclude Include="Code\GameEngine\GameObjects\CameraObject.h" />
