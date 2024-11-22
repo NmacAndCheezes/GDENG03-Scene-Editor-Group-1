@@ -127,21 +127,20 @@ void GameEngineWindow::OnUpdate()
 {
 	swapChain->ClearBuffer(0.0f, 0.0f, 0.0f);
 	//swapChain->ClearBuffer(0.4f, 0.4f, 0.6f);
-
-	accumulator += (float)EngineTime::GetDeltaTime();
-	float secsPerFrame = 1.f / (float)fps;
-	while (accumulator >= secsPerFrame) 
-	{
-		accumulator -= secsPerFrame; 
-		GameObjectManager::GetInstance()->Update(secsPerFrame);
-		PhysicsEngine::GetInstance()->UpdateWorld(secsPerFrame);
-
-		Keyboard::FlushCharBuffer();
-	}
-
 	
 	if (EditorBackend::get()->getState() == EditorBackend::PLAY)
 	{
+		accumulator += (float)EngineTime::GetDeltaTime(); 
+		float secsPerFrame = 1.f / (float)fps; 
+		while (accumulator >= secsPerFrame) 
+		{
+			accumulator -= secsPerFrame; 
+			GameObjectManager::GetInstance()->Update(secsPerFrame); 
+			PhysicsEngine::GetInstance()->UpdateWorld(secsPerFrame); 
+
+			Keyboard::FlushCharBuffer(); 
+		}
+
 		float factor = accumulator / secsPerFrame;
 		PhysicsEngine::GetInstance()->UpdateRigidBodies(factor);
 	}
