@@ -23,7 +23,7 @@ void HierarchyTab::RenderUI()
 
     // child windows are needed to receive drag&drop inputs
     ImGui::BeginChild("##DroppableHierarchy");  
-	for (auto obj : GameObjectManager::GetInstance()->GetAllObjects())  // render all root objs
+	for (auto obj : GameObjectManager::GetInstance()->GetAllGameObjects())  // render all root objs
 	{
 		PrintObject(obj);
 	}

@@ -225,6 +225,7 @@
     <ClCompile Include="Code\EditorGUI\DebugLogUI.cpp">
       <Filter>EditorGUI</Filter>
     </ClCompile>
+    <ClCompile Include="Code\EditorStates\EditorBackend.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\WindowsMessageMap.h" />
@@ -461,6 +462,7 @@
     <ClInclude Include="Code\EditorGUI\DebugLogUI.h">
       <Filter>EditorGUI</Filter>
     </ClInclude>
+    <ClInclude Include="Code\EditorStates\EditorBackend.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Code\Shaders\VLitTextureShader.hlsl">

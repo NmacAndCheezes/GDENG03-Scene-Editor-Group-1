@@ -74,21 +74,21 @@ void RigidBody3D::RenderUI()
 	ImGui::DragFloat("Linear Damping", &linearDamping, 1.0f, 0.0f);
 	ImGui::DragFloat("Angular Damping", &angularDamping, 1.0f, 0.f);
 	
-	/*ImGui::Text("Freeze Position"); 
-	ImGui::Dummy(ImVec2(10.f, 0.f));
-	for (int i = 0; i < 3; i++)
-	{
-		ImGui::SameLine();
-		ImGui::Checkbox((axis[i] + "##pos").c_str(), &linearLocks[i]);
-	}
+	//ImGui::Text("Freeze Position"); 
+	//ImGui::Dummy(ImVec2(10.f, 0.f));
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	ImGui::SameLine();
+	//	ImGui::Checkbox((axis[i] + "##pos").c_str(), &linearLocks[i]);
+	//}
 
-	ImGui::Text("Freeze Rotation");
-	ImGui::Dummy(ImVec2(10.f, 0.f));
-	for (int i = 0; i < 3; i++)
-	{
-		ImGui::SameLine();
-		ImGui::Checkbox((axis[i] + "##rot").c_str(), &angularLocks[i]);
-	}*/
+	//ImGui::Text("Freeze Rotation");
+	//ImGui::Dummy(ImVec2(10.f, 0.f));
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	ImGui::SameLine();
+	//	ImGui::Checkbox((axis[i] + "##rot").c_str(), &angularLocks[i]);
+	//}
 
 	// update values
 	if (mass != Mass)                            Mass = mass;

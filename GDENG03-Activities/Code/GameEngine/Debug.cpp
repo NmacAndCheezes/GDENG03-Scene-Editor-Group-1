@@ -34,3 +34,8 @@ void Debug::Log(std::string log)
 	std::string l = dateTime + log;
 	m_logs.push_back(l);
 }
+
+void Debug::ClearLog()
+{
+	m_logs.clear();
+}

@@ -15,11 +15,12 @@ public:
 
 	// Game-related methods
 	//void ProcessInputs(WPARAM wParam, LPARAM lParam);
-	void Update(float dt);
+	void UpdateEditor(float dt);
+	void UpdateGame(float dt);
 	void Draw();
 
 	// Object-related methods
-	void AddObject(AGameObject* gameObject);
+	void AddObject(AGameObject* gameObject, bool isEditorObject = false);
 	void BindRendererToShader(ARenderer* rendererComponent);
 	std::vector<AGameObject*> FindObjectsWithName(std::string name);
 	void UpdateObjectWithNewName(AGameObject* gameObject, std::string newName);
@@ -27,8 +28,8 @@ public:
 	void RemoveObjectByID(unsigned int id);
 	void DeleteObject(AGameObject* gameObject);
 	void DeleteObjectByID(unsigned int id);
-	std::vector<AGameObject*> GetAllObjects(); 
-	int GetActiveObjectsCount();
+	std::vector<AGameObject*> GetAllGameObjects(); 
+	int GetActiveGameObjectsCount();
 
 private:
 	void UnbindRendererWithChildren(AGameObject* obj);
@@ -39,7 +40,8 @@ private:
 	static GameObjectManager* sharedInstance;
 
 	std::vector<AGameObject*> gameObjectList;
-	std::unordered_map<std::string, std::vector<AGameObject*>> gameObjectMap;
+	std::vector<AGameObject*> editorObjectList;
+	std::unordered_map<std::string, std::vector<AGameObject*>> objectMap;
 	std::unordered_map<LPCWSTR, std::vector<AGameObject*>> shaderToObjectsMap;
 };
 
