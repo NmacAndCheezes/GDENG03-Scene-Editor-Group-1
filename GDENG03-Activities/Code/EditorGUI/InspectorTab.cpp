@@ -1,8 +1,10 @@
 #include "InspectorTab.h"
 #include "HierarchyTab.h"
-#include "../GameEngine/Managers/GameObjectManager.h"
-#include "../WindowSystem/Keyboard.h"
+#include "GameEngine/Managers/GameObjectManager.h"
+#include "WindowSystem/Keyboard.h"
 
+#include "GameEngine/Components/Physics/Rigidbody3D.h"
+#include "GameEngine/Managers/PhysicsEngine.h"
 
 InspectorTab::InspectorTab(HierarchyTab* hierarchy) : AUITab(EditorGUIManager::TabNames::INSPECTOR_TAB.data()), hierarchy(hierarchy)
 {
@@ -55,6 +57,27 @@ void InspectorTab::RenderUI()
 
 		component->Enabled = compEnabled; 
 	}
+
+	// refactor next time
+	if (ImGui::Button("Add RigidBody3D"))
+	{
+		auto physicsList = selected->GetComponentsOfType(EComponentTypes::Physics);
+		bool hasRB = false;
+		for (auto physicsComp : physicsList)
+		{
+			if (dynamic_cast<RigidBody3D*>(physicsComp) != nullptr) hasRB = true;
+		}
+
+		if (!hasRB)
+		{
+			RigidBody3D* rb = new RigidBody3D(EPrimitiveMeshTypes::Cube);
+			selected->AttachComponent(rb);
+			PhysicsEngine::GetInstance()->RegisterRigidBody(rb);
+			rb->UpdateTransform();
+			rb->Mass = 10.f;
+		}
+	}
+
 	ImGui::Dummy(ImVec2(0.0f, 20.f));
 
 	ImGui::End();
