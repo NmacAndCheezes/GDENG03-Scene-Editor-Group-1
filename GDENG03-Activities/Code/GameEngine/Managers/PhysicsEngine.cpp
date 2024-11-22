@@ -25,8 +25,8 @@ bool PhysicsEngine::Init()
 	physicsCommon = new rp3d::PhysicsCommon();
 
 	rp3d::PhysicsWorld::WorldSettings settings;
-	settings.defaultVelocitySolverNbIterations = 150; 
-	settings.defaultPositionSolverNbIterations = 50;
+	settings.defaultVelocitySolverNbIterations = 200; 
+	settings.defaultPositionSolverNbIterations = 200;
 	settings.isSleepingEnabled = true;
 	settings.gravity = rp3d::Vector3(0, -9.81, 0);  
 	settings.restitutionVelocityThreshold = 0.25f;
