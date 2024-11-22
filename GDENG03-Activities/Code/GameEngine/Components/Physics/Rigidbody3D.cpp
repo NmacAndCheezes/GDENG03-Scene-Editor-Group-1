@@ -180,7 +180,12 @@ bool RigidBody3D::IsGravityEnabled()
 void RigidBody3D::EnableGravity(const bool& status)
 {
 	isGravityEnabled = status;
-	if (rb) rb->enableGravity(status);
+	if (rb)
+	{
+		rb->enableGravity(status);
+		rb->setType(rp3d::BodyType::STATIC); // considered a HACK, either that or the lib is not consistent
+		rb->setType(currBodyType);
+	}
 }
 
 float RigidBody3D::GetLinearDamping()

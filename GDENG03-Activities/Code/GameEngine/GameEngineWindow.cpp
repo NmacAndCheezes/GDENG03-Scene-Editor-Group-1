@@ -68,6 +68,7 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 			MathUtils::RandFloatWithRange(0.5f, 1.4f));*/
 
 		GameObjectManager::GetInstance()->AddObject(phy); 
+		phy->GetRB()->BodyType = rp3d::BodyType::STATIC;
 	}
 
 
