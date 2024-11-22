@@ -57,18 +57,17 @@ void InspectorTab::RenderUI()
 
 		component->Enabled = compEnabled; 
 	}
-
 	// refactor next time
-	if (ImGui::Button("Add RigidBody3D"))
+	auto physicsList = selected->GetComponentsOfType(EComponentTypes::Physics);
+	bool hasRB = false;
+	for (auto physicsComp : physicsList)
 	{
-		auto physicsList = selected->GetComponentsOfType(EComponentTypes::Physics);
-		bool hasRB = false;
-		for (auto physicsComp : physicsList)
-		{
-			if (dynamic_cast<RigidBody3D*>(physicsComp) != nullptr) hasRB = true;
-		}
+		if (dynamic_cast<RigidBody3D*>(physicsComp) != nullptr) hasRB = true;
+	}
 
-		if (!hasRB)
+	if (!hasRB)
+	{
+		if (ImGui::Button("Add RigidBody3D"))
 		{
 			RigidBody3D* rb = new RigidBody3D(EPrimitiveMeshTypes::Cube);
 			selected->AttachComponent(rb);
@@ -77,19 +76,18 @@ void InspectorTab::RenderUI()
 			rb->Mass = 10.f;
 		}
 	}
-
-	// refactor next time
-	if (ImGui::Button("Remove RigidBody3D"))
+	else
 	{
-		auto physicsList = selected->GetComponentsOfType(EComponentTypes::Physics); 
-		RigidBody3D* rb = nullptr;
-		for (auto physicsComp : physicsList) 
+		if (ImGui::Button("Delete RigidBody3D"))
 		{
-			if (dynamic_cast<RigidBody3D*>(physicsComp) != nullptr) rb = (RigidBody3D*)physicsComp;
-		}
+			auto physicsList = selected->GetComponentsOfType(EComponentTypes::Physics);
+			bool hasRB = false;
+			RigidBody3D* rb = nullptr;
+			for (auto physicsComp : physicsList)
+			{
+				if (dynamic_cast<RigidBody3D*>(physicsComp) != nullptr) rb = (RigidBody3D*)physicsComp;
+			}
 
-		if (rb)
-		{
 			PhysicsEngine::GetInstance()->UnregisterRigidBody(rb);
 			selected->DetachComponent(rb);
 		}
