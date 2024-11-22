@@ -1,6 +1,9 @@
 #include "GraphicsEngine.h"
 #include "ShaderManager.h"
 
+#include "Materials/UnlitColorMaterial.h"
+#include "Materials/LitTextureMaterial.h"
+
 
 GraphicsEngine* GraphicsEngine::sharedInstance = nullptr;
 
@@ -69,30 +72,33 @@ bool GraphicsEngine::InitializeShaders()
 
     std::vector<D3D11_INPUT_ELEMENT_DESC> layout = {
         //SEMANTIC NAME - SEMANTIC INDEX  -   FORMAT   -    INPUT SLOT - ALIGNED BYTE OFFSET - INPUT SLOT CLASS - INSTANCE DATA STEP RATE
-        {"POSITION",          0,    DXGI_FORMAT_R32G32B32_FLOAT,  0,           0,       D3D11_INPUT_PER_VERTEX_DATA,   0},
-        {"COLOR",             0,    DXGI_FORMAT_R32G32B32_FLOAT,  0,    D3D11_APPEND_ALIGNED_ELEMENT,       D3D11_INPUT_PER_VERTEX_DATA,   0}
+        {"POSITION",       0,    DXGI_FORMAT_R32G32B32_FLOAT,   0,           0,                        D3D11_INPUT_PER_VERTEX_DATA,   0},
+        {"COLOR",          0,    DXGI_FORMAT_R32G32B32_FLOAT,   0,    D3D11_APPEND_ALIGNED_ELEMENT,    D3D11_INPUT_PER_VERTEX_DATA,   0}
     };
 
-    if (!sm->CreateVertexShader(L"VertexShader.cso", layout))
-    {
-        return false;
-    }
+    if (!sm->CreateVertexShader(L"VUnlitColorShader.cso", layout)) return false;
+    if (!sm->CreatePixelShader(L"PUnlitColorShader.cso")) return false;
+    if (!sm->CreateShaderProgram(L"UnlitColorShader", L"VUnlitColorShader.cso", L"PUnlitColorShader.cso")) return false;
 
-    if (!sm->CreatePixelShader(L"PixelShader.cso"))
-    {
-        return false;
-    }
+    layout.clear();
+    layout = {
+        //SEMANTIC NAME - SEMANTIC INDEX  -   FORMAT   -    INPUT SLOT - ALIGNED BYTE OFFSET - INPUT SLOT CLASS - INSTANCE DATA STEP RATE
+        {"POSITION",        0,    DXGI_FORMAT_R32G32B32_FLOAT,  0,           0,                        D3D11_INPUT_PER_VERTEX_DATA,   0},
+        {"NORMAL",          0,    DXGI_FORMAT_R32G32B32_FLOAT,  0,    D3D11_APPEND_ALIGNED_ELEMENT,    D3D11_INPUT_PER_VERTEX_DATA,   0},
+        {"TEXCOORD",        0,    DXGI_FORMAT_R32G32_FLOAT,     0,    D3D11_APPEND_ALIGNED_ELEMENT,    D3D11_INPUT_PER_VERTEX_DATA,   0}
+    };
 
-    if (sm->CreateShaderProgram(L"DefaultShader", L"VertexShader.cso", L"PixelShader.cso"))
-    {
-        return false;
-    }
+    if (!sm->CreateVertexShader(L"VLitTextureShader.cso", layout)) return false;
+    if (!sm->CreatePixelShader(L"PLitTextureShader.cso")) return false;
+    if (!sm->CreateShaderProgram(L"LitTextureShader", L"VLitTextureShader.cso", L"PLitTextureShader.cso")) return false;
 
     return true;
 }
 
 bool GraphicsEngine::Release()
 {
+    if (!sharedInstance) return false;
+
     for (auto& sc : swapChainList)
     {
         if (sc != nullptr)
@@ -109,6 +115,8 @@ bool GraphicsEngine::Release()
 
     d3d11Context.Get()->Release();
     d3d11Device.Get()->Release();
+
+    delete sharedInstance;
 
     return true;
 }

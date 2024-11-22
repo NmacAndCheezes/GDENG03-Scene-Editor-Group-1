@@ -1,6 +1,6 @@
 #include "AGameObject.h"
-#include "../Components/Inputs/GenericInputController.h"
 #include "../Components/Renderer/ARenderer.h"
+#include "../Managers/GameObjectManager.h"
 
 
 int AGameObject::currentID = 0;
@@ -8,12 +8,12 @@ int AGameObject::currentID = 0;
 #pragma region Constructor-Destructor
 AGameObject::AGameObject(std::string name)
 {
-	this->instanceID = currentID; currentID++;
+	this->instanceID = currentID; currentID++; 
 	this->name = name;
 	this->parent = NULL;
 	this->enabled = true;
 	this->isInitialized = false;
-	this->level = 0;
+	this->level = 0; 
 
 	transform = new Transform();
 	AttachComponent(transform);
@@ -125,6 +125,7 @@ std::string AGameObject::GetName()
 
 void AGameObject::SetName(std::string newName)
 {
+	GameObjectManager::GetInstance()->UpdateObjectWithNewName(this, newName);
 	this->name = newName;
 }
 
@@ -150,7 +151,11 @@ void AGameObject::AttachChild(AGameObject* child)
 {
 	if (child == this || child == nullptr) return;
 
-	if (child->parent != nullptr)
+	if (child->parent == nullptr)
+	{
+		GameObjectManager::GetInstance()->RemoveObject(child); 
+	}
+	else if (child->parent != nullptr)
 	{
 		child->parent->DetachChild(child);
 	}
@@ -158,9 +163,10 @@ void AGameObject::AttachChild(AGameObject* child)
 	this->childList.push_back(child); 
 	child->SetParent(this);
 	child->level = this->level + 1;
-	if (!enabled) child->SetEnabled(false);
 
+	if (!enabled) child->SetEnabled(false);
 	if (!child->isInitialized) child->Initialize(); 
+
 	child->transform->RecalculateChildTransformWithParent(this->transform);
 }
 
@@ -183,8 +189,8 @@ void AGameObject::DetachChild(AGameObject* child)
 		this->childList.erase(this->childList.begin() + index); 
 	}
 
-	child->level = 0; 
 	child->SetParent(NULL); 
+	child->level = 0; 
 	child->transform->RecalculateChildTransformWithoutParent();
 
 	//this->childList.erase(std::remove(this->childList.begin(), this->childList.end(), child), this->childList.end());

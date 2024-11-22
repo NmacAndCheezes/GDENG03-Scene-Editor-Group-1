@@ -18,6 +18,7 @@ public:
 	void AttachOwner(AGameObject* owner);
 	void DetachOwner();
 	AGameObject* GetOwner();
+	Transform* GetTransform();
 
 	EComponentTypes GetType();
 	std::string GetName();

@@ -1,6 +1,6 @@
 #pragma once
 #include <unordered_map>
-#include "../../DirectXClasses/Shader.h"
+#include "DirectXClasses/Shader.h"
 
 
 class ShaderManager
@@ -16,6 +16,7 @@ public:
 
 public:
 	static ShaderManager* GetInstance();
+	static void Destroy();
 	ShaderManager(const ShaderManager&) = delete; 
 	ShaderManager& operator=(const ShaderManager&) = delete; 
 

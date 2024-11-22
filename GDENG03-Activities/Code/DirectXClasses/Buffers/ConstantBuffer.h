@@ -1,5 +1,4 @@
 #pragma once
-#include <wrl.h>
 #include "../AD3D11Object.h"
 
 

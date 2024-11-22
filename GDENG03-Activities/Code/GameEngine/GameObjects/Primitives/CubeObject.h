@@ -1,16 +1,10 @@
 #pragma once
-#include "../AGameObject.h"
-#include "../../Components/Renderer/MeshRenderer.h"
+#include "PrimitiveObject.h"
 
-class CubeObject : public AGameObject
+class CubeObject : public PrimitiveObject
 {
 public:
-	CubeObject();
-	CubeObject(std::string name);
-	~CubeObject();
-	void Initialize() override;
-
-
-private:
-	MeshRenderer* renderer;
+	CubeObject(std::string name = "CubeObj", bool isRainbowed = false) 
+		: PrimitiveObject(name, EPrimitiveMeshTypes::Cube, isRainbowed) {}
+	~CubeObject() {}
 };

@@ -44,17 +44,20 @@
     <Filter Include="GameEngine\Components\Camera">
       <UniqueIdentifier>{e43d8e90-b56b-4dd8-8f09-e2328695a0e6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameEngine\Components\Inputs">
-      <UniqueIdentifier>{79fe56b6-87c2-410a-9474-1f44fddd22db}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameEngine\Components\Scripts">
       <UniqueIdentifier>{c1401415-0581-4e3e-b1e6-5b1726de29ef}</UniqueIdentifier>
     </Filter>
     <Filter Include="EditorGUI">
-      <UniqueIdentifier>{2690968f-c3b4-4d72-b433-0374acd245bf}</UniqueIdentifier>
+      <UniqueIdentifier>{ad0414d4-2f32-4698-8780-73d55028e395}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EditorGUI\IMGUI">
-      <UniqueIdentifier>{e2963b5f-e1b0-4df7-a117-091db58b5f32}</UniqueIdentifier>
+    <Filter Include="DearIMGUI">
+      <UniqueIdentifier>{034a65b2-4e77-4b53-bbb3-87e7afc99218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Graphics\Materials">
+      <UniqueIdentifier>{7613b788-4d97-4a6a-aeac-35a7b3dc189d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine\Components\Physics">
+      <UniqueIdentifier>{31bed144-7b03-43d0-a452-b6b6f3c45f79}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -111,26 +114,11 @@
     <ClCompile Include="Code\WindowSystem\Window.cpp">
       <Filter>WindowsSystem</Filter>
     </ClCompile>
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\CubeObject.cpp">
-      <Filter>GameEngine\GameObjects\Primitives</Filter>
-    </ClCompile>
     <ClCompile Include="Code\GameEngine\Components\Camera\Camera.cpp">
       <Filter>GameEngine\Components\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="Code\GameEngine\Components\Inputs\GenericInputController.cpp">
-      <Filter>GameEngine\Components\Inputs</Filter>
-    </ClCompile>
     <ClCompile Include="Code\GameEngine\GameObjects\CameraObject.cpp">
       <Filter>GameEngine\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\CircleObject.cpp">
-      <Filter>GameEngine\GameObjects\Primitives</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\QuadObject.cpp">
-      <Filter>GameEngine\GameObjects\Primitives</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\PlaneObject.cpp">
-      <Filter>GameEngine\GameObjects\Primitives</Filter>
     </ClCompile>
     <ClCompile Include="Code\GameEngine\Graphics\CameraManager.cpp">
       <Filter>GameEngine\Graphics</Filter>
@@ -147,59 +135,89 @@
     <ClCompile Include="Code\GameEngine\GameObjects\FreeCameraObject.cpp">
       <Filter>GameEngine\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\ConeObject.cpp">
-      <Filter>GameEngine\GameObjects\Primitives</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\CylinderObject.cpp">
-      <Filter>GameEngine\GameObjects\Primitives</Filter>
-    </ClCompile>
     <ClCompile Include="Code\GameEngine\Components\Scripts\CameraController.cpp">
       <Filter>GameEngine\Components\Scripts</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\SphereObject.cpp">
-      <Filter>GameEngine\GameObjects\Primitives</Filter>
     </ClCompile>
     <ClCompile Include="Code\GameEngine\MathUtils.cpp">
       <Filter>GameEngine</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Editor UI\AUIScreen.cpp">
+    <ClCompile Include="Code\EditorGUI\EditorGUIManager.cpp">
       <Filter>EditorGUI</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Editor UI\EditorUIManager.cpp">
+    <ClCompile Include="Code\EditorGUI\AUITab.cpp">
       <Filter>EditorGUI</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Editor UI\EToolBar.cpp">
+    <ClCompile Include="Code\EditorGUI\CreditsTab.cpp">
       <Filter>EditorGUI</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Editor UI\HeirarcyUI.cpp">
+    <ClCompile Include="Code\EditorGUI\MenuTab.cpp">
       <Filter>EditorGUI</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui.cpp">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_demo.cpp">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_draw.cpp">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_impl_dx11.cpp">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_impl_win32.cpp">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_tables.cpp">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_widgets.cpp">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Code\Editor UI\InspectorUI.cpp">
+    <ClCompile Include="Code\EditorGUI\HierarchyTab.cpp">
       <Filter>EditorGUI</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Editor UI\HierarchyUI.cpp">
+    <ClCompile Include="Code\EditorGUI\DockSpace.cpp">
       <Filter>EditorGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\EditorGUI\ColorPickerTab.cpp">
+      <Filter>EditorGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\DirectXClasses\Texture.cpp">
+      <Filter>DirectXClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameEngine\GameObjects\ModelObject.cpp">
+      <Filter>GameEngine\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\DirectXClasses\TextureSampler.cpp">
+      <Filter>DirectXClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameEngine\Graphics\Materials\UnlitColorMaterial.cpp">
+      <Filter>GameEngine\Graphics\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameEngine\Graphics\Materials\LitTextureMaterial.cpp">
+      <Filter>GameEngine\Graphics\Materials</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\PrimitiveObject.cpp">
+      <Filter>GameEngine\GameObjects\Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\EditorGUI\InspectorTab.cpp">
+      <Filter>EditorGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\DearIMGUI\imgui.cpp">
+      <Filter>DearIMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\DearIMGUI\imgui_demo.cpp">
+      <Filter>DearIMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\DearIMGUI\imgui_draw.cpp">
+      <Filter>DearIMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\DearIMGUI\imgui_impl_dx11.cpp">
+      <Filter>DearIMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\DearIMGUI\imgui_impl_win32.cpp">
+      <Filter>DearIMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\DearIMGUI\imgui_stdlib.cpp">
+      <Filter>DearIMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\DearIMGUI\imgui_tables.cpp">
+      <Filter>DearIMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\DearIMGUI\imgui_widgets.cpp">
+      <Filter>DearIMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameEngine\Managers\PhysicsEngine.cpp">
+      <Filter>GameEngine\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameEngine\Components\Physics\Rigidbody3D.cpp">
+      <Filter>GameEngine\Components\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameEngine\Managers\MeshManager.cpp">
+      <Filter>GameEngine\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameEngine\GameObjects\PhysicsObject.cpp">
+      <Filter>GameEngine\GameObjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -285,9 +303,6 @@
     <ClInclude Include="Code\GameEngine\Components\Camera\EProjectionTypes.h">
       <Filter>GameEngine\Components\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="Code\GameEngine\Components\Inputs\GenericInputController.h">
-      <Filter>GameEngine\Components\Inputs</Filter>
-    </ClInclude>
     <ClInclude Include="Code\GameEngine\Meshes\CircleMesh.h">
       <Filter>GameEngine\Meshes</Filter>
     </ClInclude>
@@ -345,54 +360,107 @@
     <ClInclude Include="Code\GameEngine\MathUtils.h">
       <Filter>GameEngine</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Editor UI\HeirarcyUI.h">
+    <ClInclude Include="Code\EditorGUI\EditorGUIManager.h">
       <Filter>EditorGUI</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Editor UI\AUIScreen.h">
+    <ClInclude Include="Code\EditorGUI\AUITab.h">
       <Filter>EditorGUI</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Editor UI\EditorUIManager.h">
+    <ClInclude Include="Code\EditorGUI\CreditsTab.h">
       <Filter>EditorGUI</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Editor UI\EToolBar.h">
+    <ClInclude Include="Code\EditorGUI\MenuTab.h">
       <Filter>EditorGUI</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Editor UI\imgui-master\imconfig.h">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\Editor UI\imgui-master\imgui.h">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\Editor UI\imgui-master\imgui_impl_dx11.h">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\Editor UI\imgui-master\imgui_impl_win32.h">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\Editor UI\imgui-master\imgui_internal.h">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\Editor UI\imgui-master\imstb_rectpack.h">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\Editor UI\imgui-master\imstb_textedit.h">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\Editor UI\imgui-master\imstb_truetype.h">
-      <Filter>EditorGUI\IMGUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Code\Editor UI\InspectorUI.h">
+    <ClInclude Include="Code\EditorGUI\HierarchyTab.h">
       <Filter>EditorGUI</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Editor UI\HierarchyUI.h">
+    <ClInclude Include="Code\EditorGUI\DockSpace.h">
       <Filter>EditorGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\EditorGUI\ColorPickerTab.h">
+      <Filter>EditorGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\stb_image.h" />
+    <ClInclude Include="Code\DirectXClasses\Texture.h">
+      <Filter>DirectXClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\tiny_obj_loader.h" />
+    <ClInclude Include="Code\GameEngine\GameObjects\ModelObject.h">
+      <Filter>GameEngine\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\DirectXClasses\TextureSampler.h">
+      <Filter>DirectXClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameEngine\Graphics\Materials\AMaterial.h">
+      <Filter>GameEngine\Graphics\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameEngine\Graphics\Materials\UnlitColorMaterial.h">
+      <Filter>GameEngine\Graphics\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameEngine\Graphics\Materials\LitTextureMaterial.h">
+      <Filter>GameEngine\Graphics\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameEngine\GameObjects\Primitives\PrimitiveObject.h">
+      <Filter>GameEngine\GameObjects\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\EditorGUI\InspectorTab.h">
+      <Filter>EditorGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\EditorGUI\IRenderableUI.h">
+      <Filter>EditorGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\DearIMGUI\imstb_truetype.h">
+      <Filter>DearIMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\DearIMGUI\imconfig.h">
+      <Filter>DearIMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\DearIMGUI\imgui.h">
+      <Filter>DearIMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\DearIMGUI\imgui_impl_dx11.h">
+      <Filter>DearIMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\DearIMGUI\imgui_impl_win32.h">
+      <Filter>DearIMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\DearIMGUI\imgui_internal.h">
+      <Filter>DearIMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\DearIMGUI\imgui_stdlib.h">
+      <Filter>DearIMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\DearIMGUI\imstb_rectpack.h">
+      <Filter>DearIMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\DearIMGUI\imstb_textedit.h">
+      <Filter>DearIMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameEngine\Managers\PhysicsEngine.h">
+      <Filter>GameEngine\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameEngine\Components\Physics\Rigidbody3D.h">
+      <Filter>GameEngine\Components\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameEngine\Managers\MeshManager.h">
+      <Filter>GameEngine\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameEngine\GameObjects\PhysicsObject.h">
+      <Filter>GameEngine\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Code\Shaders\PixelShader.hlsl">
+    <FxCompile Include="Code\Shaders\VLitTextureShader.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
-    <FxCompile Include="Code\Shaders\VertexShader.hlsl">
+    <FxCompile Include="Code\Shaders\PLitTextureShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Code\Shaders\VUnlitColorShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Code\Shaders\PUnlitColorShader.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
   </ItemGroup>

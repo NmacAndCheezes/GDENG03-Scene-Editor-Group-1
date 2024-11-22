@@ -9,6 +9,7 @@ class GameObjectManager
 {
 public:
 	static GameObjectManager* GetInstance();
+	static void Destroy(); 
 	GameObjectManager(const GameObjectManager&) = delete;
 	GameObjectManager& operator=(const GameObjectManager&) = delete;
 
@@ -20,16 +21,17 @@ public:
 	// Object-related methods
 	void AddObject(AGameObject* gameObject);
 	void BindRendererToShader(ARenderer* rendererComponent);
-	AGameObject* FindObjectByName(std::string name);
+	std::vector<AGameObject*> FindObjectsWithName(std::string name);
+	void UpdateObjectWithNewName(AGameObject* gameObject, std::string newName);
+	void RemoveObject(AGameObject* gameObject); 
+	void RemoveObjectByID(unsigned int id);
 	void DeleteObject(AGameObject* gameObject);
-	void DeleteObjectByName(std::string name);
+	void DeleteObjectByID(unsigned int id);
 	std::vector<AGameObject*> GetAllObjects(); 
 	int GetActiveObjectsCount();
 
 private:
 	void UnbindRendererWithChildren(AGameObject* obj);
-	void RemoveObject(AGameObject* gameObject);  
-	void RemoveObjectByName(std::string name); 
 
 
 private:
@@ -37,12 +39,7 @@ private:
 	static GameObjectManager* sharedInstance;
 
 	std::vector<AGameObject*> gameObjectList;
-	std::unordered_map<std::string, AGameObject*> gameObjectMap;
+	std::unordered_map<std::string, std::vector<AGameObject*>> gameObjectMap;
 	std::unordered_map<LPCWSTR, std::vector<AGameObject*>> shaderToObjectsMap;
-
-private:
-	friend class HeirarcyUI;
-	friend class HierarchyUI;
-	friend class InspectorUI;
 };
 

@@ -19,19 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Code\Editor UI\AUIScreen.cpp" />
-    <ClCompile Include="Code\Editor UI\EditorUIManager.cpp" />
-    <ClCompile Include="Code\Editor UI\EToolBar.cpp" />
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui.cpp" />
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_demo.cpp" />
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_draw.cpp" />
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_impl_dx11.cpp" />
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_impl_win32.cpp" />
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_tables.cpp" />
-    <ClCompile Include="Code\Editor UI\imgui-master\imgui_widgets.cpp" />
+    <ClCompile Include="Code\EditorGUI\AUITab.cpp" />
+    <ClCompile Include="Code\EditorGUI\HierarchyTab.cpp" />
     <ClCompile Include="Code\GameEngine\Components\Scripts\CameraController.cpp" />
     <ClCompile Include="Code\GameEngine\Graphics\CameraManager.cpp" />
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\CircleObject.cpp" />
     <ClCompile Include="Code\GameEngine\GameObjects\CameraObject.cpp" />
     <ClCompile Include="Code\GameEngine\Components\Camera\Camera.cpp" />
     <ClCompile Include="Code\DirectXClasses\Buffers\ConstantBuffer.cpp" />
@@ -53,34 +44,39 @@
     <ClCompile Include="Code\WindowsMessageMap.cpp" />
     <ClCompile Include="Code\WindowSystem\Window.cpp" />
     <ClCompile Include="Code\WinMain.cpp" />
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\CubeObject.cpp" />
-    <ClCompile Include="Code\GameEngine\Components\Inputs\GenericInputController.cpp" />
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\QuadObject.cpp" />
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\PlaneObject.cpp" />
     <ClCompile Include="Code\WindowSystem\Keyboard.cpp" />
     <ClCompile Include="Code\WindowSystem\Mouse.cpp" />
     <ClCompile Include="Code\GameEngine\Components\Scripts\FreeCameraScript.cpp" />
     <ClCompile Include="Code\GameEngine\GameObjects\FreeCameraObject.cpp" />
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\ConeObject.cpp" />
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\CylinderObject.cpp" />
-    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\SphereObject.cpp" />
     <ClCompile Include="Code\GameEngine\MathUtils.cpp" />
-    <ClCompile Include="Code\Editor UI\HeirarcyUI.cpp" />
-    <ClCompile Include="Code\Editor UI\InspectorUI.cpp" />
-    <ClCompile Include="Code\Editor UI\HierarchyUI.cpp" />
+    <ClCompile Include="Code\EditorGUI\EditorGUIManager.cpp" />
+    <ClCompile Include="Code\EditorGUI\CreditsTab.cpp" />
+    <ClCompile Include="Code\EditorGUI\MenuTab.cpp" />
+    <ClCompile Include="Code\EditorGUI\DockSpace.cpp" />
+    <ClCompile Include="Code\EditorGUI\ColorPickerTab.cpp" />
+    <ClCompile Include="Code\GameEngine\GameObjects\ModelObject.cpp" />
+    <ClCompile Include="Code\GameEngine\Graphics\Materials\LitTextureMaterial.cpp" />
+    <ClCompile Include="Code\EditorGUI\InspectorTab.cpp" />
+    <ClCompile Include="Code\DirectXClasses\Texture.cpp" />
+    <ClCompile Include="Code\DirectXClasses\TextureSampler.cpp" />
+    <ClCompile Include="Code\GameEngine\Graphics\Materials\UnlitColorMaterial.cpp" />
+    <ClCompile Include="Code\GameEngine\GameObjects\Primitives\PrimitiveObject.cpp" />
+    <ClCompile Include="Code\GameEngine\Managers\MeshManager.cpp" />
+    <ClCompile Include="packages\DearIMGUI\imgui.cpp" />
+    <ClCompile Include="packages\DearIMGUI\imgui_demo.cpp" />
+    <ClCompile Include="packages\DearIMGUI\imgui_draw.cpp" />
+    <ClCompile Include="packages\DearIMGUI\imgui_impl_dx11.cpp" />
+    <ClCompile Include="packages\DearIMGUI\imgui_impl_win32.cpp" />
+    <ClCompile Include="packages\DearIMGUI\imgui_stdlib.cpp" />
+    <ClCompile Include="packages\DearIMGUI\imgui_tables.cpp" />
+    <ClCompile Include="packages\DearIMGUI\imgui_widgets.cpp" />
+    <ClCompile Include="Code\GameEngine\Managers\PhysicsEngine.cpp" />
+    <ClCompile Include="Code\GameEngine\Components\Physics\Rigidbody3D.cpp" />
+    <ClCompile Include="Code\GameEngine\GameObjects\PhysicsObject.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Code\Editor UI\AUIScreen.h" />
-    <ClInclude Include="Code\Editor UI\EditorUIManager.h" />
-    <ClInclude Include="Code\Editor UI\EToolBar.h" />
-    <ClInclude Include="Code\Editor UI\imgui-master\imconfig.h" />
-    <ClInclude Include="Code\Editor UI\imgui-master\imgui.h" />
-    <ClInclude Include="Code\Editor UI\imgui-master\imgui_impl_dx11.h" />
-    <ClInclude Include="Code\Editor UI\imgui-master\imgui_impl_win32.h" />
-    <ClInclude Include="Code\Editor UI\imgui-master\imgui_internal.h" />
-    <ClInclude Include="Code\Editor UI\imgui-master\imstb_rectpack.h" />
-    <ClInclude Include="Code\Editor UI\imgui-master\imstb_textedit.h" />
-    <ClInclude Include="Code\Editor UI\imgui-master\imstb_truetype.h" />
+    <ClInclude Include="Code\EditorGUI\AUITab.h" />
+    <ClInclude Include="Code\EditorGUI\HierarchyTab.h" />
     <ClInclude Include="Code\GameEngine\Components\Scripts\CameraController.h" />
     <ClInclude Include="Code\GameEngine\Graphics\CameraManager.h" />
     <ClInclude Include="Code\GameEngine\GameObjects\Primitives\CircleObject.h" />
@@ -110,11 +106,12 @@
     <ClInclude Include="Code\GameEngine\Meshes\CubeMesh.h" />
     <ClInclude Include="Code\GameEngine\Meshes\EPrimitiveMeshTypes.h" />
     <ClInclude Include="Code\GameEngine\Meshes\QuadMesh.h" />
+    <ClInclude Include="Code\stb_image.h" />
+    <ClInclude Include="Code\tiny_obj_loader.h" />
     <ClInclude Include="Code\WindowsMessageMap.h" />
     <ClInclude Include="Code\WindowSystem\Window.h" />
     <ClInclude Include="Code\GameEngine\GameObjects\Primitives\CubeObject.h" />
     <ClInclude Include="Code\GameEngine\Components\Camera\EProjectionTypes.h" />
-    <ClInclude Include="Code\GameEngine\Components\Inputs\GenericInputController.h" />
     <ClInclude Include="Code\GameEngine\GameObjects\Primitives\QuadObject.h" />
     <ClInclude Include="Code\GameEngine\Meshes\PlaneMesh.h" />
     <ClInclude Include="Code\GameEngine\GameObjects\Primitives\PlaneObject.h" />
@@ -129,19 +126,61 @@
     <ClInclude Include="Code\GameEngine\Meshes\SphereMesh.h" />
     <ClInclude Include="Code\GameEngine\GameObjects\Primitives\SphereObject.h" />
     <ClInclude Include="Code\GameEngine\MathUtils.h" />
-    <ClInclude Include="Code\Editor UI\HeirarcyUI.h" />
-    <ClInclude Include="Code\Editor UI\InspectorUI.h" />
-    <ClInclude Include="Code\Editor UI\HierarchyUI.h" />
+    <ClInclude Include="Code\EditorGUI\EditorGUIManager.h" />
+    <ClInclude Include="Code\EditorGUI\CreditsTab.h" />
+    <ClInclude Include="Code\EditorGUI\MenuTab.h" />
+    <ClInclude Include="Code\EditorGUI\DockSpace.h" />
+    <ClInclude Include="Code\EditorGUI\ColorPickerTab.h" />
+    <ClInclude Include="Code\GameEngine\GameObjects\ModelObject.h" />
+    <ClInclude Include="Code\GameEngine\Graphics\Materials\AMaterial.h" />
+    <ClInclude Include="Code\GameEngine\Graphics\Materials\LitTextureMaterial.h" />
+    <ClInclude Include="Code\EditorGUI\InspectorTab.h" />
+    <ClInclude Include="Code\EditorGUI\IRenderableUI.h" />
+    <ClInclude Include="Code\DirectXClasses\Texture.h" />
+    <ClInclude Include="Code\DirectXClasses\TextureSampler.h" />
+    <ClInclude Include="Code\GameEngine\Graphics\Materials\UnlitColorMaterial.h" />
+    <ClInclude Include="Code\GameEngine\GameObjects\Primitives\PrimitiveObject.h" />
+    <ClInclude Include="Code\GameEngine\Managers\MeshManager.h" />
+    <ClInclude Include="packages\DearIMGUI\imconfig.h" />
+    <ClInclude Include="packages\DearIMGUI\imgui.h" />
+    <ClInclude Include="packages\DearIMGUI\imgui_impl_dx11.h" />
+    <ClInclude Include="packages\DearIMGUI\imgui_impl_win32.h" />
+    <ClInclude Include="packages\DearIMGUI\imgui_internal.h" />
+    <ClInclude Include="packages\DearIMGUI\imgui_stdlib.h" />
+    <ClInclude Include="packages\DearIMGUI\imstb_rectpack.h" />
+    <ClInclude Include="packages\DearIMGUI\imstb_textedit.h" />
+    <ClInclude Include="packages\DearIMGUI\imstb_truetype.h" />
+    <ClInclude Include="Code\GameEngine\Managers\PhysicsEngine.h" />
+    <ClInclude Include="Code\GameEngine\Components\Physics\Rigidbody3D.h" />
+    <ClInclude Include="Code\GameEngine\GameObjects\PhysicsObject.h" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Code\Shaders\PixelShader.hlsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    <FxCompile Include="Code\Shaders\PLitTextureShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
       <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)/Code/Shaders/%(Filename).cso</ObjectFileOutput>
     </FxCompile>
-    <FxCompile Include="Code\Shaders\VertexShader.hlsl">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    <FxCompile Include="Code\Shaders\VLitTextureShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)/Code/Shaders/%(Filename).cso</ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="Code\Shaders\PUnlitColorShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)/Code/Shaders/%(Filename).cso</ObjectFileOutput>
+    </FxCompile>
+    <FxCompile Include="Code\Shaders\VUnlitColorShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
       <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)/Code/Shaders/%(Filename).cso</ObjectFileOutput>
     </FxCompile>
   </ItemGroup>
@@ -232,13 +271,16 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_USE_MATH_DEFINES;NOMINMAX;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)/packages/DearIMGUI;$(ProjectDir)/Code;$(ProjectDir)/packages/OpenAssetImporter/include;$(ProjectDir)/packages/ReactPhysics3D/include;$(ProjectDir)/packages/rapidjson/include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;winmm.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;winmm.lib;dxguid.lib;assimp-vc143-mt.lib;reactphysics3d-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(ProjectDir)/packages/OpenAssetImporter/lib/x64;$(ProjectDir)/packages/ReactPhysics3D</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -247,15 +289,17 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_USE_MATH_DEFINES;NOMINMAX;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)/packages/DearIMGUI;$(ProjectDir)/Code;$(ProjectDir)/packages/OpenAssetImporter/include;$(ProjectDir)/packages/ReactPhysics3D/include;$(ProjectDir)/packages/rapidjson/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;winmm.lib;dxguid.lib$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>;$(ProjectDir)/packages/OpenAssetImporter/lib/x64;$(ProjectDir)/packages/ReactPhysics3D</AdditionalLibraryDirectories>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;winmm.lib;dxguid.lib;assimp-vc143-mt.lib;reactphysics3d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,5 +1,5 @@
 #include "SwapChain.h"
-#include "../GameEngine/Graphics/GraphicsEngine.h"
+#include "GameEngine/Graphics/GraphicsEngine.h"
 
 
 SwapChain::SwapChain(GraphicsEngine* gfx) : gfx (gfx)

@@ -1,7 +1,7 @@
 #pragma once
 #include <SimpleMath.h>
 #include "AComponent.h"
-#include "../../DirectXClasses/Buffers/BufferDataTypes.h"
+#include "DirectXClasses/Buffers/BufferDataTypes.h"
 
 
 using namespace DirectX::SimpleMath;
@@ -29,12 +29,12 @@ public:
 	void SetLocalPosition(const Vector3& newPos);
 	__declspec(property(get = GetLocalPosition, put = SetLocalPosition)) Vector3 LocalPosition;
 
-
 	Vector3 GetLocalScale();
 	void SetLocalScale(const Vector3& newScale);
 	__declspec(property(get = GetLocalScale, put = SetLocalScale)) Vector3 LocalScale;
 
 
+	Quaternion GetOrientation();
 	Vector3 GetEulerAngles();
 	Vector3 GetLocalEulerAngles();
 	Vector3 GetLocalRight();
@@ -46,6 +46,7 @@ public:
 
 	void Rotate(float xAngleInDeg, float yAngleInDeg, float zAngleInDeg);
 	void Rotate(const Vector3& eulerInDeg);
+	void Rotate(const Quaternion& toRotate);
 	//void Rotate(const Vector3& axis, float angleInDeg);
 
 private:
@@ -75,7 +76,4 @@ private:
 	Vector3 localForward;
 
 	TMatrix tMatrix;
-
-private:
-	friend class InspectorUI;
 };

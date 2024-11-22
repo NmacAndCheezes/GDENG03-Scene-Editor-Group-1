@@ -2,9 +2,9 @@
 #include <SimpleMath.h>
 #include "../AComponent.h"
 #include "EProjectionTypes.h"
-#include "../../../DirectXClasses/SwapChain.h"
-#include "../../../DirectXClasses/Buffers/BufferDataTypes.h"
-#include "../../../DirectXClasses/Buffers/ConstantBuffer.cpp"
+#include "DirectXClasses/SwapChain.h"
+#include "DirectXClasses/Buffers/BufferDataTypes.h"
+#include "DirectXClasses/Buffers/ConstantBuffer.cpp"
 
 
 using namespace DirectX::SimpleMath;

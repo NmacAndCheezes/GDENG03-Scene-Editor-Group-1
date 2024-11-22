@@ -1,16 +1,10 @@
 #pragma once
-#include "../AGameObject.h"
-#include "../../Components/Renderer/MeshRenderer.h"
+#include "PrimitiveObject.h"
 
-class CylinderObject : public AGameObject
+class CylinderObject : public PrimitiveObject
 {
 public:
-	CylinderObject();
-	CylinderObject(std::string name);
-	~CylinderObject();
-	void Initialize() override;
-
-
-private:
-	MeshRenderer* renderer;
+	CylinderObject(std::string name = "CylinderObj", bool isRainbowed = false) 
+		: PrimitiveObject(name, EPrimitiveMeshTypes::Cylinder, isRainbowed) {}
+	~CylinderObject() {}
 };

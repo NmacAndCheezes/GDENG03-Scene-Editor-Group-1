@@ -6,6 +6,7 @@ class CameraManager
 {
 public:
 	static CameraManager* GetInstance();
+	static void Destroy();
 	CameraManager(const CameraManager&) = delete;
 	CameraManager& operator=(const CameraManager&) = delete;
 

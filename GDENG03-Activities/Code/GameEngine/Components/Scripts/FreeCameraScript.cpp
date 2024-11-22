@@ -1,8 +1,9 @@
 #include "FreeCameraScript.h"
-#include "../../../WindowSystem/Keyboard.h"
-#include "../../../WindowSystem/Mouse.h"
-#include "../../MathUtils.h"
+#include "WindowSystem/Keyboard.h"
+#include "WindowSystem/Mouse.h"
+#include "GameEngine/MathUtils.h"
 #include "../Transform.h"
+#include "EditorGUI/EditorGUIManager.h"
 
 
 FreeCameraScript::FreeCameraScript(int width, int height) : AComponent("FreeCamera", EComponentTypes::Script)
@@ -30,6 +31,8 @@ void FreeCameraScript::Clone(AComponent* copy)
 
 void FreeCameraScript::Perform()
 {
+	if (EditorGUIManager::GetInstance()->IsMousesOverUI()) return;
+
 	if (Mouse::IsButtonDown(Mouse::EMouseButtons::Right))
 	{
 		HandleMovement(); 

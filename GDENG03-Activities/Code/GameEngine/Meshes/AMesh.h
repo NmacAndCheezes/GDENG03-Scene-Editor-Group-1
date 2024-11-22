@@ -1,12 +1,12 @@
 #pragma once
-#include "../../DirectXClasses/Buffers/VertexBuffer.cpp"
-#include "../../DirectXClasses/Buffers/IndexBuffer.h"
+#include <SimpleMath.h>
+
+using namespace DirectX::SimpleMath;
 
 
-template <typename T>
 class AMesh
 {
 public:
-	virtual VertexBuffer<T>* CreateVertexBuffer() = 0;
-	virtual IndexBuffer* CreateIndexBuffer() = 0;
+	virtual std::vector<Vector3> GetVertexPositions() = 0;
+	virtual std::vector<unsigned short> GetIndices() = 0;
 };

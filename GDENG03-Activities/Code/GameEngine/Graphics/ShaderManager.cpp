@@ -13,6 +13,12 @@ ShaderManager* ShaderManager::GetInstance()
     return sharedInstance;
 }
 
+void ShaderManager::Destroy()
+{
+    if (!sharedInstance) return;
+    delete sharedInstance;
+}
+
 ShaderManager::~ShaderManager()
 {
     shaderProgramsList.clear();

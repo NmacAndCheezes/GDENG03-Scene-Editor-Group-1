@@ -1,7 +1,7 @@
 #include "Camera.h"
 #include "../Transform.h"
-#include "../../Graphics/GraphicsEngine.h"
-#include "../../Graphics/CameraManager.h"
+#include "GameEngine/Graphics/GraphicsEngine.h"
+#include "GameEngine/Graphics/CameraManager.h"
 
 
 Camera::Camera(int width, int height) : AComponent("Camera", EComponentTypes::Camera)

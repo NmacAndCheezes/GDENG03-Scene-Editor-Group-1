@@ -15,6 +15,24 @@ GameObjectManager* GameObjectManager::GetInstance()
 	return sharedInstance; 
 }
 
+void GameObjectManager::Destroy()
+{
+	if (!sharedInstance) return;
+
+	CameraManager::Destroy();
+	ShaderManager::Destroy();
+
+	for (int i = (int)sharedInstance->gameObjectList.size() - 1; i >= 0; i--)
+	{
+		sharedInstance->DeleteObject(sharedInstance->gameObjectList[i]);
+	}
+
+	sharedInstance->gameObjectMap.clear();
+	sharedInstance->shaderToObjectsMap.clear();
+
+	delete sharedInstance;
+}
+
 
 #pragma region Game-related methods
 //void GameObjectManager::ProcessInputs(WPARAM wParam, LPARAM lParam)
@@ -101,15 +119,25 @@ void GameObjectManager::Draw()
 #pragma region Object-related methods
 void GameObjectManager::AddObject(AGameObject* gameObject)
 {
+	// check for invalid game objects
 	if (gameObject == nullptr) return;
-
+	
+	// check if game object is already tracked by manager
+	auto& namedObjList = gameObjectMap[gameObject->Name];
+	for (auto& namedObj : namedObjList)
+	{
+		if (namedObj->GetInstanceID() == gameObject->GetInstanceID()) return;
+	}
+	
+	// check for relationships, manager only tracks root objs
 	if (gameObject->GetParent() != nullptr)
 	{
 		gameObject->GetParent()->DetachChild(gameObject);
 	}
 
-	gameObjectMap[gameObject->GetName()] = gameObject; 
-	gameObjectList.push_back(gameObject); 
+	// set trackers
+	gameObjectList.push_back(gameObject);
+	gameObjectMap[gameObject->Name].push_back(gameObject); 
 	if (!gameObject->IsInitialized()) gameObject->Initialize(); 
 }
 
@@ -119,17 +147,50 @@ void GameObjectManager::BindRendererToShader(ARenderer* rendererComponent)
 	shaderToObjectsMap[shaderType].push_back(rendererComponent->GetOwner());
 }
 
-AGameObject* GameObjectManager::FindObjectByName(std::string name)
+std::vector<AGameObject*> GameObjectManager::FindObjectsWithName(std::string name)
 {
-	if (gameObjectMap[name] != NULL)
+	return gameObjectMap[name];
+}
+
+void GameObjectManager::UpdateObjectWithNewName(AGameObject* gameObject, std::string newName)
+{
+	auto& namedList = gameObjectMap[gameObject->Name];
+	for (int i = 0; i < namedList.size(); i++) 
 	{
-		return gameObjectMap[name];
+		if (namedList[i]->GetInstanceID() == gameObject->GetInstanceID()) namedList.erase(namedList.begin() + i); 
 	}
-	else
+
+	if (namedList.size() == 0) gameObjectMap.erase(gameObject->Name);
+
+	gameObjectMap[newName].push_back(gameObject);
+}
+
+void GameObjectManager::RemoveObject(AGameObject* gameObject)
+{
+	if (gameObject == nullptr) return;
+
+	auto itr = std::find(gameObjectList.begin(), gameObjectList.end(), gameObject); 
+
+	if (itr != gameObjectList.end()) 
 	{
-		//std::cout << "Object " << name << " not found!" << std::endl;
-		return NULL;
+		gameObjectList.erase(itr); 
+		gameObjectList.shrink_to_fit(); 
+
+		auto& namedList = gameObjectMap[gameObject->Name]; 
+		for (int i = 0; i < namedList.size(); i++)  
+		{
+			if (namedList[i]->GetInstanceID() == gameObject->GetInstanceID()) namedList.erase(namedList.begin() + i); 
+		}
 	}
+}
+
+void GameObjectManager::RemoveObjectByID(unsigned int id)
+{
+	auto itr = std::find_if(gameObjectList.begin(), gameObjectList.end(), [&](AGameObject* obj) {
+			return obj->GetInstanceID() == id;
+		});
+
+	if (itr != gameObjectList.end()) RemoveObject(*itr);
 }
 
 void GameObjectManager::DeleteObject(AGameObject* gameObject)
@@ -150,14 +211,13 @@ void GameObjectManager::DeleteObject(AGameObject* gameObject)
 	delete gameObject;
 }
 
-void GameObjectManager::DeleteObjectByName(std::string name)
+void GameObjectManager::DeleteObjectByID(unsigned int id)
 {
-	AGameObject* object = FindObjectByName(name);
+	auto itr = std::find_if(gameObjectList.begin(), gameObjectList.end(), [&](AGameObject* obj) {
+		return obj->GetInstanceID() == id;
+		});
 
-	if (object != NULL)
-	{
-		DeleteObject(object); 
-	}
+	if (itr != gameObjectList.end()) DeleteObject(*itr);
 }
 
 std::vector<AGameObject*> GameObjectManager::GetAllObjects()
@@ -187,29 +247,6 @@ void GameObjectManager::UnbindRendererWithChildren(AGameObject* obj)
 	for (int i = 0; i < childList.size(); i++) 
 	{
 		UnbindRendererWithChildren(childList[i]);
-	}
-}
-
-void GameObjectManager::RemoveObject(AGameObject* gameObject)
-{
-	if (gameObject == nullptr) return;
-
-	// remove from game object trackers
-	std::string key = gameObject->GetName();
-	gameObjectMap.erase(key);
-
-	auto itr = std::find(gameObjectList.begin(), gameObjectList.end(), gameObject);
-	if (itr != gameObjectList.end()) gameObjectList.erase(itr);
-	gameObjectList.shrink_to_fit();
-}
-
-void GameObjectManager::RemoveObjectByName(std::string name)
-{
-	AGameObject* object = FindObjectByName(name); 
-
-	if (object != NULL) 
-	{
-		RemoveObject(object); 
 	}
 }
 #pragma endregion

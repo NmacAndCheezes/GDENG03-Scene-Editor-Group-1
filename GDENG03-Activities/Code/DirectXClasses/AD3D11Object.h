@@ -1,12 +1,13 @@
 #pragma once
-#include "../GameEngine/Graphics/GraphicsEngine.h"
+#include <wrl.h>
+#include "GameEngine/Graphics/GraphicsEngine.h"
 
 
 class AD3D11Object
 {
 public:
-	AD3D11Object(GraphicsEngine* gfx) : gfx(gfx) {};
-	~AD3D11Object() {};
+	AD3D11Object(GraphicsEngine* gfx) : gfx(gfx) {}
+	~AD3D11Object() {}
 
 	virtual bool Init() = 0;
 	virtual void BindToPipeline() = 0;

@@ -37,6 +37,11 @@ AGameObject* AComponent::GetOwner()
 	return this->owner;
 }
 
+Transform* AComponent::GetTransform()
+{
+	return this->transform;
+}
+
 
 EComponentTypes AComponent::GetType()
 {

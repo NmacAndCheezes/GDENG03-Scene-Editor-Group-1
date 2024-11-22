@@ -1,8 +1,6 @@
 #pragma once
-#include <wrl.h>
-#include <d3d11.h>
 #include <vector>
-#include "../../DirectXClasses/SwapChain.h"
+#include "DirectXClasses/SwapChain.h"
 
 
 class GraphicsEngine

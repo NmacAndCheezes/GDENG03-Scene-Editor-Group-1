@@ -61,7 +61,7 @@ artifacts/
 *_h.h
 *.ilk
 *.meta
-#*.obj
+*.obj
 *.iobj
 *.pch
 *.pdb
@@ -181,8 +181,6 @@ node_modules/
 *.sln.iml
 
 # Project specific/
-!**/3D/*
-!**/[Mm]edia/*
-!**/[Ss]haders/*
-!**/[Ll]ibs/*
+!**/[Aa]ssets/** 
+!**/[Ss]haders/** 
 !**/[Pp]ackages/** 

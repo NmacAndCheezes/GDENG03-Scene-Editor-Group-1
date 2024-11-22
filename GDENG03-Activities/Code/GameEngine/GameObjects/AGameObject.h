@@ -19,7 +19,7 @@ public:
 	virtual void Update(float dt);
 	virtual void Draw(); 
 
-	unsigned int GetInstanceID();
+	unsigned int GetInstanceID(); 
 	std::string GetName();
 	void SetName(std::string newName);
 	__declspec(property(get = GetName, put = SetName)) std::string Name;
@@ -49,7 +49,6 @@ private:
 
 protected:
 	unsigned int instanceID;
-
 	std::string name;
 	bool enabled;
 	bool isInitialized;
@@ -62,8 +61,5 @@ protected:
 
 private:
 	static int currentID;
-
-private:
-	friend class InspectorUI;
 };
 

@@ -1,19 +1,15 @@
 #include "MeshRenderer.h"
-#include "../../Meshes/CubeMesh.h"
-#include "../../Meshes/SphereMesh.h"
-#include "../../Meshes/QuadMesh.h"
-#include "../../Meshes/CircleMesh.h"
-#include "../../Meshes/PlaneMesh.h"
-#include "../../Meshes/CylinderMesh.h"
-#include "../../Meshes/ConeMesh.h"
+#include "GameEngine/Managers/MeshManager.h"
+#include "DirectXClasses/Buffers/VertexBuffer.cpp"
+#include "GameEngine/Graphics/Materials/UnlitColorMaterial.h"
 
 
-MeshRenderer::MeshRenderer() : ARenderer("MeshRenderer", L"DefaultShader")
+MeshRenderer::MeshRenderer() : ARenderer("MeshRenderer")
 {
 	topologyType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 }
 
-MeshRenderer::MeshRenderer(LPCWSTR shaderType) : ARenderer("MeshRenderer", shaderType)
+MeshRenderer::MeshRenderer(AMaterial* material) : ARenderer("MeshRenderer", material)
 {
 	topologyType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 }
@@ -23,52 +19,76 @@ MeshRenderer::~MeshRenderer()
 
 }
 
-void MeshRenderer::LoadPrimitive(EPrimitiveMeshTypes type)
+void MeshRenderer::LoadPrimitive(EPrimitiveMeshTypes type, bool isRainbowed)
 {
-	AMesh<VertexData>* mesh = nullptr;
+	auto vertices = MeshManager::GetInstance()->GetVertexDataFromMesh(type);
+	auto indices = MeshManager::GetInstance()->GetIndexDataFromMesh(type);
 
-	switch (type)
-	{
-	case EPrimitiveMeshTypes::Cube:
-		mesh = new CubeMesh<VertexData>(); 
-		break;
-	case EPrimitiveMeshTypes::Sphere:
-		mesh = new SphereMesh<VertexData>();
-		break;
-	case EPrimitiveMeshTypes::Quad:
-		mesh = new QuadMesh<VertexData>();
-		break;
-	case EPrimitiveMeshTypes::Circle:
-		mesh = new CircleMesh<VertexData>();
-		break;
-	case EPrimitiveMeshTypes::Plane:
-		mesh = new PlaneMesh<VertexData>();
-		break;
-	case EPrimitiveMeshTypes::Cylinder:
-		mesh = new CylinderMesh<VertexData>();
-		break;
-	case EPrimitiveMeshTypes::Cone:
-		mesh = new ConeMesh<VertexData>(); 
-		break;
-	default:
-		break;
-	}
-
-	if (mesh == nullptr) return;
+	if (vertices.size() == 0) return;
 
 	InitRenderer();
 
-	VertexBuffer<VertexData>* vb = mesh->CreateVertexBuffer();
-	vb->Init();
-	buffersList.push_back(vb);
+	UnlitColorMaterial* unlit = (UnlitColorMaterial*)material;
 
-	indexBuffer = mesh->CreateIndexBuffer();
-	indexBuffer->Init();
+	std::vector<VUnlitColorData> verticesWithColor;
+	for (auto& v : vertices)
+	{
+		VUnlitColorData vWithColor;
+		vWithColor.pos = v.pos;
+		vWithColor.vColor = (!isRainbowed) ? unlit->GetColor() :
+			Vector3(MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange());
+		verticesWithColor.push_back(vWithColor);
+	}
 
-	delete mesh;
+	VertexBuffer<VUnlitColorData>* vb = new VertexBuffer<VUnlitColorData>(GraphicsEngine::GetInstance(), verticesWithColor);
+	vb->Init(); 
+	vertexBuffer = vb; 
+
+	indexBuffer = new IndexBuffer(GraphicsEngine::GetInstance(), indices);
+	indexBuffer->Init(); 
 }
 
-void MeshRenderer::LoadNonPrimitive(std::string fileName)
+void MeshRenderer::LoadNonPrimitive(std::string modelName, bool isRainbowed)
 {
+	auto vertices = MeshManager::GetInstance()->GetVertexDataFromMesh(modelName); 
+	auto indices = MeshManager::GetInstance()->GetIndexDataFromMesh(modelName); 
 
+	if (vertices.size() == 0) return; 
+
+	InitRenderer();
+
+	if (isRainbowed)
+	{
+		std::vector<VUnlitColorData> verticesWithColor;
+		for (auto& v : vertices) 
+		{
+			VUnlitColorData vWithColor; 
+			vWithColor.pos = v.pos; 
+			vWithColor.vColor = Vector3(MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange());  
+			verticesWithColor.push_back(vWithColor); 
+		}
+
+		VertexBuffer<VUnlitColorData>* vb = new VertexBuffer<VUnlitColorData>(GraphicsEngine::GetInstance(), verticesWithColor);
+		vb->Init();
+		vertexBuffer = vb;
+	}
+	else
+	{
+		std::vector<VLitTextureData> verticesWithUV;
+		for (auto& v : vertices)
+		{
+			VLitTextureData vWithUV; 
+			vWithUV.pos = v.pos; 
+			vWithUV.normals = v.normals; 
+			vWithUV.uv = v.uv;
+			verticesWithUV.push_back(vWithUV); 
+		}
+
+		VertexBuffer<VLitTextureData>* vb = new VertexBuffer<VLitTextureData>(GraphicsEngine::GetInstance(), verticesWithUV);
+		vb->Init();
+		vertexBuffer = vb;
+	}
+
+	indexBuffer = new IndexBuffer(GraphicsEngine::GetInstance(), indices); 
+	indexBuffer->Init(); 
 }

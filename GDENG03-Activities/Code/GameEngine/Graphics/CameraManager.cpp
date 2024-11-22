@@ -13,6 +13,18 @@ CameraManager* CameraManager::GetInstance()
     return sharedInstance; 
 }
 
+void CameraManager::Destroy()
+{
+    if (!sharedInstance) return;
+
+    /*for (auto camera : sharedInstance->camerasList) 
+    {
+        if (camera) delete camera->GetOwner();
+    }*/
+
+    delete sharedInstance;
+}
+
 void CameraManager::AddCamera(Camera* newCamera)
 {
     if (newCamera == nullptr) return;
