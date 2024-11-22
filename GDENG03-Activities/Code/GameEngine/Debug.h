@@ -9,6 +9,7 @@ public:
 	static Debug* get();
 
 	static void Log(std::string log);
+	static void ClearLog();
 
 private:
 	Debug() = default;
