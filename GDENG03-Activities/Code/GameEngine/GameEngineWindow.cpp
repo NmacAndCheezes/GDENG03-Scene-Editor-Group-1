@@ -45,7 +45,7 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 	FreeCameraObject* freeCam = new FreeCameraObject(width, height);  
 	freeCam->GetTransform()->Position = { 0.0f, 30.0f, -30.0f };
 	freeCam->GetTransform()->Rotate(50.0f, 0.0f, 0.0f);
-	GameObjectManager::GetInstance()->AddObject(freeCam); 
+	GameObjectManager::GetInstance()->AddObject(freeCam, true); 
 
 	PhysicsObject* phy1 = new PhysicsObject(EPrimitiveMeshTypes::Plane);
 	phy1->GetTransform()->Position = Vector3(0.0f, 0.0f, 0.0f);
@@ -127,20 +127,25 @@ void GameEngineWindow::OnUpdate()
 {
 	swapChain->ClearBuffer(0.0f, 0.0f, 0.0f);
 	//swapChain->ClearBuffer(0.4f, 0.4f, 0.6f);
-	
-	if (EditorBackend::get()->getState() == EditorBackend::PLAY)
-	{
-		accumulator += (float)EngineTime::GetDeltaTime(); 
-		float secsPerFrame = 1.f / (float)fps; 
-		while (accumulator >= secsPerFrame) 
-		{
-			accumulator -= secsPerFrame; 
-			GameObjectManager::GetInstance()->Update(secsPerFrame); 
-			PhysicsEngine::GetInstance()->UpdateWorld(secsPerFrame); 
 
-			Keyboard::FlushCharBuffer(); 
+	accumulator += (float)EngineTime::GetDeltaTime();
+	float secsPerFrame = 1.f / (float)fps;
+	while (accumulator >= secsPerFrame)
+	{
+		accumulator -= secsPerFrame;
+		GameObjectManager::GetInstance()->UpdateEditor(secsPerFrame);
+
+		if (EditorBackend::get()->getState() == EditorBackend::PLAY)
+		{
+			GameObjectManager::GetInstance()->UpdateGame(secsPerFrame);
+			PhysicsEngine::GetInstance()->UpdateWorld(secsPerFrame);
 		}
 
+		Keyboard::FlushCharBuffer();
+	}
+
+	if (EditorBackend::get()->getState() == EditorBackend::PLAY)
+	{
 		float factor = accumulator / secsPerFrame;
 		PhysicsEngine::GetInstance()->UpdateRigidBodies(factor);
 	}
