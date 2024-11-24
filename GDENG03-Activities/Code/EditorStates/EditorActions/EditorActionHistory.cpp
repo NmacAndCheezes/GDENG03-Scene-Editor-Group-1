@@ -1,7 +1,7 @@
 #include "EditorActionHistory.h"
-#include "../../AGameObjectManager.h"
-#include "../../Physics/PhysicsSystem.h"
-#include "../../ECS Systems/BaseComponentSystem.h"
+#include "./GameEngine/Managers/GameObjectManager.h"
+#include "./GameEngine/Managers/PhysicsEngine.h"
+
 EditorActionHistory* EditorActionHistory::sharedInstance = nullptr;
 
 void EditorActionHistory::initialize()
@@ -39,33 +39,37 @@ void EditorActionHistory::CheckIfSimilar(AGameObject* obj)
 
 void EditorActionHistory::SetToEditState()
 {
+	if (EditState.size() == 0) return;
 	for (auto action : EditState)
 	{
-		AGameObject* obj = AGameObjectManager::get()->getObjectList()[action->id];
+		AGameObject* obj = GameObjectManager::GetInstance()->GetGameObjectMap()[action->id];
 
 		if (obj == nullptr) continue;
 
-		std::cout << "Reverting " << obj->getId() << std::endl;
-		obj->getTransform()->SetLocalPosition(action->m_local_position);
-		obj->getTransform()->SetLocalRotation(action->m_local_rotation);
-		obj->getTransform()->SetLocalScale(action->m_local_scale);
-		obj->setActive(action->isActive);
+		std::cout << "Reverting " << obj->GetInstanceID() << std::endl;
+		obj->GetTransform()->SetLocalPosition(action->m_local_position);
+
+		Vector3 diffEuler = action->m_local_rotation - obj->GetTransform()->GetEulerAngles();
+		obj->GetTransform()->Rotate(diffEuler);
+
+		obj->GetTransform()->SetLocalScale(action->m_local_scale);
+		obj->SetEnabled(action->isEnabled);
 	}
 }
 
 void EditorActionHistory::RecordEditStates()
 {
-	BaseComponentSystem::get()->getPhysicsSystem()->resetAllComponents();
+	//BaseComponentSystem::get()->getPhysicsSystem()->resetAllComponents();
 	EditState.clear();
-	for (auto i : AGameObjectManager::get()->getObjectList())
+	for (auto i : GameObjectManager::GetInstance()->GetGameObjectMap())
 	{
 		EditorAction* action = new EditorAction((i.second));
 		EditState.push_back(action);
 
-		std::cout << "Recording " << i.second->getId() << std::endl;
-		action->m_local_position.printVector(i.second->getName());
-		action->m_local_rotation.printVector(i.second->getName());
-		action->m_local_scale.printVector(i.second->getName());
+		//std::cout << "Recording " << i.second->getId() << std::endl;
+		//action->m_local_position.printVector(i.second->getName());
+		//action->m_local_rotation.printVector(i.second->getName());
+		//action->m_local_scale.printVector(i.second->getName());
 	}
 }
 
@@ -76,15 +80,18 @@ void EditorActionHistory::Undo()
 	
 	UndoActions.pop();
 
-	AGameObject* obj = AGameObjectManager::get()->getObjectList()[action->id];
+	AGameObject* obj = GameObjectManager::GetInstance()->GetGameObjectMap()[action->id];
 	if (obj == nullptr) return;
 
 	RedoActions.push(new EditorAction(obj));
 
-	obj->getTransform()->SetLocalPosition(action->m_local_position);
-	obj->getTransform()->SetLocalRotation(action->m_local_rotation);
-	obj->getTransform()->SetLocalScale(action->m_local_scale);
-	obj->setActive(action->isActive);
+	obj->GetTransform()->SetLocalPosition(action->m_local_position);
+
+	Vector3 diffEuler = action->m_local_rotation - obj->GetTransform()->GetEulerAngles();
+	obj->GetTransform()->Rotate(diffEuler);
+
+	obj->GetTransform()->SetLocalScale(action->m_local_scale);
+	obj->SetEnabled(action->isEnabled);
 }
 
 void EditorActionHistory::Redo()
@@ -93,12 +100,15 @@ void EditorActionHistory::Redo()
 	EditorAction* action = RedoActions.top();
 	RedoActions.pop();
 
-	AGameObject* obj = AGameObjectManager::get()->getObjectList()[action->id];
+	AGameObject* obj = GameObjectManager::GetInstance()->GetGameObjectMap()[action->id];
 	if (obj == nullptr) return;
-	obj->getTransform()->SetLocalPosition(action->m_local_position);
-	obj->getTransform()->SetLocalRotation(action->m_local_rotation);
-	obj->getTransform()->SetLocalScale(action->m_local_scale);
-	obj->setActive(action->isActive);
+	obj->GetTransform()->SetLocalPosition(action->m_local_position);
+
+	Vector3 diffEuler = action->m_local_rotation - obj->GetTransform()->GetEulerAngles();
+	obj->GetTransform()->Rotate(diffEuler);
+
+	obj->GetTransform()->SetLocalScale(action->m_local_scale);
+	obj->SetEnabled(action->isEnabled);
 }
 
 EditorActionHistory::~EditorActionHistory()

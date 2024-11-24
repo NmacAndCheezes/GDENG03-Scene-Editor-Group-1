@@ -1,7 +1,9 @@
 #include "Transform.h"
 #include "../MathUtils.h"
 #include "../GameObjects/AGameObject.h"
-
+#include "./EditorStates/EditorActions/EditorActionHistory.h"
+#include <EditorGUI/HierarchyTab.h>
+#include <EditorGUI/EditorGUIManager.h>
 
 Transform::Transform() : AComponent("Transform", EComponentTypes::Transform)
 {
@@ -56,30 +58,40 @@ void Transform::SetEnabled(bool flag)
 
 void Transform::RenderUI()
 {
-	float position[3];
-	position[0] = localPos.x;
-	position[1] = localPos.y;
-	position[2] = localPos.z;
+#if 0
+	HierarchyTab* h = (HierarchyTab*)EditorGUIManager::GetInstance()->GetTab(EditorGUIManager::TabNames::HIERARCHY_TAB.data());
 
-	float eulerAngle[3];
-	eulerAngle[0] = localEulerAngles.x;
-	eulerAngle[1] = localEulerAngles.y;
-	eulerAngle[2] = localEulerAngles.z;
+	if (ImGui::IsMouseClicked(0, false))
+		EditorActionHistory::get()->RecordAction(h->GetSelectedObj());
+	else
+		EditorActionHistory::get()->CheckIfSimilar(h->GetSelectedObj());
+#endif
 
-	float scale[3];
-	scale[0] = localScale.x;
-	scale[1] = localScale.y;
-	scale[2] = localScale.z;
+	float local_position[3];
+	local_position[0] = localPos.x;
+	local_position[1] = localPos.y;
+	local_position[2] = localPos.z;
 
-	ImGui::DragFloat3("Position", position);
-	ImGui::DragFloat3("Rotation", eulerAngle);
-	ImGui::DragFloat3("Scale", scale);
+	float local_euler_angle[3];
+	local_euler_angle[0] = localEulerAngles.x;
+	local_euler_angle[1] = localEulerAngles.y;
+	local_euler_angle[2] = localEulerAngles.z;
 
-	Vector3 diffEuler = Vector3(eulerAngle) - localEulerAngles;
+	float local_scale[3];
+	local_scale[0] = localScale.x;
+	local_scale[1] = localScale.y;
+	local_scale[2] = localScale.z;
 
-	if (Vector3(position) != localPos)           SetLocalPosition(Vector3(position));
-	if (Vector3(eulerAngle) != localEulerAngles) Rotate(diffEuler); 
-	if (Vector3(scale) != localScale)            SetLocalScale(Vector3(scale)); 
+	ImGui::DragFloat3("Position", local_position);
+	ImGui::DragFloat3("Rotation", local_euler_angle);
+	ImGui::DragFloat3("Scale", local_scale);
+
+	//new - old;
+	Vector3 diffEuler = Vector3(local_euler_angle) - localEulerAngles;
+
+	if (Vector3(local_position) != localPos)           SetLocalPosition(Vector3(local_position));
+	if (Vector3(local_euler_angle) != localEulerAngles) Rotate(diffEuler);
+	if (Vector3(local_scale) != localScale)            SetLocalScale(Vector3(local_scale));
 }
 
 TMatrix Transform::GetTransformationMatrix()

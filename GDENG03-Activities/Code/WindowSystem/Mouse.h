@@ -2,6 +2,7 @@
 #include <SimpleMath.h>
 #include <vector>
 #include <unordered_map>
+#include <imgui.h>
 
 using namespace DirectX::SimpleMath; 
 
@@ -59,7 +60,8 @@ public:
 
 	static int GetMouseWheelRotations();
 	static void FlushEventsBuffer();
-
+	
+	static bool IsGUIButtonDown();
 private:
 	Mouse() {};
 
@@ -68,7 +70,6 @@ private:
 	static void OnMousePress(EMouseButtons button, int x, int y);
 	static void OnMouseRelease(EMouseButtons button, int x, int y);
 	static void OnMouseWheelRotate(int deltaWheel, int x, int y);
-
 private:
 	static bool isInWindow; 
 	static Vector2 mousePos; 

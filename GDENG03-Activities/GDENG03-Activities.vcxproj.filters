@@ -226,6 +226,8 @@
       <Filter>EditorGUI</Filter>
     </ClCompile>
     <ClCompile Include="Code\EditorStates\EditorBackend.cpp" />
+    <ClCompile Include="Code\EditorStates\EditorActions\EditorAction.cpp" />
+    <ClCompile Include="Code\EditorStates\EditorActions\EditorActionHistory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\WindowsMessageMap.h" />
@@ -463,6 +465,8 @@
       <Filter>EditorGUI</Filter>
     </ClInclude>
     <ClInclude Include="Code\EditorStates\EditorBackend.h" />
+    <ClInclude Include="Code\EditorStates\EditorActions\EditorAction.h" />
+    <ClInclude Include="Code\EditorStates\EditorActions\EditorActionHistory.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Code\Shaders\VLitTextureShader.hlsl">

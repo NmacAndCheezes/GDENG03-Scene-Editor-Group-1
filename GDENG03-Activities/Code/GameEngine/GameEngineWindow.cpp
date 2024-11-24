@@ -17,6 +17,7 @@
 #include "MathUtils.h"
 
 #include "EditorStates/EditorBackend.h"
+#include <EditorStates/EditorActions/EditorActionHistory.h>
 
 GameEngineWindow::GameEngineWindow(int fps) : fps(fps), accumulator(0.f)
 {
@@ -31,6 +32,7 @@ GameEngineWindow::~GameEngineWindow()
 void GameEngineWindow::OnCreate(HWND hWnd)
 {
 	// initialize game engine
+	EditorActionHistory::initialize();
 	EditorBackend::initialize();
 	Debug::initialize();
 	GraphicsEngine::GetInstance()->Init();
@@ -168,6 +170,7 @@ void GameEngineWindow::OnDestroy()
 	GraphicsEngine::GetInstance()->Release();
 	Debug::destroy();
 	EditorBackend::destroy();
+	EditorActionHistory::destroy();
 }
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);

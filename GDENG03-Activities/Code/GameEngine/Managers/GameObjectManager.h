@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include "../GameObjects/AGameObject.h"
 #include "../Components/Renderer/ARenderer.h"
+#include <map>
 
 // Should only contain base game objects (one's with no parents)
 class GameObjectManager
@@ -28,7 +29,8 @@ public:
 	void RemoveObjectByID(unsigned int id);
 	void DeleteObject(AGameObject* gameObject);
 	void DeleteObjectByID(unsigned int id);
-	std::vector<AGameObject*> GetAllGameObjects(); 
+	std::vector<AGameObject*> GetAllGameObjects();
+	std::map<unsigned int, AGameObject*> GetGameObjectMap();
 	int GetActiveGameObjectsCount();
 
 private:
@@ -40,6 +42,7 @@ private:
 	static GameObjectManager* sharedInstance;
 
 	std::vector<AGameObject*> gameObjectList;
+	std::map<unsigned int, AGameObject*> gameObjectMap;
 	std::vector<AGameObject*> editorObjectList;
 	std::unordered_map<std::string, std::vector<AGameObject*>> objectMap;
 	std::unordered_map<LPCWSTR, std::vector<AGameObject*>> shaderToObjectsMap;

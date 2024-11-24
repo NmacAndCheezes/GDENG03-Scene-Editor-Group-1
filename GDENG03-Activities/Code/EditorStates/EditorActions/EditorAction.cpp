@@ -1,22 +1,21 @@
 #include "EditorAction.h"
-#include "../../AGameObject.h"
 
 EditorAction::EditorAction(AGameObject* obj)
 {
-	id = obj->getId();
-	m_local_position = obj->getTransform()->localPosition();
-	m_local_rotation = obj->getTransform()->localRotation();
-	m_local_scale = obj->getTransform()->localScale();
-	isActive = obj->getActive();
+	id = obj->GetInstanceID();
+	m_local_position = obj->GetTransform()->GetLocalPosition();
+	m_local_rotation = obj->GetTransform()->GetLocalEulerAngles();
+	m_local_scale = obj->GetTransform()->GetLocalScale();
+	isEnabled = obj->IsEnabled();
 }
 
 bool EditorAction::isSimilar(AGameObject* obj)
 {
-	Transform* t = obj->getTransform();
+	Transform* t = obj->GetTransform();
 
 	//t->localPosition().printVector("Position 1"); m_local_position.printVector("Position 2");
-	return t->localPosition() == m_local_position && 
-		t->localRotation() == m_local_rotation && 
-		t->localScale() == m_local_scale && 
-		obj->getActive() == isActive;
+	return obj->GetTransform()->GetPosition() == m_local_position &&
+		obj->GetTransform()->GetEulerAngles() == m_local_rotation &&
+		obj->GetTransform()->GetLocalScale() == m_local_scale &&
+		obj->IsEnabled() == isEnabled;
 }

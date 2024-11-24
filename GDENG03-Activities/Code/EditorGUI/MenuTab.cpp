@@ -1,6 +1,8 @@
 #include "MenuTab.h"
 #include <EditorStates/EditorBackend.h>
 #include <GameEngine/Debug.h>
+#include <EditorStates/EditorActions/EditorAction.h>
+#include <EditorStates/EditorActions/EditorActionHistory.h>
 
 MenuTab::MenuTab() : AUITab(EditorGUIManager::TabNames::MENU_TAB.data()) 
 {
@@ -116,6 +118,7 @@ void MenuTab::RenderSceneStatesMenu()
         if (ImGui::MenuItem("Play"))
         {
             Debug::Log("Playing game");
+            EditorActionHistory::get()->RecordEditStates();
             EditorBackend::get()->setState(EditorBackend::PLAY);
         }
 
@@ -129,6 +132,7 @@ void MenuTab::RenderSceneStatesMenu()
         {
             Debug::Log("Returning to edit mode");
             EditorBackend::get()->setState(EditorBackend::EDIT);
+            EditorActionHistory::get()->SetToEditState();
             // no functionality for the HO it will be implemented at the Scene Editor MO
         }
 

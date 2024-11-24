@@ -65,6 +65,11 @@ void Mouse::FlushEventsBuffer()
 	mouseEventsBuffer.clear();
 	mouseEventsBuffer.shrink_to_fit();
 }
+
+bool Mouse::IsGUIButtonDown()
+{
+	return false;
+}
 #pragma endregion
 
 

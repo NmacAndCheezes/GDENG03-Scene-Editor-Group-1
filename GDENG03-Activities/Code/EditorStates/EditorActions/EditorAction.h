@@ -1,8 +1,7 @@
 #pragma once
-
-#include "../../Vector3D.h"
-#include "../../Matrix4x4.h"
-#include "../../AGameObject.h"
+#include "./GameEngine/GameObjects/AGameObject.h"
+#include "./GameEngine/Components/Transform.h"
+#include "./SimpleMath.h"
 
 class EditorAction
 {
@@ -12,11 +11,11 @@ public:
 
 	bool isSimilar(AGameObject* obj);
 private:
-	std::string id;
-	Vector3D m_local_position;
-	Vector3D m_local_rotation;
-	Vector3D m_local_scale;
-	bool isActive;
+	unsigned int id;
+	Vector3 m_local_position;
+	Vector3 m_local_rotation;
+	Vector3 m_local_scale;
+	bool isEnabled;
 
 	friend class EditorActionHistory;
 };

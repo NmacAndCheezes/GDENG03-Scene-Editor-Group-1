@@ -1,7 +1,8 @@
 #pragma once
+#include <list>
 #include <stack>
 #include "EditorAction.h"
-#include "../../AGameObject.h"
+#include "GameEngine/GameObjects/AGameObject.h"
 
 class EditorActionHistory
 {
