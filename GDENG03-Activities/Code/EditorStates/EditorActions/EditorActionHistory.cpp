@@ -1,6 +1,7 @@
 #include "EditorActionHistory.h"
 #include "./GameEngine/Managers/GameObjectManager.h"
 #include "./GameEngine/Managers/PhysicsEngine.h"
+#include <GameEngine/Debug.h>
 
 EditorActionHistory* EditorActionHistory::sharedInstance = nullptr;
 
@@ -31,6 +32,7 @@ void EditorActionHistory::RecordAction(AGameObject* obj)
 
 void EditorActionHistory::CheckIfSimilar(AGameObject* obj)
 {
+	if (UndoActions.empty()) return;
 	EditorAction* gO = UndoActions.top();
 	if (gO->isSimilar(obj)) { UndoActions.pop(); return; }
 
@@ -39,14 +41,28 @@ void EditorActionHistory::CheckIfSimilar(AGameObject* obj)
 
 void EditorActionHistory::SetToEditState()
 {
-	if (EditState.size() == 0) return;
+	if (EditState.empty()) return;
 	for (auto action : EditState)
 	{
 		AGameObject* obj = GameObjectManager::GetInstance()->GetGameObjectMap()[action->id];
 
-		if (obj == nullptr) continue;
+		if (obj == nullptr) 
+		{
+			obj = new AGameObject(action->name);
+			Debug::Log(action->name);
+			GameObjectManager::GetInstance()->AddObject(obj);
+
+			for (auto i : action->components)
+			{
+				Debug::Log(i.GetName());
+				obj->AttachComponent(&i);
+				obj->Initialize();
+				i.Initialize();
+			}
+		}
 
 		std::cout << "Reverting " << obj->GetInstanceID() << std::endl;
+
 		obj->GetTransform()->SetLocalPosition(action->m_local_position);
 
 		Vector3 diffEuler = action->m_local_rotation - obj->GetTransform()->GetEulerAngles();
@@ -75,7 +91,7 @@ void EditorActionHistory::RecordEditStates()
 
 void EditorActionHistory::Undo()
 {
-	if (UndoActions.size() == 0) { std::cout << "UndoAction is empty" << std::endl; return; }
+	if (UndoActions.empty()) { std::cout << "UndoAction is empty" << std::endl; return; }
 	EditorAction* action = UndoActions.top();
 	
 	UndoActions.pop();
@@ -92,11 +108,13 @@ void EditorActionHistory::Undo()
 
 	obj->GetTransform()->SetLocalScale(action->m_local_scale);
 	obj->SetEnabled(action->isEnabled);
+
+	Debug::Log("Undoing " + obj->GetName());
 }
 
 void EditorActionHistory::Redo()
 {
-	if (RedoActions.size() == 0) { std::cout << "RedoAction is empty" << std::endl; return; }
+	if (RedoActions.empty()) { std::cout << "RedoAction is empty" << std::endl; return; }
 	EditorAction* action = RedoActions.top();
 	RedoActions.pop();
 
@@ -109,11 +127,10 @@ void EditorActionHistory::Redo()
 
 	obj->GetTransform()->SetLocalScale(action->m_local_scale);
 	obj->SetEnabled(action->isEnabled);
+	Debug::Log("Undoing " + obj->GetName());
 }
 
 EditorActionHistory::~EditorActionHistory()
 {
-	UndoActions.empty();
-	RedoActions.empty();
 	EditState.clear();
 }

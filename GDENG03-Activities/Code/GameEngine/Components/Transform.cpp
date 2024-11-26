@@ -58,7 +58,7 @@ void Transform::SetEnabled(bool flag)
 
 void Transform::RenderUI()
 {
-#if 0
+#if 1
 	HierarchyTab* h = (HierarchyTab*)EditorGUIManager::GetInstance()->GetTab(EditorGUIManager::TabNames::HIERARCHY_TAB.data());
 
 	if (ImGui::IsMouseClicked(0, false))

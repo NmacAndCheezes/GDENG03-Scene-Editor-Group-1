@@ -14,7 +14,7 @@ public:
 
 	// Game-related methods
 	bool IsInitialized();
-	virtual void Initialize() = 0;
+	virtual void Initialize();
 	//virtual void ProcessInputs(WPARAM wParam, LPARAM lParam);
 	virtual void Update(float dt);
 	virtual void Draw(); 

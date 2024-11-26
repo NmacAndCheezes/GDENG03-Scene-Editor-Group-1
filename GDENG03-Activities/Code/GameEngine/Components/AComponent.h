@@ -13,9 +13,10 @@ public:
 	AComponent(std::string name, EComponentTypes type);
 	virtual ~AComponent();
 
-	virtual void Clone(AComponent* copy) = 0;
-	virtual void Perform() = 0;
-	virtual void RenderUI() = 0;
+	virtual void Initialize();
+	virtual void Clone(AComponent* copy);
+	virtual void Perform();
+	virtual void RenderUI();
 
 	void AttachOwner(AGameObject* owner);
 	void DetachOwner();

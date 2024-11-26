@@ -21,6 +21,7 @@ void MenuTab::RenderUI()
         RenderFilesMenu();
         RenderTabsMenu();
         RenderToolsMenu();
+        RenderUndoRedoMenu();
         RenderAboutMenu();
         RenderSceneStatesMenu();
 
@@ -134,6 +135,26 @@ void MenuTab::RenderSceneStatesMenu()
             EditorBackend::get()->setState(EditorBackend::EDIT);
             EditorActionHistory::get()->SetToEditState();
             // no functionality for the HO it will be implemented at the Scene Editor MO
+        }
+
+        ImGui::EndMenu();
+    }
+}
+
+void MenuTab::RenderUndoRedoMenu()
+{
+    if (EditorBackend::get()->getState() != EditorBackend::EDIT) return;
+
+    if (ImGui::BeginMenu("Undo/Redo"))
+    {
+        if (ImGui::MenuItem("Undo", "Ctrl + Z"))
+        {
+            EditorActionHistory::get()->Undo();
+        }
+
+        if (ImGui::MenuItem("Redo", "Ctrl + Y"))
+        {
+            EditorActionHistory::get()->Redo();
         }
 
         ImGui::EndMenu();

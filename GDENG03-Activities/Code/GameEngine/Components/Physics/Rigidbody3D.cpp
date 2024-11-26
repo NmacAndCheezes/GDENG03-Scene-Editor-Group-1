@@ -16,6 +16,10 @@ RigidBody3D::~RigidBody3D()
 
 }
 
+void RigidBody3D::Initialize()
+{
+}
+
 void RigidBody3D::Clone(AComponent* copy)
 {
 	RigidBody3D* copyRB = (RigidBody3D*)copy;

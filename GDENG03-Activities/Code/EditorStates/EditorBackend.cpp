@@ -1,5 +1,6 @@
 #include "EditorBackend.h"
 #include <exception>
+#include <GameEngine/Debug.h>
 
 EditorBackend* EditorBackend::sharedInstance = nullptr;
 

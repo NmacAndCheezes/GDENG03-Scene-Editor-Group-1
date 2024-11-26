@@ -3,10 +3,17 @@
 EditorAction::EditorAction(AGameObject* obj)
 {
 	id = obj->GetInstanceID();
+	name = obj->GetName();
 	m_local_position = obj->GetTransform()->GetLocalPosition();
 	m_local_rotation = obj->GetTransform()->GetLocalEulerAngles();
 	m_local_scale = obj->GetTransform()->GetLocalScale();
 	isEnabled = obj->IsEnabled();
+
+	for (auto i : obj->GetAllComponents())
+	{
+		if (i->GetType() == EComponentTypes::Transform) continue;
+		components.push_back(*i);
+	}
 }
 
 bool EditorAction::isSimilar(AGameObject* obj)

@@ -13,6 +13,7 @@ public:
 	RigidBody3D(EPrimitiveMeshTypes shapeType);
 	~RigidBody3D();
 
+	void Initialize() override;
 	void Clone(AComponent* copy) override;
 	void Perform() override;
 	void RenderUI() override;

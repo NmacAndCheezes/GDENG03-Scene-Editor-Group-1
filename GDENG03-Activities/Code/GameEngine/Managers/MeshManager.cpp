@@ -25,8 +25,6 @@ MeshManager* MeshManager::GetInstance()
 }
 #pragma endregion
 
-
-
 bool MeshManager::Release()
 {
 	for (auto& pair : primitiveVertices)

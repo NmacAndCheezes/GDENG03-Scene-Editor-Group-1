@@ -16,4 +16,5 @@ private:
 	void RenderToolsMenu();
 	void RenderAboutMenu();
 	void RenderSceneStatesMenu();
+	void RenderUndoRedoMenu();
 };

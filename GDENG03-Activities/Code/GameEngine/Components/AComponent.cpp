@@ -17,6 +17,22 @@ AComponent::~AComponent()
 	this->type = EComponentTypes::NotSet;
 }
 
+void AComponent::Initialize()
+{
+}
+
+void AComponent::Clone(AComponent* copy)
+{
+}
+
+void AComponent::Perform()
+{
+}
+
+void AComponent::RenderUI()
+{
+}
+
 
 // public methods of the AComponent Class
 void AComponent::AttachOwner(AGameObject* object)

@@ -57,6 +57,10 @@ bool AGameObject::IsInitialized()
 	return isInitialized;
 }
 
+void AGameObject::Initialize()
+{
+}
+
 //void AGameObject::ProcessInputs(WPARAM wParam, LPARAM lParam)
 //{
 //	if (!this->enabled) return;

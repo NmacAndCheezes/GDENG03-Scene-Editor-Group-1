@@ -16,7 +16,14 @@ MeshRenderer::MeshRenderer(AMaterial* material) : ARenderer("MeshRenderer", mate
 
 MeshRenderer::~MeshRenderer()
 {
+}
 
+void MeshRenderer::Initialize()
+{
+	if (type != EPrimitiveMeshTypes::Unknown)
+		LoadPrimitive(type, isRainbowed);
+	else if (modelName != "")
+		LoadNonPrimitive(modelName, isRainbowed);
 }
 
 void MeshRenderer::RenderUI()
