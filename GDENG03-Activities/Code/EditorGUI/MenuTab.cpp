@@ -139,6 +139,11 @@ void MenuTab::RenderSceneStatesMenu()
 
         ImGui::EndMenu();
     }
+
+    if (ImGui::Button("Frame step"))
+    {
+        EditorBackend::get()->startFrameStep();
+    }
 }
 
 void MenuTab::RenderUndoRedoMenu()

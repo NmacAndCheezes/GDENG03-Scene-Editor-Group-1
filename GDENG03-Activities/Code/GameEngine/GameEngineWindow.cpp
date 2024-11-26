@@ -141,16 +141,24 @@ void GameEngineWindow::OnUpdate()
 		{
 			GameObjectManager::GetInstance()->UpdateGame(secsPerFrame);
 			PhysicsEngine::GetInstance()->UpdateWorld(secsPerFrame);
+			float factor = accumulator / secsPerFrame;
+			PhysicsEngine::GetInstance()->UpdateRigidBodies(factor);
+		}
+		else if (EditorBackend::get()->getState() == EditorBackend::PAUSE)
+		{
+			if (EditorBackend::get()->getIsFrameStep())
+			{
+				GameObjectManager::GetInstance()->UpdateGame(secsPerFrame);
+				PhysicsEngine::GetInstance()->UpdateWorld(secsPerFrame);
+				float factor = accumulator / secsPerFrame;
+				PhysicsEngine::GetInstance()->UpdateRigidBodies(factor);
+				EditorBackend::get()->endFrameStep();
+			}
 		}
 
 		Keyboard::FlushCharBuffer();
 	}
-
-	if (EditorBackend::get()->getState() == EditorBackend::PLAY)
-	{
-		float factor = accumulator / secsPerFrame;
-		PhysicsEngine::GetInstance()->UpdateRigidBodies(factor);
-	}
+	
 
 	GameObjectManager::GetInstance()->Draw(); 
 	EditorGUIManager::GetInstance()->Render();

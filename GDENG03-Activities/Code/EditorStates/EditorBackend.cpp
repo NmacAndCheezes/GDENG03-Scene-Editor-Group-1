@@ -14,6 +14,21 @@ EditorBackend::EditorState EditorBackend::getState()
     return currentState;
 }
 
+void EditorBackend::startFrameStep()
+{
+	isFramedStep = true;
+}
+
+void EditorBackend::endFrameStep()
+{
+	isFramedStep = false;
+}
+
+bool EditorBackend::getIsFrameStep()
+{
+	return isFramedStep;
+}
+
 void EditorBackend::initialize()
 {
 	if (EditorBackend::sharedInstance) throw std::exception("Graphics Engine already created");

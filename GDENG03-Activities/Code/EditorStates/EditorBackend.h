@@ -6,7 +6,9 @@ public:
 
 	void setState(EditorState newState);
 	EditorState getState();
-
+	void startFrameStep();
+	void endFrameStep();
+	bool getIsFrameStep();
 	//Initialize the GraphicsEngine and DirectX 11 Device
 	static void initialize();
 	static void destroy();
@@ -21,5 +23,6 @@ private:
 
 private:
 	EditorState currentState = EditorState::EDIT;
+	bool isFramedStep;
 };
 

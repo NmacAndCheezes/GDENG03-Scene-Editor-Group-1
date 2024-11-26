@@ -15,8 +15,6 @@ protected:
 	void OnUpdate() override;
 	void OnDestroy() override;
 	LRESULT CALLBACK HandleWindowMessages(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) override;
-
-
 private:
 	SwapChain* swapChain;
 	int fps;
