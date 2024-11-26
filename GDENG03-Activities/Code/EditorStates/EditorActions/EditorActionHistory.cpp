@@ -75,6 +75,8 @@ void EditorActionHistory::SetToEditState()
 		if (rb3D != NULL)
 		{
 			rb3D->GetRigidBody()->setTransform(action->lastTransform);
+			rb3D->GetRigidBody()->setAngularVelocity(reactphysics3d::Vector3(0,0,0));
+			rb3D->GetRigidBody()->setLinearVelocity(reactphysics3d::Vector3(0, 0, 0));
 		}
 		
 	}
