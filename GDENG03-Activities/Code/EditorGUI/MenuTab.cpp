@@ -3,6 +3,7 @@
 #include <GameEngine/Debug.h>
 #include <EditorStates/EditorActions/EditorAction.h>
 #include <EditorStates/EditorActions/EditorActionHistory.h>
+#include <GameEngine/Managers/PhysicsEngine.h>
 
 MenuTab::MenuTab() : AUITab(EditorGUIManager::TabNames::MENU_TAB.data()) 
 {
@@ -116,24 +117,26 @@ void MenuTab::RenderSceneStatesMenu()
 {
     if (ImGui::BeginMenu("Play/Pause"))
     {
-        if (ImGui::MenuItem("Play"))
+        if (ImGui::MenuItem("Play") && EditorBackend::get()->getState() != EditorBackend::PLAY)
         {
             Debug::Log("Playing game");
+            //PhysicsEngine::GetInstance()->Init();
+            
             EditorActionHistory::get()->RecordEditStates();
             EditorBackend::get()->setState(EditorBackend::PLAY);
         }
-
-        if (ImGui::MenuItem("Pause"))
+        else if (ImGui::MenuItem("Pause") && EditorBackend::get()->getState() != EditorBackend::PAUSE)
         {
             Debug::Log("Pausing game");
             EditorBackend::get()->setState(EditorBackend::PAUSE);
         }
-
-        if (ImGui::MenuItem("Stop"))
+        else if (ImGui::MenuItem("Stop") && EditorBackend::get()->getState() != EditorBackend::EDIT)
         {
             Debug::Log("Returning to edit mode");
             EditorBackend::get()->setState(EditorBackend::EDIT);
             EditorActionHistory::get()->SetToEditState();
+            //PhysicsEngine::GetInstance()->Reset();
+            //PhysicsEngine::GetInstance()->Release();
             // no functionality for the HO it will be implemented at the Scene Editor MO
         }
 

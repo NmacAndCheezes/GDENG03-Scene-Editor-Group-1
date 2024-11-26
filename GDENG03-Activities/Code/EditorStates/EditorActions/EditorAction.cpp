@@ -1,4 +1,5 @@
 #include "EditorAction.h"
+#include <GameEngine/Debug.h>
 
 EditorAction::EditorAction(AGameObject* obj)
 {
@@ -12,6 +13,15 @@ EditorAction::EditorAction(AGameObject* obj)
 	for (auto i : obj->GetAllComponents())
 	{
 		if (i->GetType() == EComponentTypes::Transform) continue;
+		if (i->GetType() == EComponentTypes::Physics)
+		{
+			RigidBody3D* r = (RigidBody3D*)i;
+			lastTransform = r->GetRigidBody()->getTransform();
+			
+			Vector3 v = Vector3(lastTransform.getPosition().x, lastTransform.getPosition().y, lastTransform.getPosition().z);
+			Debug::Log("Recording Position of " + name + std::to_string(v.x) + std::to_string(v.y) + std::to_string(v.z) + "\n");
+		}
+			
 		components.push_back(*i);
 	}
 }

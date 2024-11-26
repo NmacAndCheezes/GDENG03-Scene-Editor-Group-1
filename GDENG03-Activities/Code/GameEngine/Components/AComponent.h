@@ -13,7 +13,7 @@ public:
 	AComponent(std::string name, EComponentTypes type);
 	virtual ~AComponent();
 
-	virtual void Initialize();
+	virtual void Initialize(); //At the moment this does nothing but maybe it will be later
 	virtual void Clone(AComponent* copy);
 	virtual void Perform();
 	virtual void RenderUI();

@@ -70,6 +70,13 @@ void EditorActionHistory::SetToEditState()
 
 		obj->GetTransform()->SetLocalScale(action->m_local_scale);
 		obj->SetEnabled(action->isEnabled);
+
+		RigidBody3D* rb3D = (RigidBody3D*)obj->FindComponentByName("RigidBody3D");
+		if (rb3D != NULL)
+		{
+			rb3D->GetRigidBody()->setTransform(action->lastTransform);
+		}
+		
 	}
 }
 

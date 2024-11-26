@@ -62,7 +62,7 @@ public:
 
 private:
 	// rb references and trackers
-	rp3d::RigidBody* rb;
+	rp3d::RigidBody* rb = nullptr;
 	rp3d::Transform prevTransform;
 	float factor;
 	

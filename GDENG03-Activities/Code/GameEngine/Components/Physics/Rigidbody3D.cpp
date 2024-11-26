@@ -46,11 +46,11 @@ void RigidBody3D::Perform()
 	rp3d::Transform lerpTransform = rp3d::Transform::interpolateTransforms(prevTransform, rb->getTransform(), factor);
 	prevTransform = rb->getTransform();
 
-	transform->Position = MathUtils::ConvertVector(lerpTransform.getPosition());
+	transform->Position = MathUtils::ConvertVector(rb->getTransform().getPosition());
 
 	Quaternion q = transform->GetOrientation();
 
-	Quaternion lerpQuat = MathUtils::ConvertQuaternion(lerpTransform.getOrientation()); 
+	Quaternion lerpQuat = MathUtils::ConvertQuaternion(rb->getTransform().getOrientation());
 	Quaternion inverseQuat = transform->GetOrientation();  
 	inverseQuat.Inverse(inverseQuat);  
 

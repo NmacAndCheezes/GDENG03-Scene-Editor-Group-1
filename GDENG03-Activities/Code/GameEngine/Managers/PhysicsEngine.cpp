@@ -69,6 +69,11 @@ bool PhysicsEngine::Release()
 	return true;
 }
 
+void PhysicsEngine::Reset()
+{
+	
+}
+
 void PhysicsEngine::UpdateWorld(float dt)
 {
 	for (auto& rb : rigidBodyList)
@@ -76,7 +81,11 @@ void PhysicsEngine::UpdateWorld(float dt)
 		rb->EnablePhysics(rb->Enabled && rb->GetOwner()->Enabled);
 	}
 
-	physicsWorld->update(dt);
+	//do not update during first frame. Delta time is still 0.
+	if (dt > 0.0f) {
+		//update physics world
+		physicsWorld->update(dt);
+	}
 }
 
 void PhysicsEngine::UpdateRigidBodies(float factor)
@@ -94,6 +103,11 @@ void PhysicsEngine::UpdateRigidBodies(float factor)
 rp3d::PhysicsCommon* PhysicsEngine::GetPhysicsCommon() 
 {
 	return physicsCommon; 
+}
+
+rp3d::PhysicsWorld* PhysicsEngine::GetPhysicsWorld()
+{
+	return physicsWorld;
 }
 
 

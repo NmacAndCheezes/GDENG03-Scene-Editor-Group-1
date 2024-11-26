@@ -13,10 +13,12 @@ public:
 
 	bool Init();
 	bool Release();
+	void Reset();
 	void UpdateWorld(float dt);
 	void UpdateRigidBodies(float factor);
 
 	rp3d::PhysicsCommon* GetPhysicsCommon();
+	rp3d::PhysicsWorld* GetPhysicsWorld();
 
 	void RegisterRigidBody(RigidBody3D* rb);
 	void UnregisterRigidBody(RigidBody3D* rb);
@@ -34,8 +36,8 @@ private:
 private:
 	static PhysicsEngine* sharedInstance;
 
-	rp3d::PhysicsCommon* physicsCommon;
-	rp3d::PhysicsWorld* physicsWorld;
+	rp3d::PhysicsCommon* physicsCommon = NULL;
+	rp3d::PhysicsWorld* physicsWorld = NULL;
 
 	std::vector<RigidBody3D*> rigidBodyList;
 
