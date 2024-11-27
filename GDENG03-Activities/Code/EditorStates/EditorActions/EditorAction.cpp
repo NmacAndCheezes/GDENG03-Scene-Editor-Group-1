@@ -9,7 +9,7 @@ EditorAction::EditorAction(AGameObject* obj)
 	m_local_rotation = obj->GetTransform()->GetLocalEulerAngles();
 	m_local_scale = obj->GetTransform()->GetLocalScale();
 	isEnabled = obj->IsEnabled();
-
+	//Debug::Log("Recording Position of " + name + std::to_string(m_local_position.x) + std::to_string(m_local_position.y) + std::to_string(m_local_position.z) + "\n");
 	for (auto i : obj->GetAllComponents())
 	{
 		if (i->GetType() == EComponentTypes::Transform) continue;
@@ -19,7 +19,7 @@ EditorAction::EditorAction(AGameObject* obj)
 			lastTransform = r->GetRigidBody()->getTransform();
 			
 			Vector3 v = Vector3(lastTransform.getPosition().x, lastTransform.getPosition().y, lastTransform.getPosition().z);
-			Debug::Log("Recording Position of " + name + std::to_string(v.x) + std::to_string(v.y) + std::to_string(v.z) + "\n");
+			
 		}
 			
 		components.push_back(*i);
@@ -30,6 +30,7 @@ bool EditorAction::isSimilar(AGameObject* obj)
 {
 	Transform* t = obj->GetTransform();
 
+	
 	//t->localPosition().printVector("Position 1"); m_local_position.printVector("Position 2");
 	return obj->GetTransform()->GetPosition() == m_local_position &&
 		obj->GetTransform()->GetEulerAngles() == m_local_rotation &&

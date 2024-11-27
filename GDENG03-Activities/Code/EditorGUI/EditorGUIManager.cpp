@@ -77,9 +77,9 @@ bool EditorGUIManager::Initialize(HWND hWnd)
 
 void EditorGUIManager::Render()
 {
-	ImGui_ImplDX11_NewFrame(); 
-	ImGui_ImplWin32_NewFrame(); 
-	ImGui::NewFrame(); 
+	ImGui_ImplDX11_NewFrame();
+	ImGui_ImplWin32_NewFrame();
+	ImGui::NewFrame();
 
 	/*for (auto tab : uiList)
 	{
@@ -92,8 +92,9 @@ void EditorGUIManager::Render()
 		if (ui && ui->Enabled) ui->RenderUI();
 	}
 
-	ImGui::Render(); 
-	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData()); 
+	ImGui::Render();
+	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
+	ImGui::EndFrame();
 }
 
 AUITab* EditorGUIManager::GetTab(std::string tabName)

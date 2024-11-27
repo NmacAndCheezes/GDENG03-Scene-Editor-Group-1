@@ -77,4 +77,6 @@ private:
 	Vector3 localForward;
 
 	TMatrix tMatrix;
+
+	bool clicked;
 };

@@ -4,6 +4,7 @@
 #include "./EditorStates/EditorActions/EditorActionHistory.h"
 #include <EditorGUI/HierarchyTab.h>
 #include <EditorGUI/EditorGUIManager.h>
+#include <GameEngine/Debug.h>
 
 Transform::Transform() : AComponent("Transform", EComponentTypes::Transform)
 {
@@ -61,10 +62,19 @@ void Transform::RenderUI()
 #if 1
 	HierarchyTab* h = (HierarchyTab*)EditorGUIManager::GetInstance()->GetTab(EditorGUIManager::TabNames::HIERARCHY_TAB.data());
 
-	if (ImGui::IsMouseClicked(0, false))
+	if (ImGui::IsMouseClicked(0, true) && !clicked)
+	{
+		//Debug::Log("[Transform] click down");
+		clicked = true;
 		EditorActionHistory::get()->RecordAction(h->GetSelectedObj());
-	else
+	}
+	else if (ImGui::IsMouseReleased(0) && clicked)
+	{
+		//Debug::Log("[Transform] click up");
+		clicked = false;
 		EditorActionHistory::get()->CheckIfSimilar(h->GetSelectedObj());
+	}
+		
 #endif
 
 	float local_position[3];

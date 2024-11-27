@@ -4,7 +4,8 @@
 #include <EditorStates/EditorActions/EditorAction.h>
 #include <EditorStates/EditorActions/EditorActionHistory.h>
 #include <GameEngine/Managers/PhysicsEngine.h>
-
+#include <EditorGUI/HierarchyTab.h>
+#include <EditorGUI/EditorGUIManager.h>
 MenuTab::MenuTab() : AUITab(EditorGUIManager::TabNames::MENU_TAB.data()) 
 {
 
@@ -22,12 +23,13 @@ void MenuTab::RenderUI()
         RenderFilesMenu();
         RenderTabsMenu();
         RenderToolsMenu();
-        RenderUndoRedoMenu();
+        //RenderUndoRedoMenu();
         RenderAboutMenu();
         RenderSceneStatesMenu();
 
 		ImGui::EndMainMenuBar();
 	}
+         
 }
 
 void MenuTab::RenderFilesMenu()

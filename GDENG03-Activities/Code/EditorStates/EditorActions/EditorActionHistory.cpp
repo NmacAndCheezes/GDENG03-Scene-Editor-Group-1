@@ -26,17 +26,22 @@ EditorActionHistory* EditorActionHistory::get()
 
 void EditorActionHistory::RecordAction(AGameObject* obj)
 {
-	if(obj != nullptr)
+	if (obj == nullptr) return;
+
 	UndoActions.push(new EditorAction(obj));
+	Debug::Log("[EditorActionHistory] Record Action");
+
 }
 
 void EditorActionHistory::CheckIfSimilar(AGameObject* obj)
 {
 	if (UndoActions.empty()) return;
 	EditorAction* gO = UndoActions.top();
-	if (gO->isSimilar(obj)) { UndoActions.pop(); return; }
-
-	std::cout << "Undo Actions" << UndoActions.size() << std::endl;
+	if (gO->isSimilar(obj)) 
+	{ 
+		UndoActions.pop(); 
+		//Debug::Log("[EditorActionHistory] Similar values: " + std::to_string(UndoActions.size()));
+	}
 }
 
 void EditorActionHistory::SetToEditState()
@@ -118,7 +123,7 @@ void EditorActionHistory::Undo()
 	obj->GetTransform()->SetLocalScale(action->m_local_scale);
 	obj->SetEnabled(action->isEnabled);
 
-	Debug::Log("Undoing " + obj->GetName());
+	Debug::Log("Undoing " + obj->GetName() + " undos left: " + std::to_string(UndoActions.size()));
 }
 
 void EditorActionHistory::Redo()
@@ -129,6 +134,8 @@ void EditorActionHistory::Redo()
 
 	AGameObject* obj = GameObjectManager::GetInstance()->GetGameObjectMap()[action->id];
 	if (obj == nullptr) return;
+
+	UndoActions.push(new EditorAction(obj));
 	obj->GetTransform()->SetLocalPosition(action->m_local_position);
 
 	Vector3 diffEuler = action->m_local_rotation - obj->GetTransform()->GetEulerAngles();

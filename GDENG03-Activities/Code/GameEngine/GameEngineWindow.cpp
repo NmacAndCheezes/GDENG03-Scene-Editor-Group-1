@@ -155,6 +155,19 @@ void GameEngineWindow::OnUpdate()
 				EditorBackend::get()->endFrameStep();
 			}
 		}
+		else if (EditorBackend::get()->getState() == EditorBackend::EDIT)
+		{
+			int CTRL_Y = 89;
+			int CTRL_Z = 90;
+			int KEY_DELETE = 46;
+
+			if (Keyboard::IsKeyPressed(CTRL_Z)) {
+				EditorActionHistory::get()->Undo();
+			}
+			else if (Keyboard::IsKeyPressed(CTRL_Y)) {
+				EditorActionHistory::get()->Redo();
+			}
+		}
 
 		Keyboard::FlushCharBuffer();
 	}

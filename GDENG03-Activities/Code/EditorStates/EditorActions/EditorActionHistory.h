@@ -29,6 +29,7 @@ private:
 private:
 	std::list<EditorAction*> EditState;
 	std::stack<EditorAction*> UndoActions;
+	bool isUndoing = false;
 	std::stack<EditorAction*> RedoActions;
 };
 

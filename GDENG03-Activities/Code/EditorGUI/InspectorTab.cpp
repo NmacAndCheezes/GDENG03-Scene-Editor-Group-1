@@ -6,6 +6,7 @@
 #include "GameEngine/Components/Physics/Rigidbody3D.h"
 #include "GameEngine/Managers/PhysicsEngine.h"
 #include <EditorStates/EditorBackend.h>
+#include <EditorStates/EditorActions/EditorActionHistory.h>
 
 InspectorTab::InspectorTab(HierarchyTab* hierarchy) : AUITab(EditorGUIManager::TabNames::INSPECTOR_TAB.data()), hierarchy(hierarchy)
 {
