@@ -10,7 +10,7 @@ PrimitiveObject::PrimitiveObject(std::string name, EPrimitiveMeshTypes type, boo
 
 PrimitiveObject::~PrimitiveObject()
 {
-	if (renderer) renderer->Release();
+	//if (renderer) renderer->Release();
 }
 
 void PrimitiveObject::Initialize()

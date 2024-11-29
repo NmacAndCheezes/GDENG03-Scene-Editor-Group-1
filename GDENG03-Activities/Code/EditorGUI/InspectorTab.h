@@ -1,5 +1,6 @@
 #pragma once
 #include "AUITab.h"
+#include "GameEngine/GameObjects/AGameObject.h"
 
 class HierarchyTab;
 
@@ -13,6 +14,11 @@ public:
 
 protected:
 	void InitializeImGuiFlags() override;
+
+private:
+	void RenderGameObjectDetails(AGameObject* selected);
+	void RenderAddComponentButton(bool* toggles);
+	void HandleAddingNewComponents(AGameObject* selected, bool* toggles);
 
 
 private:

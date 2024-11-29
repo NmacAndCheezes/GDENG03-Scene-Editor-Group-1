@@ -24,7 +24,7 @@ ARenderer::ARenderer(std::string compoonentName, AMaterial* material) : ACompone
 
 ARenderer::~ARenderer()
 {
-
+	Release();
 }
 
 void ARenderer::Clone(AComponent* copy)

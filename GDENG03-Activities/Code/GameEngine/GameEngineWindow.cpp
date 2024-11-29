@@ -185,10 +185,10 @@ void GameEngineWindow::OnDestroy()
 { 
 	Window::OnDestroy();
 
-	PhysicsEngine::GetInstance()->Release();
 	GameObjectManager::Destroy();
 	EditorGUIManager::Destroy(); 
 	GraphicsEngine::GetInstance()->Release();
+	PhysicsEngine::GetInstance()->Release();
 	Debug::destroy();
 	EditorBackend::destroy();
 	EditorActionHistory::destroy();

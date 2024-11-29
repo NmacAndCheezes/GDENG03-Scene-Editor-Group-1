@@ -16,7 +16,7 @@ ModelObject::ModelObject(std::string modelName) : AGameObject(modelName.substr(0
 
 ModelObject::~ModelObject()
 {
-	if (renderer) renderer->Release();
+	//if (renderer) renderer->Release();
 }
 
 void ModelObject::Initialize()

@@ -11,8 +11,8 @@ PhysicsObject::PhysicsObject(EPrimitiveMeshTypes meshType, float mass) : AGameOb
 
 PhysicsObject::~PhysicsObject()
 {
-	if (rb) PhysicsEngine::GetInstance()->UnregisterRigidBody(rb);
-	if (renderer) renderer->Release();
+	//if (rb) PhysicsEngine::GetInstance()->UnregisterRigidBody(rb);
+	//if (renderer) renderer->Release();
 }
 
 void PhysicsObject::Initialize()

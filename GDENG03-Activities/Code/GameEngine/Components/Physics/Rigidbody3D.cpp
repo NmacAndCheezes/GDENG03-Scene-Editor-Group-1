@@ -13,7 +13,7 @@ RigidBody3D::RigidBody3D(EPrimitiveMeshTypes shapeType) : AComponent("RigidBody3
 
 RigidBody3D::~RigidBody3D() 
 {
-
+	PhysicsEngine::GetInstance()->UnregisterRigidBody(this);
 }
 
 void RigidBody3D::Initialize()
