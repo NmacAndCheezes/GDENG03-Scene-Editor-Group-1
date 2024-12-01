@@ -80,6 +80,7 @@
     <ClCompile Include="Code\GameEngine\Components\Physics\Rigidbody3D.cpp" />
     <ClCompile Include="Code\GameEngine\GameObjects\PhysicsObject.cpp" />
     <ClCompile Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.cpp" />
+    <ClCompile Include="Code\GameEngine\Managers\SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\EditorGUI\AUITab.h" />
@@ -167,6 +168,7 @@
     <ClInclude Include="Code\GameEngine\Components\Physics\Rigidbody3D.h" />
     <ClInclude Include="Code\GameEngine\GameObjects\PhysicsObject.h" />
     <ClInclude Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.h" />
+    <ClInclude Include="Code\GameEngine\Managers\SceneManager.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Code\Shaders\PLitTextureShader.hlsl">

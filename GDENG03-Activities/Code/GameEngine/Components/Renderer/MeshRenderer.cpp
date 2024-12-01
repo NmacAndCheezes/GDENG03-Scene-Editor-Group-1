@@ -35,6 +35,10 @@ void MeshRenderer::RenderUI()
 
 void MeshRenderer::LoadPrimitive(EPrimitiveMeshTypes type, bool isRainbowed)
 {
+	this->type = type;
+	this->modelName = "";
+	this->isRainbowed = isRainbowed;
+
 	auto vertices = MeshManager::GetInstance()->GetVertexDataFromMesh(type);
 	auto indices = MeshManager::GetInstance()->GetIndexDataFromMesh(type);
 
@@ -80,6 +84,10 @@ void MeshRenderer::LoadPrimitive(EPrimitiveMeshTypes type, bool isRainbowed)
 
 void MeshRenderer::LoadNonPrimitive(std::string modelName, bool isRainbowed)
 {
+	this->type = EPrimitiveMeshTypes::Unknown;
+	this->modelName = modelName;
+	this->isRainbowed = isRainbowed; 
+
 	auto vertices = MeshManager::GetInstance()->GetVertexDataFromMesh(modelName); 
 	auto indices = MeshManager::GetInstance()->GetIndexDataFromMesh(modelName); 
 
@@ -121,4 +129,19 @@ void MeshRenderer::LoadNonPrimitive(std::string modelName, bool isRainbowed)
 
 	indexBuffer = new IndexBuffer(GraphicsEngine::GetInstance(), indices); 
 	indexBuffer->Init(); 
+}
+
+std::string MeshRenderer::GetModelName()
+{
+	return modelName;
+}
+
+EPrimitiveMeshTypes MeshRenderer::GetMeshType()
+{
+	return type;
+}
+
+bool MeshRenderer::IsRainbowed()
+{
+	return isRainbowed;
 }

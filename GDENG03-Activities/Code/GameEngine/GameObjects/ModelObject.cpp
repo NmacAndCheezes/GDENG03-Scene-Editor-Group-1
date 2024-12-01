@@ -1,5 +1,6 @@
 #include "ModelObject.h"
 #include "GameEngine/Managers/GameObjectManager.h"
+#include "GameEngine/Graphics/Materials/UnlitRainbowMaterial.h"
 #include "GameEngine/Graphics/Materials/LitTextureMaterial.h"
 
 
@@ -23,7 +24,8 @@ void ModelObject::Initialize()
 {
 	if (isRainbowed) 
 	{
-		renderer = new MeshRenderer(); 
+		UnlitRainbowMaterial* mat = new UnlitRainbowMaterial();
+		renderer = new MeshRenderer(mat); 
 	}
 	else
 	{

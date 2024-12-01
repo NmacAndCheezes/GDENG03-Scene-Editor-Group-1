@@ -59,6 +59,9 @@
     <Filter Include="GameEngine\Components\Physics">
       <UniqueIdentifier>{31bed144-7b03-43d0-a452-b6b6f3c45f79}</UniqueIdentifier>
     </Filter>
+    <Filter Include="EditorActions">
+      <UniqueIdentifier>{17738e2c-7b00-441f-9142-91112bf6d076}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\WinMain.cpp" />
@@ -225,14 +228,23 @@
     <ClCompile Include="Code\EditorGUI\DebugLogUI.cpp">
       <Filter>EditorGUI</Filter>
     </ClCompile>
-    <ClCompile Include="Code\EditorStates\EditorBackend.cpp" />
-    <ClCompile Include="Code\EditorStates\EditorActions\EditorAction.cpp" />
-    <ClCompile Include="Code\EditorStates\EditorActions\EditorActionHistory.cpp" />
     <ClCompile Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.cpp">
       <Filter>GameEngine\Graphics\Materials</Filter>
     </ClCompile>
     <ClCompile Include="Code\WindowSystem\FileDialogs.cpp">
       <Filter>WindowsSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GameEngine\Managers\SceneManager.cpp">
+      <Filter>GameEngine\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\EditorStates\EditorActions\EditorAction.cpp">
+      <Filter>EditorActions</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\EditorStates\EditorActions\EditorActionHistory.cpp">
+      <Filter>EditorActions</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\EditorStates\EditorBackend.cpp">
+      <Filter>EditorActions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -470,14 +482,23 @@
     <ClInclude Include="Code\EditorGUI\DebugLogUI.h">
       <Filter>EditorGUI</Filter>
     </ClInclude>
-    <ClInclude Include="Code\EditorStates\EditorBackend.h" />
-    <ClInclude Include="Code\EditorStates\EditorActions\EditorAction.h" />
-    <ClInclude Include="Code\EditorStates\EditorActions\EditorActionHistory.h" />
     <ClInclude Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.h">
       <Filter>GameEngine\Graphics\Materials</Filter>
     </ClInclude>
     <ClInclude Include="Code\WindowSystem\FileDialogs.h">
       <Filter>WindowsSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\GameEngine\Managers\SceneManager.h">
+      <Filter>GameEngine\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\EditorStates\EditorBackend.h">
+      <Filter>EditorActions</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\EditorStates\EditorActions\EditorAction.h">
+      <Filter>EditorActions</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\EditorStates\EditorActions\EditorActionHistory.h">
+      <Filter>EditorActions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

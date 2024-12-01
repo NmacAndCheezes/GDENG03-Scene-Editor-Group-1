@@ -15,6 +15,10 @@ public:
 	void LoadPrimitive(EPrimitiveMeshTypes type, bool isRainbowed = false);
 	void LoadNonPrimitive(std::string modelName, bool isRainbowed = false);
 
+	std::string GetModelName();
+	EPrimitiveMeshTypes GetMeshType();
+	bool IsRainbowed();
+
 
 private:
 	const std::string STANDARD_MODEL_PATH = "Assets/Models/";

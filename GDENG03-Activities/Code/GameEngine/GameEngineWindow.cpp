@@ -75,49 +75,11 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 	ModelObject* model = new ModelObject("teapot3.obj", "brick.png");
 	model->GetTransform()->ScaleUniformly(0.35f);
 	GameObjectManager::GetInstance()->AddObject(model);
-
-	/*std::vector<AGameObject*> objsList; 
-	int rowSize = 15; int colSize = 15; 
-	float rowSpacing = 5.f; float colSpacing = 5.f; 
-	int sphereNum = 0, cylinderNum = 0, coneNum = 0, cubeNum = 0; 
-
-	for (int i = 0; i < colSize; i++) 
-	{
-		for (int j = 0; j < rowSize; j++) 
-		{
-			int randNum = rand() % 4; 
-			AGameObject* randObj = nullptr; 
-
-			switch (randNum) 
-			{ 
-				case 0:
-				{ randObj = new SphereObject("Sphere" + std::to_string(sphereNum), true); sphereNum++; break; } 
-				case 1:
-				{ randObj = new CylinderObject("Cylinder" + std::to_string(cylinderNum), true); cylinderNum++; break; }
-				case 2:
-				{ randObj = new ConeObject("Cone" + std::to_string(coneNum), true); coneNum++; break; }
-				case 3: default:
-				{ randObj = new CubeObject("Cube" + std::to_string(cubeNum), true); cubeNum++; break; }
-			}
-
-			float x = j * rowSpacing - (rowSize / 2.f - 0.5f) * rowSpacing; 
-			float z = i * colSpacing - (colSize / 2.f - 0.5f) * colSpacing; 
-			randObj->GetTransform()->Position = { x , 0, z }; 
-
-			randNum = (i == 0) ? rowSize * 4 : rand() % rowSize * 4 + 1;
-			int parentIndex = (randNum / 4) + (i - 1) * rowSize; 
-			if (randNum == rowSize * 4) GameObjectManager::GetInstance()->AddObject(randObj);
-			else objsList[parentIndex]->AttachChild(randObj); 
-
-			objsList.push_back(randObj); 
-		}
-	}*/
 }
 
 void GameEngineWindow::OnUpdate()
 {
 	swapChain->ClearBuffer(0.0f, 0.0f, 0.0f);
-	//swapChain->ClearBuffer(0.4f, 0.4f, 0.6f);
 
 	accumulator += (float)EngineTime::GetDeltaTime();
 	float secsPerFrame = 1.f / (float)fps;

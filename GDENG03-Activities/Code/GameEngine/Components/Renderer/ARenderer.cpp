@@ -83,6 +83,11 @@ LPCWSTR ARenderer::GetShaderType()
 	return material->GetShaderType();
 }
 
+AMaterial* ARenderer::GetMaterial()
+{
+	return material;
+}
+
 void ARenderer::SetMaterial(AMaterial* newMaterial)
 {
 	if (material) delete material;

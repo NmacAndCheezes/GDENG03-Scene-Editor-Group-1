@@ -16,6 +16,8 @@ public:
 
 	void Render() override;
 	void RenderUI() override;
+
+	void SetColor(const Vector3& newColor);
 	Vector3& GetColor();
 
 

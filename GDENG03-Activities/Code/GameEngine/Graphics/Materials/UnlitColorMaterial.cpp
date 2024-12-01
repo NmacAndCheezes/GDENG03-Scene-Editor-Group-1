@@ -32,6 +32,11 @@ void UnlitColorMaterial::RenderUI()
 	ImGui::ColorEdit3("##MaterialColorPicker", (float*)&color, colorFlags);
 }
 
+void UnlitColorMaterial::SetColor(const Vector3& newColor)
+{
+	color = newColor;
+}
+
 Vector3& UnlitColorMaterial::GetColor()
 {
 	return color;

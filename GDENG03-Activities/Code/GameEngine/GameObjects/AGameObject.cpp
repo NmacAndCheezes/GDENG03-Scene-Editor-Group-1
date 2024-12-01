@@ -13,6 +13,7 @@ AGameObject::AGameObject(std::string name)
 	this->name = name;
 	this->parent = NULL;
 	this->enabled = true;
+	this->parentEnabled = true;
 	this->isInitialized = false;
 	this->level = 0; 
 
@@ -85,7 +86,7 @@ void AGameObject::Initialize()
 
 void AGameObject::Update(float dt) 
 {
-	if (!this->enabled) return;
+	if (!this->parentEnabled) return;
 
 	std::vector<AComponent*> componentList = this->GetComponentsOfType(EComponentTypes::Script); 
 
@@ -106,7 +107,7 @@ void AGameObject::Update(float dt)
 
 void AGameObject::Draw()
 {
-	if (!this->enabled) return;
+	if (!this->parentEnabled) return;
 
 	std::vector<AComponent*> rendererList = this->GetComponentsOfType(EComponentTypes::Renderer); 
 
@@ -147,9 +148,33 @@ void AGameObject::SetEnabled(bool flag)
 {
 	enabled = flag;
 
+	AGameObject* parentObj = this;
+	parentEnabled = true;
+
+	while (parentObj != nullptr)
+	{
+		if (!parentObj->enabled)
+		{
+			parentEnabled = false;
+			break;
+		}
+
+		parentObj = parentObj->parent;
+	}
+
 	for (size_t i = 0; i < childList.size(); i++)
 	{
-		this->childList[i]->SetEnabled(flag);
+		this->childList[i]->SetParentEnabled(parentEnabled);
+	}
+}
+
+void AGameObject::SetParentEnabled(bool status)
+{
+	parentEnabled = status && enabled;
+
+	for (size_t i = 0; i < childList.size(); i++) 
+	{
+		this->childList[i]->SetParentEnabled(parentEnabled);
 	}
 }
 #pragma endregion

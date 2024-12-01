@@ -6,6 +6,12 @@
 #include <GameEngine/Managers/PhysicsEngine.h>
 #include <EditorGUI/HierarchyTab.h>
 #include <EditorGUI/EditorGUIManager.h>
+
+#include "WindowSystem/FileDialogs.h"
+#include "GameEngine/Managers/SceneManager.h"
+
+
+
 MenuTab::MenuTab() : AUITab(EditorGUIManager::TabNames::MENU_TAB.data()) 
 {
 
@@ -43,17 +49,33 @@ void MenuTab::RenderFilesMenu()
 
         if (ImGui::MenuItem("Open", "Ctrl+O"))
         {
-
+            const char* filters =
+                "Level (*.level)\0*.level\0"
+                ;
+            std::string scenePath = FileDialogs::OpenFile(filters); 
+            SceneManager::GetInstance()->OpenScene(scenePath);
         }
 
         if (ImGui::MenuItem("Save", "Ctrl+S"))
         {
-
+            std::string scenePath = "";
+            if (SceneManager::GetInstance()->GetActiveSceneName() == "")
+            {
+                const char* filters =
+                    "Level (*.level)\0*.level\0"
+                    ;
+                scenePath = FileDialogs::SaveFile(filters);
+            }
+            SceneManager::GetInstance()->SaveScene(scenePath);
         }
 
         if (ImGui::MenuItem("Save As.."))
         {
-
+            const char* filters =
+                "Level (*.level)\0*.level\0"
+                ;
+            std::string scenePath = FileDialogs::SaveFile(filters);
+            SceneManager::GetInstance()->SaveScene(scenePath); 
         }
 
         ImGui::EndMenu();

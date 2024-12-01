@@ -46,12 +46,14 @@ public:
 
 private:
 	void SetParent(AGameObject* parent);
+	void SetParentEnabled(bool status);
 
 
 protected:
 	unsigned int instanceID;
 	std::string name;
 	bool enabled;
+	bool parentEnabled;
 	bool isInitialized;
 	Transform* transform;
 
