@@ -4,6 +4,7 @@
 #include "EditorGUI/EditorGUIManager.h"
 #include "Managers/GameObjectManager.h"
 #include "Managers/PhysicsEngine.h"
+#include "WindowSystem/FileDialogs.h"
 #include "GameObjects/FreeCameraObject.h"
 
 #include "GameObjects/Primitives/CubeObject.h"
@@ -35,12 +36,16 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 	EditorActionHistory::initialize();
 	EditorBackend::initialize();
 	Debug::initialize();
+
 	GraphicsEngine::GetInstance()->Init();
 	GraphicsEngine::GetInstance()->SetViewport(width, height); 
 	swapChain = GraphicsEngine::GetInstance()->CreateSwapChain(hWnd, width, height); 
+
 	EngineTime::Initialize();
 	EditorGUIManager::GetInstance()->Initialize(hWnd); 
 	PhysicsEngine::GetInstance()->Init();
+
+	FileDialogs::SetDeafultHWND(hWnd);
 
 
 	// setup the objects
@@ -67,8 +72,8 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 		GameObjectManager::GetInstance()->AddObject(cube);
 	}
 
-	ModelObject* model = new ModelObject("bunny2.obj", "brick.png");
-	model->GetTransform()->ScaleUniformly(20.f);
+	ModelObject* model = new ModelObject("teapot3.obj", "brick.png");
+	model->GetTransform()->ScaleUniformly(0.35f);
 	GameObjectManager::GetInstance()->AddObject(model);
 
 	/*std::vector<AGameObject*> objsList; 

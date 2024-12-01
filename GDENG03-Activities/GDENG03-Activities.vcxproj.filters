@@ -231,6 +231,9 @@
     <ClCompile Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.cpp">
       <Filter>GameEngine\Graphics\Materials</Filter>
     </ClCompile>
+    <ClCompile Include="Code\WindowSystem\FileDialogs.cpp">
+      <Filter>WindowsSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\WindowsMessageMap.h" />
@@ -472,6 +475,9 @@
     <ClInclude Include="Code\EditorStates\EditorActions\EditorActionHistory.h" />
     <ClInclude Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.h">
       <Filter>GameEngine\Graphics\Materials</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\WindowSystem\FileDialogs.h">
+      <Filter>WindowsSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

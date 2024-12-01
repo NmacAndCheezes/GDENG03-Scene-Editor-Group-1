@@ -87,20 +87,20 @@ void MeshRenderer::LoadNonPrimitive(std::string modelName, bool isRainbowed)
 
 	InitRenderer();
 
-	if (isRainbowed)
+	if (isRainbowed) 
 	{
-		std::vector<VUnlitRainbowData> verticesWithColor;
-		for (auto& v : vertices) 
+		std::vector<VUnlitRainbowData> verticesWithColor; 
+		for (auto& v : vertices)  
 		{
-			VUnlitRainbowData vWithColor;
-			vWithColor.pos = v.pos; 
-			vWithColor.vColor = Vector3(MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange());  
-			verticesWithColor.push_back(vWithColor); 
+			VUnlitRainbowData vWithColor; 
+			vWithColor.pos = v.pos;  
+			vWithColor.vColor = Vector3(MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange());   
+			verticesWithColor.push_back(vWithColor);  
 		}
 
-		VertexBuffer<VUnlitRainbowData>* vb = new VertexBuffer<VUnlitRainbowData>(GraphicsEngine::GetInstance(), verticesWithColor);
-		vb->Init();
-		vertexBuffer = vb;
+		VertexBuffer<VUnlitRainbowData>* vb = new VertexBuffer<VUnlitRainbowData>(GraphicsEngine::GetInstance(), verticesWithColor); 
+		vb->Init(); 
+		vertexBuffer = vb; 
 	}
 	else
 	{

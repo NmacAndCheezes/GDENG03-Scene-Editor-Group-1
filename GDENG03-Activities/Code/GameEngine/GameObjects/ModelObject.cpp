@@ -21,14 +21,14 @@ ModelObject::~ModelObject()
 
 void ModelObject::Initialize()
 {
-	if (!isRainbowed) 
+	if (isRainbowed) 
 	{
-		LitTextureMaterial* mat = new LitTextureMaterial(textureName); 
-		renderer = new MeshRenderer(mat); 
+		renderer = new MeshRenderer(); 
 	}
 	else
 	{
-		renderer = new MeshRenderer();
+		LitTextureMaterial* mat = new LitTextureMaterial(textureName); 
+		renderer = new MeshRenderer(mat); 
 	}
 
 	renderer->LoadNonPrimitive(modelName, isRainbowed);

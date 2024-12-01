@@ -67,6 +67,7 @@
     <ClCompile Include="Code\GameEngine\Graphics\Materials\UnlitColorMaterial.cpp" />
     <ClCompile Include="Code\GameEngine\GameObjects\Primitives\PrimitiveObject.cpp" />
     <ClCompile Include="Code\GameEngine\Managers\MeshManager.cpp" />
+    <ClCompile Include="Code\WindowSystem\FileDialogs.cpp" />
     <ClCompile Include="packages\DearIMGUI\imgui.cpp" />
     <ClCompile Include="packages\DearIMGUI\imgui_demo.cpp" />
     <ClCompile Include="packages\DearIMGUI\imgui_draw.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Code\GameEngine\Graphics\Materials\UnlitColorMaterial.h" />
     <ClInclude Include="Code\GameEngine\GameObjects\Primitives\PrimitiveObject.h" />
     <ClInclude Include="Code\GameEngine\Managers\MeshManager.h" />
+    <ClInclude Include="Code\WindowSystem\FileDialogs.h" />
     <ClInclude Include="packages\DearIMGUI\imconfig.h" />
     <ClInclude Include="packages\DearIMGUI\imgui.h" />
     <ClInclude Include="packages\DearIMGUI\imgui_impl_dx11.h" />
