@@ -4,20 +4,37 @@
 
 using namespace DirectX::SimpleMath;
 
-struct VUnlitColorData 
+struct VUnlitColorData
+{
+	Vector3 pos;
+
+	VUnlitColorData() : pos(0.0f, 0.0f, 0.0f)
+	{
+	}
+
+	VUnlitColorData(const Vector3& pos) : pos(pos)
+	{
+	}
+
+	VUnlitColorData(const VUnlitColorData& copy) : pos(copy.pos)
+	{
+	}
+};
+
+struct VUnlitRainbowData
 {
 	Vector3 pos;
 	Vector3 vColor;
 
-	VUnlitColorData() : pos(0.0f, 0.0f, 0.0f), vColor(0.0f, 0.0f, 0.0f)
+	VUnlitRainbowData() : pos(0.0f, 0.0f, 0.0f), vColor(0.0f, 0.0f, 0.0f)
 	{
 	}
 
-	VUnlitColorData(const Vector3& pos, const Vector3& vColor) : pos(pos), vColor(vColor)
+	VUnlitRainbowData(const Vector3& pos, const Vector3& vColor) : pos(pos), vColor(vColor)
 	{
 	}
 
-	VUnlitColorData(const VUnlitColorData& copy) : pos(copy.pos), vColor(copy.vColor)
+	VUnlitRainbowData(const VUnlitRainbowData& copy) : pos(copy.pos), vColor(copy.vColor)
 	{
 	}
 };
@@ -72,4 +89,10 @@ struct VPMatrix
 {
 	Matrix view;
 	Matrix projection;
+};
+
+__declspec(align(16))
+struct UnlitColor
+{
+	Vector3 color;
 };

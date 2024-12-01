@@ -30,6 +30,7 @@ void ModelObject::Initialize()
 	{
 		renderer = new MeshRenderer();
 	}
+
 	renderer->LoadNonPrimitive(modelName, isRainbowed);
 	AttachComponent(renderer);
 	GameObjectManager::GetInstance()->BindRendererToShader(renderer); 

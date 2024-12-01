@@ -69,16 +69,28 @@ bool GraphicsEngine::InitializeShaders()
 {
     ShaderManager* sm = ShaderManager::GetInstance();
     Shader::SetShaderFolderDirectory(L"Code/Shaders/");
-
-    std::vector<D3D11_INPUT_ELEMENT_DESC> layout = {
+     
+    std::vector<D3D11_INPUT_ELEMENT_DESC> layout = { 
         //SEMANTIC NAME - SEMANTIC INDEX  -   FORMAT   -    INPUT SLOT - ALIGNED BYTE OFFSET - INPUT SLOT CLASS - INSTANCE DATA STEP RATE
         {"POSITION",       0,    DXGI_FORMAT_R32G32B32_FLOAT,   0,           0,                        D3D11_INPUT_PER_VERTEX_DATA,   0},
-        {"COLOR",          0,    DXGI_FORMAT_R32G32B32_FLOAT,   0,    D3D11_APPEND_ALIGNED_ELEMENT,    D3D11_INPUT_PER_VERTEX_DATA,   0}
+        {"COLOR",          0,    DXGI_FORMAT_R32G32B32_FLOAT,   0,    D3D11_APPEND_ALIGNED_ELEMENT,    D3D11_INPUT_PER_VERTEX_DATA,   0} 
+    };
+
+    if (!sm->CreateVertexShader(L"VUnlitRainbowShader.cso", layout)) return false;
+    if (!sm->CreatePixelShader(L"PUnlitRainbowShader.cso")) return false;
+    if (!sm->CreateShaderProgram(L"UnlitRainbowShader", L"VUnlitRainbowShader.cso", L"PUnlitRainbowShader.cso")) return false;
+
+
+    layout.clear();
+    layout = {
+        //SEMANTIC NAME - SEMANTIC INDEX  -   FORMAT   -    INPUT SLOT - ALIGNED BYTE OFFSET - INPUT SLOT CLASS - INSTANCE DATA STEP RATE
+        {"POSITION",       0,    DXGI_FORMAT_R32G32B32_FLOAT,   0,           0,                        D3D11_INPUT_PER_VERTEX_DATA,   0}
     };
 
     if (!sm->CreateVertexShader(L"VUnlitColorShader.cso", layout)) return false;
     if (!sm->CreatePixelShader(L"PUnlitColorShader.cso")) return false;
     if (!sm->CreateShaderProgram(L"UnlitColorShader", L"VUnlitColorShader.cso", L"PUnlitColorShader.cso")) return false;
+
 
     layout.clear();
     layout = {

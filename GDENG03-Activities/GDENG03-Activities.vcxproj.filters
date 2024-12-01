@@ -228,6 +228,9 @@
     <ClCompile Include="Code\EditorStates\EditorBackend.cpp" />
     <ClCompile Include="Code\EditorStates\EditorActions\EditorAction.cpp" />
     <ClCompile Include="Code\EditorStates\EditorActions\EditorActionHistory.cpp" />
+    <ClCompile Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.cpp">
+      <Filter>GameEngine\Graphics\Materials</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\WindowsMessageMap.h" />
@@ -467,6 +470,9 @@
     <ClInclude Include="Code\EditorStates\EditorBackend.h" />
     <ClInclude Include="Code\EditorStates\EditorActions\EditorAction.h" />
     <ClInclude Include="Code\EditorStates\EditorActions\EditorActionHistory.h" />
+    <ClInclude Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.h">
+      <Filter>GameEngine\Graphics\Materials</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Code\Shaders\VLitTextureShader.hlsl">
@@ -479,6 +485,12 @@
       <Filter>Shaders</Filter>
     </FxCompile>
     <FxCompile Include="Code\Shaders\PUnlitColorShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Code\Shaders\VUnlitRainbowShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Code\Shaders\PUnlitRainbowShader.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
   </ItemGroup>

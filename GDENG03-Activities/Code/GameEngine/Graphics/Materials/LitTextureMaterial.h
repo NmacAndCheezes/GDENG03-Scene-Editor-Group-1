@@ -11,6 +11,7 @@ public:
 	~LitTextureMaterial();
 
 	void Render() override;
+	void RenderUI() override;
 
 
 private:

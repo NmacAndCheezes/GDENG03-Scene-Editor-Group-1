@@ -1,14 +1,10 @@
 struct PS_INPUT
 {
     float4 position : SV_POSITION;
-};
-
-cbuffer UnlitColor : register(b2)
-{
-    float3 color;
+    float3 color : COLOR;
 };
 
 float4 main(PS_INPUT input) : SV_TARGET
 {
-    return float4(color, 1.0f);
+    return float4(input.color, 1.0f);
 }

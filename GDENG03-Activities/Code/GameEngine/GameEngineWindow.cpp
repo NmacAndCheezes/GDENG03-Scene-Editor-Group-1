@@ -57,7 +57,7 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 
 	for (int i = 0; i < 10; i++)
 	{
-		CubeObject* cube = new CubeObject();
+		CubeObject* cube = new CubeObject("cube", false);
 		cube->GetTransform()->Position = Vector3(
 			MathUtils::RandFloatWithRange(-5.f, 5.f),
 			10.f,
@@ -66,26 +66,10 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 
 		GameObjectManager::GetInstance()->AddObject(cube);
 	}
-#if 0
-	for (int i = 0; i < 10; i++)
-	{ 
-		PhysicsObject* phy = new PhysicsObject(EPrimitiveMeshTypes::Cube); 
-		phy->GetTransform()->Position = Vector3(MathUtils::RandFloatWithRange(-3.f, 3.f), 
-			MathUtils::RandFloatWithRange(-15.f, 15.f), 
-			MathUtils::RandFloatWithRange(-3.f, 3.f));
 
-		phy->GetTransform()->Rotate(MathUtils::RandFloatWithRange(15.f, 75.f), 
-			MathUtils::RandFloatWithRange(15.f, 75.f),
-			MathUtils::RandFloatWithRange(15.f, 75.f));
-
-		/*phy->GetTransform()->LocalScale = Vector3(MathUtils::RandFloatWithRange(0.5f, 1.4f), 
-			MathUtils::RandFloatWithRange(0.5f, 1.4f), 
-			MathUtils::RandFloatWithRange(0.5f, 1.4f));*/
-
-		GameObjectManager::GetInstance()->AddObject(phy); 
-		phy->GetRB()->BodyType = rp3d::BodyType::STATIC;
-	}
-#endif
+	ModelObject* model = new ModelObject("bunny2.obj", "brick.png");
+	model->GetTransform()->ScaleUniformly(20.f);
+	GameObjectManager::GetInstance()->AddObject(model);
 
 	/*std::vector<AGameObject*> objsList; 
 	int rowSize = 15; int colSize = 15; 
