@@ -52,12 +52,12 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 	FreeCameraObject* freeCam = new FreeCameraObject(width, height);  
 	freeCam->GetTransform()->Position = { 0.0f, 30.0f, -30.0f };
 	freeCam->GetTransform()->Rotate(50.0f, 0.0f, 0.0f);
-	GameObjectManager::GetInstance()->AddObject(freeCam, true); 
+	GameObjectManager::GetInstance()->AddRootObject(freeCam); 
 
 	PhysicsObject* phy1 = new PhysicsObject(EPrimitiveMeshTypes::Plane);
 	phy1->GetTransform()->Position = Vector3(0.0f, 0.0f, 0.0f);
 	phy1->GetTransform()->LocalScale = Vector3(7.0f, 1.0f, 7.0f);
-	GameObjectManager::GetInstance()->AddObject(phy1); 
+	GameObjectManager::GetInstance()->AddRootObject(phy1); 
 	phy1->GetRB()->BodyType = rp3d::BodyType::STATIC;
 
 	for (int i = 0; i < 10; i++)
@@ -69,12 +69,12 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 			MathUtils::RandFloatWithRange(-5.f, 5.f)
 			);
 
-		GameObjectManager::GetInstance()->AddObject(cube);
+		GameObjectManager::GetInstance()->AddRootObject(cube);
 	}
 
 	ModelObject* model = new ModelObject("teapot3.obj", "brick.png");
 	model->GetTransform()->ScaleUniformly(0.35f);
-	GameObjectManager::GetInstance()->AddObject(model);
+	GameObjectManager::GetInstance()->AddRootObject(model);
 }
 
 void GameEngineWindow::OnUpdate()

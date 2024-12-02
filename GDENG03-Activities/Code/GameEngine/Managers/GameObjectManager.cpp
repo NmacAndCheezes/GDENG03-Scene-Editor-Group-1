@@ -19,35 +19,45 @@ void GameObjectManager::Destroy()
 {
 	if (!sharedInstance) return;
 
-	CameraManager::Destroy();
-	ShaderManager::Destroy();
+	if (CameraManager::GetInstance()) CameraManager::Destroy();
+	if (ShaderManager::GetInstance()) ShaderManager::Destroy(); 
 
 	for (int i = (int)sharedInstance->gameObjectList.size() - 1; i >= 0; i--)
 	{
 		sharedInstance->DeleteObject(sharedInstance->gameObjectList[i]);
 	}
 
-	sharedInstance->objectMap.clear();
+	sharedInstance->gameObjectMap.clear();
+	sharedInstance->objectNameMap.clear();
 	sharedInstance->shaderToObjectsMap.clear();
 
 	delete sharedInstance;
 }
 
+void GameObjectManager::DeleteScene()
+{
+	if (!sharedInstance) return;
+
+	for (int i = (int)sharedInstance->gameObjectList.size() - 1; i >= 0; i--)
+	{
+		AGameObject* obj = sharedInstance->gameObjectList[i];
+		if (!obj->IsEditorObject())
+		{
+			sharedInstance->DeleteObject(obj);
+		}
+	}
+}
+
 
 #pragma region Game-related methods
-//void GameObjectManager::ProcessInputs(WPARAM wParam, LPARAM lParam)
-//{
-//	for (size_t i = 0; i < gameObjectList.size(); i++)
-//	{
-//		gameObjectList[i]->ProcessInputs(wParam, lParam);
-//	}
-//}
-
 void GameObjectManager::UpdateEditor(float dt)
 {
-	for (size_t i = 0; i < editorObjectList.size(); i++)
+	for (size_t i = 0; i < gameObjectList.size(); i++)
 	{
-		editorObjectList[i]->Update(dt);
+		if (gameObjectList[i]->IsEditorObject())
+		{
+			gameObjectList[i]->Update(dt);
+		}
 	}
 }
 
@@ -55,7 +65,10 @@ void GameObjectManager::UpdateGame(float dt)
 {
 	for (size_t i = 0; i < gameObjectList.size(); i++)
 	{
-		gameObjectList[i]->Update(dt);
+		if (!gameObjectList[i]->IsEditorObject())
+		{
+			gameObjectList[i]->Update(dt);
+		}
 	}
 }
 
@@ -91,47 +104,18 @@ void GameObjectManager::Draw()
 			}
 		}
 	}
-
-	/*for (size_t i = 0; i < shadersList.size(); i++)
-	{
-		shadersList[i].vShader->BindToPipeline();
-		shadersList[i].pShader->BindToPipeline();
-
-		LPCWSTR shaderType = shadersList[i].shaderType;
-		auto& objectsList = shaderToObjectsMap[shaderType];
-		auto camerasList = CameraManager::GetInstance()->GetCamerasList();
-
-		for (int j = (int)camerasList.size() - 1; j >= 0; j--)
-		{
-			if (!camerasList[j]->Enabled || !camerasList[j]->GetOwner()->Enabled) continue;
-
-			camerasList[j]->BindVPMatrixToPipeline();
-
-			for (size_t k = 0; k < objectsList.size(); k++)
-			{
-				if (objectsList[k] == nullptr)
-				{
-					objectsList.erase(objectsList.begin() + k);
-					objectsList.shrink_to_fit();
-					continue;
-				}
-
-				objectsList[k]->Draw();
-			}
-		}
-	}*/
 }
 #pragma endregion
 
 
 #pragma region Object-related methods
-void GameObjectManager::AddObject(AGameObject* gameObject, bool isEditorObject)
+void GameObjectManager::AddRootObject(AGameObject* gameObject)
 {
 	// check for invalid game objects
 	if (gameObject == nullptr) return;
 	
 	// check if game object is already tracked by manager
-	auto& namedObjList = objectMap[gameObject->Name];
+	auto& namedObjList = objectNameMap[gameObject->Name];
 	for (auto& namedObj : namedObjList)
 	{
 		if (namedObj->GetInstanceID() == gameObject->GetInstanceID()) return;
@@ -144,13 +128,9 @@ void GameObjectManager::AddObject(AGameObject* gameObject, bool isEditorObject)
 	}
 
 	// set trackers
-	if (!isEditorObject)
-	{
-		gameObjectList.push_back(gameObject);
-		gameObjectMap[gameObject->GetInstanceID()] = gameObject;
-	}
-	else editorObjectList.push_back(gameObject);
-	objectMap[gameObject->Name].push_back(gameObject); 
+	gameObjectList.push_back(gameObject);
+	gameObjectMap[gameObject->GetInstanceID()] = gameObject;
+	objectNameMap[gameObject->Name].push_back(gameObject); 
 	if (!gameObject->IsInitialized()) gameObject->Initialize(); 
 }
 
@@ -162,12 +142,12 @@ void GameObjectManager::BindRendererToShader(ARenderer* rendererComponent)
 
 std::vector<AGameObject*> GameObjectManager::FindObjectsWithName(std::string name)
 {
-	return objectMap[name];
+	return objectNameMap[name];
 }
 
 void GameObjectManager::UpdateObjectWithNewName(AGameObject* gameObject, std::string newName)
 {
-	auto& namedList = objectMap[gameObject->Name];
+	auto& namedList = objectNameMap[gameObject->Name];
 	for (int i = 0; i < namedList.size(); i++) 
 	{
 		if (namedList[i]->GetInstanceID() == gameObject->GetInstanceID())
@@ -176,9 +156,9 @@ void GameObjectManager::UpdateObjectWithNewName(AGameObject* gameObject, std::st
 		}
 	}
 
-	if (namedList.size() == 0) objectMap.erase(gameObject->Name);
+	if (namedList.size() == 0) objectNameMap.erase(gameObject->Name);
 
-	objectMap[newName].push_back(gameObject);
+	objectNameMap[newName].push_back(gameObject);
 }
 
 void GameObjectManager::RemoveObject(AGameObject* gameObject)
@@ -192,29 +172,15 @@ void GameObjectManager::RemoveObject(AGameObject* gameObject)
 		gameObjectList.erase(itr); 
 		gameObjectList.shrink_to_fit(); 
 
-		auto& namedList = objectMap[gameObject->Name];
+		std::string key = gameObject->Name;
+		auto& namedList = objectNameMap[key];
 		for (int i = 0; i < namedList.size(); i++)  
 		{
 			if (namedList[i]->GetInstanceID() == gameObject->GetInstanceID()) namedList.erase(namedList.begin() + i); 
 		}
+		if (namedList.size() == 0) objectNameMap.erase(key);
 
 		gameObjectMap.erase(gameObject->GetInstanceID());
-
-		return;
-	}
-
-	itr = std::find(editorObjectList.begin(), editorObjectList.end(), gameObject);
-
-	if (itr != editorObjectList.end())
-	{
-		editorObjectList.erase(itr); 
-		editorObjectList.shrink_to_fit(); 
-
-		auto& namedList = objectMap[gameObject->Name]; 
-		for (int i = 0; i < namedList.size(); i++) 
-		{
-			if (namedList[i]->GetInstanceID() == gameObject->GetInstanceID()) namedList.erase(namedList.begin() + i); 
-		}
 
 		return;
 	}

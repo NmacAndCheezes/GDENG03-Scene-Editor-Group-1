@@ -10,6 +10,8 @@ public:
 	CameraManager(const CameraManager&) = delete;
 	CameraManager& operator=(const CameraManager&) = delete;
 
+	//static void DeleteCameraScene();
+
 	void AddCamera(Camera* newCamera);
 	void RemoveCamera(Camera* oldCamera);
 	std::vector<Camera*> GetCamerasList();

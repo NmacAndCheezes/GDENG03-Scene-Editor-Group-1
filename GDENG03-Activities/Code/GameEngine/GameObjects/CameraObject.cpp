@@ -1,12 +1,14 @@
 #include "CameraObject.h"
 
 
-CameraObject::CameraObject(int width, int height) : AGameObject("Camera"), screenWidth(width), screenHeight(height)
+CameraObject::CameraObject(int width, int height, bool isEditorObject) : 
+	AGameObject("Camera", isEditorObject), screenWidth(width), screenHeight(height)
 {
 
 }
 
-CameraObject::CameraObject(std::string name, int width, int height) : AGameObject(name), screenWidth(width), screenHeight(height)
+CameraObject::CameraObject(std::string name, int width, int height, bool isEditorObject) : 
+	AGameObject(name, isEditorObject), screenWidth(width), screenHeight(height)
 {
 
 }

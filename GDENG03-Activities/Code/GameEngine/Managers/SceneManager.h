@@ -14,7 +14,6 @@ public:
 
 	void SaveScene(std::string scenePath);
 	void OpenScene(std::string scenePath); 
-	void UnloadActiveScene();
 
 	std::string GetActiveSceneName();
 	bool IsSceneLoaded(std::string sceneName);
@@ -30,12 +29,16 @@ private:
 	void SaveMeshRenderer(MeshRenderer* mr, rapidjson::Value& jsonComp, rapidjson::Document::AllocatorType& allocator);
 	void SaveRigidBody3D(RigidBody3D* rb, rapidjson::Value& jsonComp, rapidjson::Document::AllocatorType& allocator);
 
+	void InitializeObj(rapidjson::Value::ConstValueIterator& obj_itr, AGameObject* parent);
+	void InitializeTransform(rapidjson::Value::ConstValueIterator& comp_itr, AGameObject* owner);
+	void InitializeMeshRenderer(rapidjson::Value::ConstValueIterator& comp_itr, AGameObject* owner);
+	void InitializeRigidBody3D(rapidjson::Value::ConstValueIterator& comp_itr, AGameObject* owner);
+
 
 private:
 	static SceneManager* sharedInstance;
 
 	bool isLoading = false;
-	std::string toLoadScene;
 	std::string activeScene;
 	std::string activeScenePath;
 };

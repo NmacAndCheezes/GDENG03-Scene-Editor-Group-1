@@ -7,7 +7,7 @@
 int AGameObject::currentID = 0;
 
 #pragma region Constructor-Destructor
-AGameObject::AGameObject(std::string name)
+AGameObject::AGameObject(std::string name, bool isEditorObject)
 {
 	this->instanceID = currentID; currentID++; 
 	this->name = name;
@@ -16,6 +16,7 @@ AGameObject::AGameObject(std::string name)
 	this->parentEnabled = true;
 	this->isInitialized = false;
 	this->level = 0; 
+	this->isEditorObject = isEditorObject;
 
 	transform = new Transform();
 	AttachComponent(transform);
@@ -121,6 +122,11 @@ void AGameObject::Draw()
 	{
 		this->childList[i]->Draw(); 
 	}
+}
+
+bool AGameObject::IsEditorObject()
+{
+	return isEditorObject;
 }
 
 unsigned int AGameObject::GetInstanceID()

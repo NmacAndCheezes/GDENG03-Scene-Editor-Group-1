@@ -1,5 +1,7 @@
 #include "SceneManager.h"
 #include "GameObjectManager.h"
+#include "PhysicsEngine.h"
+
 #include <sstream>
 #include <fstream>
 #include <rapidjson/filewritestream.h>
@@ -9,6 +11,7 @@
 #include "GameEngine/Graphics/Materials/UnlitRainbowMaterial.h"
 #include "GameEngine/Graphics/Materials/UnlitColorMaterial.h"
 #include "GameEngine/Graphics/Materials/LitTextureMaterial.h"
+#include "GameEngine/GameObjects/EmptyGameObject.h"
 
 
 #pragma region Singleton
@@ -33,6 +36,8 @@ void SceneManager::SaveScene(std::string scenePath)
 
 	if (scenePath.empty()) return;
 
+	UpdateActiveScene(scenePath); 
+
 	rapidjson::Document doc;  
 	rapidjson::Document::AllocatorType& allocator = doc.GetAllocator();  
 
@@ -45,18 +50,19 @@ void SceneManager::SaveScene(std::string scenePath)
 	std::vector<AGameObject*> rootObjsList = GameObjectManager::GetInstance()->GetAllGameObjects(); 
 	for (auto& rootObj : rootObjsList) 
 	{
-		SaveObject(rootObj, objJSONList, allocator);
+		if (!rootObj->IsEditorObject()) SaveObject(rootObj, objJSONList, allocator);
 	}
 	doc.AddMember("GameObjects", objJSONList, allocator);
 
 	FILE* file = fopen(scenePath.c_str(), "wb");
+	assert(file != NULL);
+
 	char writeBuffer[16384];
 	rapidjson::FileWriteStream os(file, writeBuffer, sizeof(writeBuffer));
 	rapidjson::PrettyWriter<rapidjson::FileWriteStream> writer(os); 
+
 	doc.Accept(writer);   
 	fclose(file);
-
-	UpdateActiveScene(scenePath);
 }
 
 void SceneManager::SaveObject(AGameObject* obj, rapidjson::Value& parentObjList, rapidjson::Document::AllocatorType& allocator)
@@ -74,7 +80,7 @@ void SceneManager::SaveObject(AGameObject* obj, rapidjson::Value& parentObjList,
 	std::vector<AGameObject*> childList = obj->GetChildList(); 
 	for (auto& child : childList) 
 	{
-		SaveObject(child, jsonChildList, allocator);
+		if (!child->IsEditorObject()) SaveObject(child, jsonChildList, allocator);
 	}
 	jsonObj.AddMember("ChildrenList", jsonChildList, allocator);
 
@@ -82,7 +88,6 @@ void SceneManager::SaveObject(AGameObject* obj, rapidjson::Value& parentObjList,
 	std::vector<AComponent*> compList = obj->GetAllComponents(); 
 	for (auto& comp : compList) 
 	{
-		OutputDebugString(("\n\nTypes: " + std::to_string(jsonCompList.GetType()) + "\n\n").c_str());
 		SaveComponent(comp, jsonCompList, allocator);
 	}
 	jsonObj.AddMember("ComponentsList", jsonCompList, allocator); 
@@ -118,7 +123,7 @@ void SceneManager::SaveComponent(AComponent* comp, rapidjson::Value& compList, r
 		SaveRigidBody3D(rb, jsonComp, allocator);
 	}
 
-	compList.PushBack(jsonComp, allocator);
+	if (!jsonComp.ObjectEmpty()) compList.PushBack(jsonComp, allocator);
 }
 
 void SceneManager::SaveTransform(Transform* t, rapidjson::Value& jsonComp, rapidjson::Document::AllocatorType& allocator)
@@ -201,6 +206,8 @@ void SceneManager::SaveMeshRenderer(MeshRenderer* mr, rapidjson::Value& jsonComp
 		jsonTextureName.SetString(tm->GetTextureName().c_str(), tm->GetTextureName().length(), allocator);
 		jsonMat.AddMember("TextureName", jsonTextureName, allocator);
 	}
+
+	jsonComp.AddMember("Material", jsonMat, allocator);
 }
 
 void SceneManager::SaveRigidBody3D(RigidBody3D* rb, rapidjson::Value& jsonComp, rapidjson::Document::AllocatorType& allocator)
@@ -226,23 +233,152 @@ void SceneManager::SaveRigidBody3D(RigidBody3D* rb, rapidjson::Value& jsonComp, 
 #pragma endregion
 
 
+#pragma region Open
 void SceneManager::OpenScene(std::string scenePath)
 {
-	toLoadScene = scenePath;
+	if (scenePath == "") return;
 
-	UnloadActiveScene();
+	UpdateActiveScene(scenePath);
 
-	activeScene = toLoadScene;
-	toLoadScene = "";
-}
+	GameObjectManager::DeleteScene();
+	PhysicsEngine::GetInstance()->Release();
+	PhysicsEngine::GetInstance()->Init(); 
 
-void SceneManager::UnloadActiveScene()
-{
-	if (activeScene != "")
+	FILE* inFile = fopen(scenePath.c_str(), "rb");
+	assert(inFile != NULL); 
+
+	char readBuffer[16384];
+	rapidjson::FileReadStream jsonFile(inFile, readBuffer, sizeof(readBuffer)); 
+	rapidjson::Document doc; 
+
+	doc.ParseStream(jsonFile); 
+	fclose(inFile); 
+
+	activeScene = doc["SceneName"].GetString();
+	for (rapidjson::Value::ConstValueIterator itr = doc["GameObjects"].Begin(); 
+		itr != doc["GameObjects"].End(); ++itr)
 	{
-		
+		InitializeObj(itr, nullptr);
 	}
 }
+
+void SceneManager::InitializeObj(rapidjson::Value::ConstValueIterator& obj_itr, AGameObject* parent)
+{
+	EmptyGameObject* newObj = new EmptyGameObject(obj_itr->GetObj()["ObjName"].GetString());
+	newObj->Enabled = obj_itr->GetObj()["IsEnabled"].GetBool();
+
+	if (parent) parent->AttachChild(newObj);
+	else GameObjectManager::GetInstance()->AddRootObject(newObj);
+
+	for (rapidjson::Value::ConstValueIterator comp_itr = obj_itr->GetObj()["ComponentsList"].Begin();
+		comp_itr != obj_itr->GetObj()["ComponentsList"].End(); ++comp_itr)
+	{
+		std::string compType = comp_itr->GetObj()["ComponentType"].GetString();
+
+		if (compType == "Transform") 
+		{
+			InitializeTransform(comp_itr, newObj); 
+		}
+		else if (compType == "MeshRenderer") 
+		{
+			InitializeMeshRenderer(comp_itr, newObj);
+		}
+		else if (compType == "RigdBody3D")  
+		{
+			InitializeRigidBody3D(comp_itr, newObj); 
+		}
+	}
+
+	for (rapidjson::Value::ConstValueIterator child_itr = obj_itr->GetObj()["ChildrenList"].Begin();
+		child_itr != obj_itr->GetObj()["ChildrenList"].End(); ++child_itr)
+	{
+		InitializeObj(child_itr, newObj);
+	}
+}
+
+void SceneManager::InitializeTransform(rapidjson::Value::ConstValueIterator& comp_itr, AGameObject* owner)
+{
+	Vector3 pos = {
+		comp_itr->GetObj()["Position"].GetObj()["x"].GetFloat(),
+		comp_itr->GetObj()["Position"].GetObj()["y"].GetFloat(),
+		comp_itr->GetObj()["Position"].GetObj()["z"].GetFloat()
+	};
+
+	Vector3 euler = {
+		comp_itr->GetObj()["Rotation"].GetObj()["x"].GetFloat(),
+		comp_itr->GetObj()["Rotation"].GetObj()["y"].GetFloat(),
+		comp_itr->GetObj()["Rotation"].GetObj()["z"].GetFloat()
+	};
+
+	Vector3 scale = {
+		comp_itr->GetObj()["Scale"].GetObj()["x"].GetFloat(),
+		comp_itr->GetObj()["Scale"].GetObj()["y"].GetFloat(),
+		comp_itr->GetObj()["Scale"].GetObj()["z"].GetFloat()
+	};
+
+	owner->GetTransform()->Position = pos;
+	owner->GetTransform()->Rotate(euler); 
+	owner->GetTransform()->LocalScale = scale; 
+}
+
+void SceneManager::InitializeMeshRenderer(rapidjson::Value::ConstValueIterator& comp_itr, AGameObject* owner)
+{
+	MeshRenderer* mr = new MeshRenderer();
+
+	std::string matType = comp_itr->GetObj()["Material"].GetObj()["MaterialType"].GetString();
+
+	if (matType == "RainbowMaterial")
+	{
+		UnlitRainbowMaterial* mat = new UnlitRainbowMaterial();
+		mr->SetMaterial(mat);
+	}
+	else if (matType == "ColorMaterial")
+	{
+		UnlitColorMaterial* mat = (UnlitColorMaterial*)mr->GetMaterial();
+		Vector3 color = {
+			comp_itr->GetObj()["Material"].GetObj()["Color"].GetObj()["r"].GetFloat(),
+			comp_itr->GetObj()["Material"].GetObj()["Color"].GetObj()["g"].GetFloat(),
+			comp_itr->GetObj()["Material"].GetObj()["Color"].GetObj()["b"].GetFloat()
+		};
+		mat->SetColor(color);
+	}
+	else if (matType == "TextureMaterial")
+	{
+		LitTextureMaterial* mat = new LitTextureMaterial(comp_itr->GetObj()["Material"]["TextureName"].GetString());
+		mr->SetMaterial(mat);
+	}
+
+	EPrimitiveMeshTypes meshType = (EPrimitiveMeshTypes)comp_itr->GetObj()["MeshType"].GetInt();
+	std::string modelName = comp_itr->GetObj()["ModelName"].GetString();
+	bool isRainbowed = comp_itr->GetObj()["IsRainbowed"].GetBool();
+
+	if (meshType != EPrimitiveMeshTypes::Unknown)
+	{
+		mr->LoadPrimitive(meshType, isRainbowed);
+	}
+	else
+	{
+		mr->LoadNonPrimitive(modelName, isRainbowed);
+	}
+
+	owner->AttachComponent(mr);
+	GameObjectManager::GetInstance()->BindRendererToShader(mr);
+}
+
+void SceneManager::InitializeRigidBody3D(rapidjson::Value::ConstValueIterator& comp_itr, AGameObject* owner)
+{
+	RigidBody3D* rb = new RigidBody3D((EPrimitiveMeshTypes)comp_itr->GetObj()["MeshType"].GetInt());
+	owner->AttachComponent(rb);
+	PhysicsEngine::GetInstance()->RegisterRigidBody(rb);
+	rb->UpdateTransform();
+
+	rb->Mass = comp_itr->GetObj()["Mass"].GetFloat();
+	rb->BodyType = (rp3d::BodyType)comp_itr->GetObj()["BodyType"].GetInt();
+	rb->GravityEnabled = comp_itr->GetObj()["GravityEnabled"].GetBool();
+	rb->LinearDamping = comp_itr->GetObj()["LinearDamping"].GetFloat();
+	rb->AngularDamping = comp_itr->GetObj()["AngularDamping"].GetFloat();
+}
+#pragma endregion
 
 std::string SceneManager::GetActiveSceneName()
 {

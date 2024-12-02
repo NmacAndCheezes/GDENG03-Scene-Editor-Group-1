@@ -2,6 +2,7 @@
 #include "HierarchyTab.h"
 #include "GameEngine/Managers/GameObjectManager.h"
 #include "WindowSystem/Keyboard.h"
+#include "WindowSystem/Mouse.h"
 
 #include "GameEngine/Components/Renderer/MeshRenderer.h"
 #include "GameEngine/Components/Physics/Rigidbody3D.h"
@@ -60,7 +61,9 @@ void InspectorTab::RenderGameObjectDetails(AGameObject* selected)
 
 	// apply user inputs on the obj
 	selected->Enabled = objEnabled;
-	if (Keyboard::IsKeyPressed(VK_RETURN) && std::string(objName) != "") selected->Name = objName;
+	if ((Keyboard::IsKeyPressed(VK_RETURN) ||
+		Mouse::IsButtonDown(Mouse::EMouseButtons::Left)) &&
+		std::string(objName) != "") selected->Name = objName;
 
 	// render each components
 	for (auto& component : selected->GetAllComponents())

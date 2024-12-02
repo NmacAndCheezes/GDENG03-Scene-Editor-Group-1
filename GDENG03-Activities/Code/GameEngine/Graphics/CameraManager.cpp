@@ -1,4 +1,5 @@
 #include "CameraManager.h"
+#include "../GameObjects/AGameObject.h"
 
 
 CameraManager* CameraManager::sharedInstance = nullptr; 
@@ -24,6 +25,18 @@ void CameraManager::Destroy()
 
     delete sharedInstance;
 }
+
+//void CameraManager::DeleteCameraScene()
+//{
+//    for (int i = (int)sharedInstance->camerasList.size() - 1; i >= 0; i--)
+//    {
+//        Camera* cam = sharedInstance->camerasList[i]; 
+//        if (!cam->GetOwner()->IsEditorObject())
+//        {
+//
+//        }
+//    }
+//}
 
 void CameraManager::AddCamera(Camera* newCamera)
 {

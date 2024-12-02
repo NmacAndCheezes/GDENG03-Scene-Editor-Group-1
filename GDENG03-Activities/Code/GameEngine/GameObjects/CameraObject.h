@@ -6,8 +6,8 @@
 class CameraObject : public AGameObject
 {
 public:
-	CameraObject(int width, int height);
-	CameraObject(std::string name, int width, int height);
+	CameraObject(int width, int height, bool isEditorObject = false);
+	CameraObject(std::string name, int width, int height, bool isEditorObject = false);
 	~CameraObject();
 
 	void Initialize() override;

@@ -55,7 +55,7 @@ void EditorActionHistory::SetToEditState()
 		{
 			obj = new AGameObject(action->name);
 			Debug::Log(action->name);
-			GameObjectManager::GetInstance()->AddObject(obj);
+			GameObjectManager::GetInstance()->AddRootObject(obj);
 
 			for (auto i : action->components)
 			{

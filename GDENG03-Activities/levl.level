@@ -1,0 +1,478 @@
+{
+    "SceneName": "levl",
+    "GameObjects": [
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 7.0,
+                        "y": 1.0,
+                        "z": 7.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 0,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 4
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 4,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.3074812889099121,
+                            "g": 0.29568976163864136,
+                            "b": 0.2610006332397461
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube1",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -3.9492478370666504,
+                        "y": 10.0,
+                        "z": -4.21628475189209
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": false,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9520248770713806,
+                            "g": 0.16187018156051636,
+                            "b": 0.29828789830207825
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube2",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 4.57426643371582,
+                        "y": 10.0,
+                        "z": -16.924999237060547
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": false,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6498611569404602,
+                            "g": 0.5597400069236755,
+                            "b": 0.6763817071914673
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube3",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.4649496078491211,
+                        "y": 10.0,
+                        "z": -4.235816478729248
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": false,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.5202795267105103,
+                            "g": 0.009949034079909325,
+                            "b": 0.6090884208679199
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube4",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.4168217182159424,
+                        "y": 10.0,
+                        "z": -0.9721670150756836
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": false,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6196172833442688,
+                            "g": 0.8758201599121094,
+                            "b": 0.652729868888855
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube5",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 15.437999725341797,
+                        "y": 10.0,
+                        "z": 9.534000396728516
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": false,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.22791223227977753,
+                            "g": 0.16022217273712158,
+                            "b": 0.23508407175540924
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube6",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -12.552000045776367,
+                        "y": 10.0,
+                        "z": -4.250465393066406
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": false,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.8068788647651672,
+                            "g": 0.49732962250709534,
+                            "b": 0.3188268542289734
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube7",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.6251716613769531,
+                        "y": 10.0,
+                        "z": -4.972838401794434
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": false,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6830652952194214,
+                            "g": 0.1356547772884369,
+                            "b": 0.37809380888938904
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -3.3593249320983887,
+                        "y": 10.0,
+                        "z": 2.8118228912353516
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": false,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.007629627361893654,
+                            "g": 0.6710410118103027,
+                            "b": 0.7897579669952393
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.3728752136230469,
+                        "y": 10.0,
+                        "z": 2.903988838195801
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": false,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9165318608283997,
+                            "g": 0.26511427760124207,
+                            "b": 0.48905912041664124
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 12.947999954223633,
+                        "y": 10.0,
+                        "z": -3.1099886894226074
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": false,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.7684255242347717,
+                            "g": 0.15991699695587158,
+                            "b": 0.6975310444831848
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "teapot3",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 15.0,
+                        "y": 16.0,
+                        "z": 25.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 0.3499999940395355,
+                        "y": 0.3499999940395355,
+                        "z": 0.3499999940395355
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "teapot3.obj",
+                    "MeshType": 0,
+                    "IsRainbowed": false,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "brick.png"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -9,7 +9,7 @@ class AGameObject
 {
 public:
 	// Constructor-Destructor
-	AGameObject(std::string name);
+	AGameObject(std::string name, bool isEditorObject = false);
 	~AGameObject();
 
 	// Game-related methods
@@ -18,6 +18,8 @@ public:
 	//virtual void ProcessInputs(WPARAM wParam, LPARAM lParam);
 	virtual void Update(float dt);
 	virtual void Draw(); 
+
+	bool IsEditorObject();
 
 	unsigned int GetInstanceID(); 
 	std::string GetName();
@@ -61,6 +63,8 @@ protected:
 	AGameObject* parent;
 	std::vector<AGameObject*> childList;
 	std::vector<AComponent*> componentList; 
+
+	bool isEditorObject;
 
 private:
 	static int currentID;

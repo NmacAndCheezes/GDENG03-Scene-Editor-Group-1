@@ -25,7 +25,7 @@ void HierarchyTab::RenderUI()
     ImGui::BeginChild("##DroppableHierarchy");  
 	for (auto obj : GameObjectManager::GetInstance()->GetAllGameObjects())  // render all root objs
 	{
-		PrintObject(obj);
+		if (!obj->IsEditorObject()) PrintObject(obj);
 	}
     ImGui::EndChild(); 
 
@@ -39,7 +39,7 @@ void HierarchyTab::RenderUI()
             AGameObject* droppedObj = *(AGameObject**)payload->Data; 
             if (droppedObj->GetParent() != nullptr)
             {
-                GameObjectManager::GetInstance()->AddObject(droppedObj); 
+                GameObjectManager::GetInstance()->AddRootObject(droppedObj); 
             }
         }
         ImGui::EndDragDropTarget(); 
