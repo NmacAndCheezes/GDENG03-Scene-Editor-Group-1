@@ -59,7 +59,7 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 	phy1->GetTransform()->LocalScale = Vector3(7.0f, 1.0f, 7.0f);
 	GameObjectManager::GetInstance()->AddRootObject(phy1); 
 	phy1->GetRB()->BodyType = rp3d::BodyType::STATIC;
-
+#if 0
 	for (int i = 0; i < 10; i++)
 	{
 		CubeObject* cube = new CubeObject("cube", false);
@@ -75,6 +75,7 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 	ModelObject* model = new ModelObject("teapot3.obj", "brick.png");
 	model->GetTransform()->ScaleUniformly(0.35f);
 	GameObjectManager::GetInstance()->AddRootObject(model);
+#endif
 }
 
 void GameEngineWindow::OnUpdate()

@@ -9,6 +9,8 @@
 
 #include "WindowSystem/FileDialogs.h"
 #include "GameEngine/Managers/SceneManager.h"
+#include <GameEngine/Managers/GameObjectManager.h>
+#include <GameEngine/GameObjects/Primitives/CubeObject.h>
 
 
 
@@ -29,7 +31,7 @@ void MenuTab::RenderUI()
         RenderFilesMenu();
         RenderTabsMenu();
         RenderToolsMenu();
-        //RenderUndoRedoMenu();
+        RenderUndoRedoMenu();
         RenderAboutMenu();
         RenderSceneStatesMenu();
 
@@ -177,16 +179,13 @@ void MenuTab::RenderUndoRedoMenu()
 {
     if (EditorBackend::get()->getState() != EditorBackend::EDIT) return;
 
-    if (ImGui::BeginMenu("Undo/Redo"))
+    if (ImGui::BeginMenu("GameObject"))
     {
-        if (ImGui::MenuItem("Undo", "Ctrl + Z"))
+        if (ImGui::MenuItem("Spawn Cube"))
         {
-            EditorActionHistory::get()->Undo();
-        }
-
-        if (ImGui::MenuItem("Redo", "Ctrl + Y"))
-        {
-            EditorActionHistory::get()->Redo();
+            CubeObject* cube = new CubeObject("cube", false);
+            cube->GetTransform()->Position = Vector3(0.f, 0.9f, 0.f);
+            GameObjectManager::GetInstance()->AddRootObject(cube);
         }
 
         ImGui::EndMenu();
