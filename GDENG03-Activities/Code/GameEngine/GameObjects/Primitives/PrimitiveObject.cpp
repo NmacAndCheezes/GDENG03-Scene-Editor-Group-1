@@ -1,6 +1,7 @@
 #include "PrimitiveObject.h"
 #include "GameEngine/Managers/GameObjectManager.h"
 #include "GameEngine/Graphics/Materials/UnlitRainbowMaterial.h"
+#include <GameEngine/Graphics/Materials/LitTextureMaterial.h>
 
 
 PrimitiveObject::PrimitiveObject(std::string name, EPrimitiveMeshTypes type, bool isRainbowed) 
@@ -8,6 +9,7 @@ PrimitiveObject::PrimitiveObject(std::string name, EPrimitiveMeshTypes type, boo
 {
 
 }
+
 
 PrimitiveObject::~PrimitiveObject()
 {
@@ -22,7 +24,7 @@ void PrimitiveObject::Initialize()
 	}
 	else
 	{
-		UnlitRainbowMaterial* mat = new UnlitRainbowMaterial();
+		LitTextureMaterial* mat = new LitTextureMaterial("blue.jpg");
 		renderer = new MeshRenderer(mat);
 	}
 

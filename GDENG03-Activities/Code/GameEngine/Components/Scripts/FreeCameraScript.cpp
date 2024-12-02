@@ -4,6 +4,7 @@
 #include "GameEngine/MathUtils.h"
 #include "../Transform.h"
 #include "EditorGUI/EditorGUIManager.h"
+#include <GameEngine/Debug.h>
 
 
 FreeCameraScript::FreeCameraScript(int width, int height) : AComponent("FreeCamera", EComponentTypes::Script)
@@ -61,6 +62,7 @@ void FreeCameraScript::HandleMovement()
 	if (Keyboard::IsKeyDown('D')) total += transform->GetLocalRight(); 
 	if (Keyboard::IsKeyDown('E')) total += Vector3::Up; 
 	if (Keyboard::IsKeyDown('Q')) total -= Vector3::Up; 
+
 	total.Normalize();
 	total *= movementSpeed * dt; 
 

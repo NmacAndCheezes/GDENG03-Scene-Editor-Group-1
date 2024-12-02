@@ -1,0 +1,4853 @@
+{
+    "SceneName": "physicsLevel",
+    "GameObjects": [
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.7526168823242188,
+                        "y": 30.0,
+                        "z": 2.3421430587768555
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.27503281831741333,
+                            "g": 0.6595050096511841,
+                            "b": 0.20954008400440216
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.6393017768859863,
+                        "y": 30.0,
+                        "z": -4.367656707763672
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6325266361236572,
+                            "g": 0.2070680856704712,
+                            "b": 0.9955137968063354
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.27359867095947266,
+                        "y": 30.0,
+                        "z": -2.0296335220336914
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.5377666354179382,
+                            "g": 0.3165684938430786,
+                            "b": 0.6360973119735718
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 4.189123153686523,
+                        "y": 30.0,
+                        "z": -2.7285072803497314
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.008880886249244213,
+                            "g": 0.65172278881073,
+                            "b": 0.022797327488660812
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -4.536423683166504,
+                        "y": 30.0,
+                        "z": -2.090975761413574
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6605731248855591,
+                            "g": 0.8844569325447083,
+                            "b": 0.5899227857589722
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.8615684509277344,
+                        "y": 30.0,
+                        "z": 2.1257667541503906
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.110751673579216,
+                            "g": 0.3266701400279999,
+                            "b": 0.3341776728630066
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.4631185531616211,
+                        "y": 30.0,
+                        "z": -0.20981454849243164
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.938810408115387,
+                            "g": 0.04361094906926155,
+                            "b": 0.730338454246521
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.04470968246459961,
+                        "y": 30.0,
+                        "z": 4.011199951171875
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.766563892364502,
+                            "g": 0.9804681539535522,
+                            "b": 0.6788842678070068
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.1926937103271484,
+                        "y": 30.0,
+                        "z": 0.7142858505249023
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.16370128095149994,
+                            "g": 0.7099520564079285,
+                            "b": 0.22693563997745514
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.303689956665039,
+                        "y": 30.0,
+                        "z": -3.5622730255126953
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.2549211084842682,
+                            "g": 0.45518356561660767,
+                            "b": 0.8603472709655762
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.8003478050231934,
+                        "y": 30.0,
+                        "z": -4.668263912200928
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9860835671424866,
+                            "g": 0.9874569177627563,
+                            "b": 0.41724905371665955
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.5765252113342285,
+                        "y": 30.0,
+                        "z": 3.4905548095703125
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.5073091983795166,
+                            "g": 0.04217658191919327,
+                            "b": 0.2544023096561432
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.463606595993042,
+                        "y": 30.0,
+                        "z": 2.5569934844970703
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.7934201955795288,
+                            "g": 0.668996274471283,
+                            "b": 0.04211554303765297
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.858516216278076,
+                        "y": 30.0,
+                        "z": 2.903683662414551
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.22583697736263275,
+                            "g": 0.8764000535011292,
+                            "b": 0.8668477535247803
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -4.800408840179443,
+                        "y": 30.0,
+                        "z": -0.9782705307006836
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.8540909886360168,
+                            "g": 0.11670278012752533,
+                            "b": 0.8650776743888855
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.4597616195678711,
+                        "y": 30.0,
+                        "z": 4.910885810852051
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.8877529501914978,
+                            "g": 0.4620197117328644,
+                            "b": 0.6486403942108154
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.155369758605957,
+                        "y": 30.0,
+                        "z": 2.8878140449523926
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9365825653076172,
+                            "g": 0.5358134508132935,
+                            "b": 0.4207586944103241
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.768792152404785,
+                        "y": 30.0,
+                        "z": -1.3341166973114014
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.21039460599422455,
+                            "g": 0.2221747487783432,
+                            "b": 0.1894283890724182
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.616901397705078,
+                        "y": 30.0,
+                        "z": -2.1187474727630615
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.395336776971817,
+                            "g": 0.7287819981575012,
+                            "b": 0.28073975443840027
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.6289255619049072,
+                        "y": 30.0,
+                        "z": 1.4146852493286133
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.021149327978491783,
+                            "g": 0.8403271436691284,
+                            "b": 0.9486678838729858
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.6908783912658691,
+                        "y": 30.0,
+                        "z": -4.2669453620910645
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9510177969932556,
+                            "g": 0.0031128879636526108,
+                            "b": 0.69466233253479
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.072268009185791,
+                        "y": 30.0,
+                        "z": 0.3807182312011719
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.23465682566165924,
+                            "g": 0.24314096570014954,
+                            "b": 0.491561621427536
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.465437650680542,
+                        "y": 30.0,
+                        "z": -3.218024253845215
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.2071291208267212,
+                            "g": 0.6358531713485718,
+                            "b": 0.8898892402648926
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.105715751647949,
+                        "y": 30.0,
+                        "z": -0.22995710372924805
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.41682180762290955,
+                            "g": 0.48149052262306213,
+                            "b": 0.39500105381011963
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.385082721710205,
+                        "y": 30.0,
+                        "z": 4.609058380126953
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.46342357993125916,
+                            "g": 0.791253387928009,
+                            "b": 0.8139286637306213
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.679464340209961,
+                        "y": 30.0,
+                        "z": 1.6457104682922363
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.8304086327552795,
+                            "g": 0.6280709505081177,
+                            "b": 0.1993468999862671
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.8610796928405762,
+                        "y": 30.0,
+                        "z": 2.4718470573425293
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.731009840965271,
+                            "g": 0.6732688546180725,
+                            "b": 0.808679461479187
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.1885433197021484,
+                        "y": 30.0,
+                        "z": -4.067659378051758
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.5379497408866882,
+                            "g": 0.24948881566524506,
+                            "b": 0.6379894614219666
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.920072078704834,
+                        "y": 30.0,
+                        "z": -1.766563892364502
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.15366069972515106,
+                            "g": 0.5948973298072815,
+                            "b": 0.7398602366447449
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -4.488814830780029,
+                        "y": 30.0,
+                        "z": -2.2875146865844727
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.7116000652313232,
+                            "g": 0.15344706177711487,
+                            "b": 0.9936216473579407
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.7516098022460938,
+                        "y": 30.0,
+                        "z": 1.678365707397461
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.41709646582603455,
+                            "g": 0.18662068247795105,
+                            "b": 0.5900753736495972
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -3.4228034019470215,
+                        "y": 30.0,
+                        "z": -4.449751377105713
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.38550981879234314,
+                            "g": 0.08166753500699997,
+                            "b": 0.44148075580596924
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.039521217346191406,
+                        "y": 30.0,
+                        "z": 4.856868743896484
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.30664998292922974,
+                            "g": 0.774407148361206,
+                            "b": 0.5895260572433472
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.0945463180541992,
+                        "y": 30.0,
+                        "z": -0.9514145851135254
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.11679433286190033,
+                            "g": 0.9443647861480713,
+                            "b": 0.26441237330436707
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -3.938871383666992,
+                        "y": 30.0,
+                        "z": 3.614154815673828
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.4839930534362793,
+                            "g": 0.6533402800559998,
+                            "b": 0.7248756289482117
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.156590461730957,
+                        "y": 30.0,
+                        "z": 3.471938133239746
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.013458662666380405,
+                            "g": 0.19199194014072418,
+                            "b": 0.4902493357658386
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -3.3712270259857178,
+                        "y": 30.0,
+                        "z": -1.987823247909546
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9130222201347351,
+                            "g": 0.19696645438671112,
+                            "b": 0.0635700523853302
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.677328109741211,
+                        "y": 30.0,
+                        "z": 0.30686378479003906
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9738456606864929,
+                            "g": 0.1278420388698578,
+                            "b": 0.4350718855857849
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.22110652923583984,
+                        "y": 30.0,
+                        "z": 2.1819210052490234
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.30552080273628235,
+                            "g": 0.0954313799738884,
+                            "b": 0.8789941072463989
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.5067596435546875,
+                        "y": 30.0,
+                        "z": 1.3197731971740723
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.3817865550518036,
+                            "g": 0.49497970938682556,
+                            "b": 0.45674002170562744
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 4.590441703796387,
+                        "y": 30.0,
+                        "z": 1.5089874267578125
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.599932849407196,
+                            "g": 0.1347697377204895,
+                            "b": 0.18863490223884583
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.3919801712036133,
+                        "y": 30.0,
+                        "z": -3.7298197746276855
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.5429242849349976,
+                            "g": 0.6603900194168091,
+                            "b": 0.5613269209861755
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.8249459266662598,
+                        "y": 30.0,
+                        "z": -1.7967772483825684
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9559312462806702,
+                            "g": 0.43952757120132446,
+                            "b": 0.14871670305728912
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.136143207550049,
+                        "y": 30.0,
+                        "z": -2.8051087856292725
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.4539628326892853,
+                            "g": 0.28162479400634766,
+                            "b": 0.9844050407409668
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.8333995342254639,
+                        "y": 30.0,
+                        "z": -3.52717661857605
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.17328409850597382,
+                            "g": 0.6260567307472229,
+                            "b": 0.9053010940551758
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.1807918548583984,
+                        "y": 30.0,
+                        "z": 1.3307595252990723
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.69466233253479,
+                            "g": 0.6099429130554199,
+                            "b": 0.11215551942586899
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -4.83550500869751,
+                        "y": 30.0,
+                        "z": -3.0202643871307373
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9441205859184265,
+                            "g": 0.48030030727386475,
+                            "b": 0.11438337713479996
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -4.55809211730957,
+                        "y": 30.0,
+                        "z": -3.4286019802093506
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9444258213043213,
+                            "g": 0.6785485148429871,
+                            "b": 0.7427899837493896
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.36576414108276367,
+                        "y": 30.0,
+                        "z": -1.7461166381835938
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.05230872705578804,
+                            "g": 0.20502334833145142,
+                            "b": 0.5329752564430237
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.2600483894348145,
+                        "y": 30.0,
+                        "z": 4.064912796020508
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.47907957434654236,
+                            "g": 0.6748863458633423,
+                            "b": 0.33869442343711853
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.4412364959716797,
+                        "y": 30.0,
+                        "z": 1.4949493408203125
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.669179379940033,
+                            "g": 0.6038087010383606,
+                            "b": 0.9743034243583679
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.8975799083709717,
+                        "y": 30.0,
+                        "z": -1.5556809902191162
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6231269240379333,
+                            "g": 0.921384334564209,
+                            "b": 0.21140171587467194
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.8102054595947266,
+                        "y": 30.0,
+                        "z": -3.994109869003296
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.37806329131126404,
+                            "g": 0.40751364827156067,
+                            "b": 0.6432386040687561
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.472975730895996,
+                        "y": 30.0,
+                        "z": 3.470412254333496
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.14169743657112122,
+                            "g": 0.22009949386119843,
+                            "b": 0.13702811300754547
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.2424392700195313,
+                        "y": 30.0,
+                        "z": -3.4224982261657715
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6273384690284729,
+                            "g": 0.9266945123672485,
+                            "b": 0.539933443069458
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.7249670028686523,
+                        "y": 30.0,
+                        "z": -4.204687595367432
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.5825067758560181,
+                            "g": 0.9743339419364929,
+                            "b": 0.3483687937259674
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.9086885452270508,
+                        "y": 30.0,
+                        "z": 2.7571945190429688
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.07708975672721863,
+                            "g": 0.9580370783805847,
+                            "b": 0.3723868429660797
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.160466194152832,
+                        "y": 30.0,
+                        "z": -1.5739920139312744
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.24347667396068573,
+                            "g": 0.6122012734413147,
+                            "b": 0.8116092681884766
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.307962417602539,
+                        "y": 30.0,
+                        "z": 4.3316450119018555
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9022797346115112,
+                            "g": 0.007751701399683952,
+                            "b": 0.3739432990550995
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.33585596084594727,
+                        "y": 30.0,
+                        "z": 4.437849044799805
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.3740958869457245,
+                            "g": 0.5260780453681946,
+                            "b": 0.7999206781387329
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.4040040969848633,
+                        "y": 30.0,
+                        "z": -1.2205877304077148
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6613666415214539,
+                            "g": 0.044831689447164536,
+                            "b": 0.7046723961830139
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.32090234756469727,
+                        "y": 30.0,
+                        "z": -3.064210891723633
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.040192876011133194,
+                            "g": 0.1345561146736145,
+                            "b": 0.6450392007827759
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.09048748016357422,
+                        "y": 30.0,
+                        "z": -3.850672960281372
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9700613617897034,
+                            "g": 0.7882015705108643,
+                            "b": 0.8515884876251221
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 4.6423234939575195,
+                        "y": 30.0,
+                        "z": -0.7011628150939941
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.4200567603111267,
+                            "g": 0.8944364786148071,
+                            "b": 0.8073061108589172
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.0390942096710205,
+                        "y": 30.0,
+                        "z": -3.927274465560913
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.045686207711696625,
+                            "g": 0.5890377759933472,
+                            "b": 0.7577135562896729
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.1263771057128906,
+                        "y": 30.0,
+                        "z": -3.2787561416625977
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.7780693769454956,
+                            "g": 0.2638935446739197,
+                            "b": 0.6810510754585266
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.2829370498657227,
+                        "y": 30.0,
+                        "z": 1.6197700500488281
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.3496505618095398,
+                            "g": 0.9160435795783997,
+                            "b": 0.4275032877922058
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.1303443908691406,
+                        "y": 30.0,
+                        "z": 2.2127442359924316
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6066164374351501,
+                            "g": 0.870082676410675,
+                            "b": 0.4670857787132263
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.3643302917480469,
+                        "y": 30.0,
+                        "z": -3.224432945251465
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.16415905952453613,
+                            "g": 0.9142124652862549,
+                            "b": 0.6009094715118408
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.17715978622436523,
+                        "y": 30.0,
+                        "z": 3.7228002548217773
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.061372723430395126,
+                            "g": 0.5892513990402222,
+                            "b": 0.6264534592628479
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -3.2747888565063477,
+                        "y": 30.0,
+                        "z": -0.35935544967651367
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.13028351962566376,
+                            "g": 0.11239966750144958,
+                            "b": 0.8888821005821228
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.783135414123535,
+                        "y": 30.0,
+                        "z": 0.27451419830322266
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.46540728211402893,
+                            "g": 0.031098362058401108,
+                            "b": 0.5014801621437073
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.33158349990844727,
+                        "y": 30.0,
+                        "z": 3.310190200805664
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6665242314338684,
+                            "g": 0.7225562334060669,
+                            "b": 0.6383556723594666
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -4.838252067565918,
+                        "y": 30.0,
+                        "z": 0.07461786270141602
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9490951299667358,
+                            "g": 0.15494246780872345,
+                            "b": 0.2784813940525055
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.7527084350585938,
+                        "y": 30.0,
+                        "z": 2.0555739402770996
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9072542786598206,
+                            "g": 0.7343974113464355,
+                            "b": 0.8759727478027344
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.7163000106811523,
+                        "y": 30.0,
+                        "z": -1.1760306358337402
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.8488723635673523,
+                            "g": 0.5598010420799255,
+                            "b": 0.19431135058403015
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.8906831741333008,
+                        "y": 30.0,
+                        "z": 3.082827568054199
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.4758140742778778,
+                            "g": 0.7840204834938049,
+                            "b": 0.0875270888209343
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.305002212524414,
+                        "y": 30.0,
+                        "z": -1.8837549686431885
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.9356364607810974,
+                            "g": 0.5086214542388916,
+                            "b": 0.38383129239082336
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.046815872192383,
+                        "y": 30.0,
+                        "z": -4.882198333740234
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.15680409967899323,
+                            "g": 0.19168676435947418,
+                            "b": 0.4515518546104431
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.5661487579345703,
+                        "y": 30.0,
+                        "z": -1.8764305114746094
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.5059358477592468,
+                            "g": 0.09198278933763504,
+                            "b": 0.6495559811592102
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.637042999267578,
+                        "y": 30.0,
+                        "z": -4.454634189605713
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.48893705010414124,
+                            "g": 0.24448378384113312,
+                            "b": 0.5848872065544128
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 4.870601654052734,
+                        "y": 30.0,
+                        "z": 1.998199462890625
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.47312843799591064,
+                            "g": 0.23535874485969543,
+                            "b": 0.33548998832702637
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -3.9465010166168213,
+                        "y": 30.0,
+                        "z": -0.8973970413208008
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.5823236703872681,
+                            "g": 0.3731498122215271,
+                            "b": 0.0005493331700563431
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 4.774772644042969,
+                        "y": 30.0,
+                        "z": -2.21366024017334
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.46461379528045654,
+                            "g": 0.6315805315971375,
+                            "b": 0.028138065710663795
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.7308571338653564,
+                        "y": 30.0,
+                        "z": 4.432661056518555
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.20047609508037567,
+                            "g": 0.9594103693962097,
+                            "b": 0.44953763484954834
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.6288337707519531,
+                        "y": 30.0,
+                        "z": 3.451186180114746
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.1908017247915268,
+                            "g": 0.2597125172615051,
+                            "b": 0.6138797998428345
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.9679861068725586,
+                        "y": 30.0,
+                        "z": 1.3731803894042969
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.4617145359516144,
+                            "g": 0.7389446496963501,
+                            "b": 0.24079103767871857
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.7760248184204102,
+                        "y": 30.0,
+                        "z": -1.9756155014038086
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6273384690284729,
+                            "g": 0.06015198305249214,
+                            "b": 0.9198583960533142
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.835444450378418,
+                        "y": 30.0,
+                        "z": 2.987609386444092
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.5322122573852539,
+                            "g": 0.7590869069099426,
+                            "b": 0.6367381811141968
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.2799768447875977,
+                        "y": 30.0,
+                        "z": 3.2760095596313477
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.4677571952342987,
+                            "g": 0.6964018940925598,
+                            "b": 0.37812432646751404
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.2086856365203857,
+                        "y": 30.0,
+                        "z": 3.218329429626465
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.5287637114524841,
+                            "g": 0.23545029759407043,
+                            "b": 0.6265144944190979
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.0330820083618164,
+                        "y": 30.0,
+                        "z": 1.7720575332641602
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.4853053390979767,
+                            "g": 0.27414777874946594,
+                            "b": 0.5058748126029968
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 3.5460987091064453,
+                        "y": 30.0,
+                        "z": 4.989317893981934
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6484572887420654,
+                            "g": 0.05175939202308655,
+                            "b": 0.9115573763847351
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.376934051513672,
+                        "y": 30.0,
+                        "z": -4.880672454833984
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.5155797004699707,
+                            "g": 0.5309610366821289,
+                            "b": 0.11438337713479996
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -3.8167972564697266,
+                        "y": 30.0,
+                        "z": -4.227576732635498
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.41825616359710693,
+                            "g": 0.6883449554443359,
+                            "b": 0.9256569147109985
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -0.34592723846435547,
+                        "y": 30.0,
+                        "z": -3.2467117309570313
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.3584398925304413,
+                            "g": 0.47947630286216736,
+                            "b": 0.6689046621322632
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -1.1861016750335693,
+                        "y": 30.0,
+                        "z": -0.6086916923522949
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.039277322590351105,
+                            "g": 0.6710410118103027,
+                            "b": 0.27494126558303833
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -2.293923854827881,
+                        "y": 30.0,
+                        "z": 3.097170829772949
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.6272469162940979,
+                            "g": 0.9120761752128601,
+                            "b": 0.7465742826461792
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.4119386672973633,
+                        "y": 30.0,
+                        "z": -4.671010494232178
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.2072511911392212,
+                            "g": 0.8305307030677795,
+                            "b": 0.252052366733551
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 2.4333934783935547,
+                        "y": 30.0,
+                        "z": 1.5538501739501953
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 2,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 1
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.06692709028720856,
+                            "g": 0.6763817071914673,
+                            "b": 0.7065035104751587
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 7.0,
+                        "y": 1.0,
+                        "z": 7.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 0,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 4
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 4,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.17282631993293762,
+                            "g": 0.5600146651268005,
+                            "b": 0.6389049887657166
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -43,7 +43,7 @@ void RigidBody3D::Perform()
 {
 	if (rb == nullptr) return;
 
-	rp3d::Transform lerpTransform = rp3d::Transform::interpolateTransforms(prevTransform, rb->getTransform(), factor);
+	//rp3d::Transform lerpTransform = rp3d::Transform::interpolateTransforms(prevTransform, rb->getTransform(), factor);
 	prevTransform = rb->getTransform();
 
 	transform->Position = MathUtils::ConvertVector(rb->getTransform().getPosition());

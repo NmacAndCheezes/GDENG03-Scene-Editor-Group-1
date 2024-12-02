@@ -1,0 +1,1283 @@
+{
+    "SceneName": "Whiteroom",
+    "GameObjects": [
+        {
+            "ObjName": "cube",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -13.0,
+                        "y": 7.0,
+                        "z": -4.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 7.0,
+                        "y": 17.0,
+                        "z": 26.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "PhysicsObject",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 7.0,
+                        "y": 1.0,
+                        "z": 7.0
+                    }
+                },
+                {
+                    "ComponentType": "RigidBody3D",
+                    "Mass": 10.0,
+                    "BodyType": 0,
+                    "GravityEnabled": true,
+                    "LinearDamping": 0.0,
+                    "AngularDamping": 0.0,
+                    "MeshType": 4
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 4,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "ColorMaterial",
+                        "Color": {
+                            "r": 0.024201178923249245,
+                            "g": 0.15494246780872345,
+                            "b": 0.442945659160614
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.0,
+                        "y": 6.0,
+                        "z": 18.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 35.0,
+                        "y": 16.0,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -13.0,
+                        "y": 3.0,
+                        "z": 13.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 6.0,
+                        "y": 7.0,
+                        "z": 10.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 7.0,
+                        "y": 6.0,
+                        "z": 0.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 9.0,
+                        "y": 12.0,
+                        "z": 35.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 19.0,
+                        "y": 10.0,
+                        "z": 15.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cone",
+            "IsEnabled": true,
+            "ChildrenList": [
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -1.0,
+                                "y": 0.0,
+                                "z": 16.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -3.0,
+                                "y": 0.0,
+                                "z": 16.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -5.0,
+                                "y": 0.0,
+                                "z": 16.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -7.0,
+                                "y": 0.0,
+                                "z": 16.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -9.0,
+                                "y": 0.0,
+                                "z": 16.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 16.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 3.0,
+                        "y": 4.0,
+                        "z": 3.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 7,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cylinder",
+            "IsEnabled": true,
+            "ChildrenList": [
+                {
+                    "ObjName": "cylinder",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -2.0,
+                                "y": 8.0,
+                                "z": 9.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 6,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cylinder",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -7.0,
+                                "y": 9.0,
+                                "z": 11.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 6,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -4.0,
+                        "y": 8.0,
+                        "z": 15.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 1.0,
+                        "y": 0.5,
+                        "z": 1.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 6,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cone",
+            "IsEnabled": true,
+            "ChildrenList": [
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -1.0,
+                                "y": 0.0,
+                                "z": 14.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -3.0,
+                                "y": 0.0,
+                                "z": 14.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -9.0,
+                                "y": 0.0,
+                                "z": 14.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -5.0,
+                                "y": 0.0,
+                                "z": 14.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -7.0,
+                                "y": 0.0,
+                                "z": 14.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 14.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 3.0,
+                        "y": 4.0,
+                        "z": 3.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 7,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cone",
+            "IsEnabled": true,
+            "ChildrenList": [
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -1.0,
+                                "y": 0.0,
+                                "z": 12.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -3.0,
+                                "y": 0.0,
+                                "z": 12.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -5.0,
+                                "y": 0.0,
+                                "z": 12.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -7.0,
+                                "y": 0.0,
+                                "z": 12.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -9.0,
+                                "y": 0.0,
+                                "z": 12.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 12.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 3.0,
+                        "y": 4.0,
+                        "z": 3.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 7,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cone",
+            "IsEnabled": true,
+            "ChildrenList": [
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -1.0,
+                                "y": 0.0,
+                                "z": 10.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -9.0,
+                                "y": 0.0,
+                                "z": 10.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -3.0,
+                                "y": 0.0,
+                                "z": 10.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -5.0,
+                                "y": 0.0,
+                                "z": 10.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ObjName": "cone",
+                    "IsEnabled": true,
+                    "ChildrenList": [],
+                    "ComponentsList": [
+                        {
+                            "ComponentType": "Transform",
+                            "Position": {
+                                "x": -7.0,
+                                "y": 0.0,
+                                "z": 10.0
+                            },
+                            "Rotation": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            },
+                            "Scale": {
+                                "x": 1.0,
+                                "y": 1.0,
+                                "z": 1.0
+                            }
+                        },
+                        {
+                            "ComponentType": "MeshRenderer",
+                            "ModelName": "",
+                            "MeshType": 7,
+                            "IsRainbowed": true,
+                            "Material": {
+                                "MaterialType": "TextureMaterial",
+                                "TextureName": "blue.jpg"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 10.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 3.0,
+                        "y": 4.0,
+                        "z": 3.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 7,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": 1.0,
+                        "y": 10.0,
+                        "z": 3.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 4.0,
+                        "y": -1.0,
+                        "z": -7.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -7.0,
+                        "y": 5.0,
+                        "z": 1.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 5.0,
+                        "y": 1.0,
+                        "z": 8.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        },
+        {
+            "ObjName": "cube",
+            "IsEnabled": true,
+            "ChildrenList": [],
+            "ComponentsList": [
+                {
+                    "ComponentType": "Transform",
+                    "Position": {
+                        "x": -4.699999809265137,
+                        "y": 5.0,
+                        "z": 1.0
+                    },
+                    "Rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "Scale": {
+                        "x": 0.5,
+                        "y": 2.0,
+                        "z": 8.0
+                    }
+                },
+                {
+                    "ComponentType": "MeshRenderer",
+                    "ModelName": "",
+                    "MeshType": 1,
+                    "IsRainbowed": true,
+                    "Material": {
+                        "MaterialType": "TextureMaterial",
+                        "TextureName": "blue.jpg"
+                    }
+                }
+            ]
+        }
+    ]
+}

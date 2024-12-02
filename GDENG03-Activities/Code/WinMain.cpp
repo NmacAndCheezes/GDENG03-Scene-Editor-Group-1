@@ -6,7 +6,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 {
 	srand((unsigned int)time(NULL)); 
 
-	GameEngineWindow gameEngine(60);  
+	GameEngineWindow gameEngine(30);  
 
 	if (gameEngine.Init(960, 720, "Game Engine")) 
 	{

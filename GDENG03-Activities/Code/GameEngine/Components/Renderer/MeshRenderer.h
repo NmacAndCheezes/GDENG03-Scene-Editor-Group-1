@@ -24,5 +24,6 @@ private:
 	const std::string STANDARD_MODEL_PATH = "Assets/Models/";
 	EPrimitiveMeshTypes type;
 	std::string modelName;
+	std::string textureName;
 	bool isRainbowed;
 };

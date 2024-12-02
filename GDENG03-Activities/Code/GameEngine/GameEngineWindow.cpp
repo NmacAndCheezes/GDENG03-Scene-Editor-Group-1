@@ -54,15 +54,26 @@ void GameEngineWindow::OnCreate(HWND hWnd)
 	freeCam->GetTransform()->Rotate(50.0f, 0.0f, 0.0f);
 	GameObjectManager::GetInstance()->AddRootObject(freeCam); 
 
-	PhysicsObject* phy1 = new PhysicsObject(EPrimitiveMeshTypes::Plane);
-	phy1->GetTransform()->Position = Vector3(0.0f, 0.0f, 0.0f);
-	phy1->GetTransform()->LocalScale = Vector3(7.0f, 1.0f, 7.0f);
-	GameObjectManager::GetInstance()->AddRootObject(phy1); 
-	phy1->GetRB()->BodyType = rp3d::BodyType::STATIC;
 #if 0
-	for (int i = 0; i < 10; i++)
+	ModelObject* bunny = new ModelObject("bunny.obj");
+	bunny->GetTransform()->Position = Vector3(10.0f, 0.0f, 0.0f);
+	bunny->GetTransform()->LocalScale = Vector3(10.0f, 10.0f, 10.0f);
+	GameObjectManager::GetInstance()->AddRootObject(bunny);
+
+	ModelObject* armadillo = new ModelObject("armadillo.obj");
+	armadillo->GetTransform()->Position = Vector3(-10.0f, 0.0f, 0.0f);
+	//armadillo->GetTransform()->LocalScale = Vector3(10.0f, 10.0f, 10.0f);
+	GameObjectManager::GetInstance()->AddRootObject(armadillo);
+
+	ModelObject* Lucy = new ModelObject("statue.obj");
+	Lucy->GetTransform()->Position = Vector3(0.0f, 0.0f, 0.0f);
+	Lucy->GetTransform()->LocalScale = Vector3(10.0f, 10.0f, 10.0f);
+	GameObjectManager::GetInstance()->AddRootObject(Lucy);
+#endif
+#if 0
+	for (int i = 0; i < 5; i++)
 	{
-		CubeObject* cube = new CubeObject("cube", false);
+		PrimitiveObject* cube = new PrimitiveObject("cube", EPrimitiveMeshTypes::Cube, true);
 		cube->GetTransform()->Position = Vector3(
 			MathUtils::RandFloatWithRange(-5.f, 5.f),
 			10.f,

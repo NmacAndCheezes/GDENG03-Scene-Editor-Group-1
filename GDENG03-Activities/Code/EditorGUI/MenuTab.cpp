@@ -11,6 +11,12 @@
 #include "GameEngine/Managers/SceneManager.h"
 #include <GameEngine/Managers/GameObjectManager.h>
 #include <GameEngine/GameObjects/Primitives/CubeObject.h>
+#include <GameEngine/GameObjects/Primitives/SphereObject.h>
+#include <GameEngine/GameObjects/ModelObject.h>
+#include <GameEngine/GameObjects/PhysicsObject.h>
+#include <GameEngine/MathUtils.h>
+#include <GameEngine/GameObjects/Primitives/CylinderObject.h>
+#include <GameEngine/GameObjects/Primitives/ConeObject.h>
 
 
 
@@ -183,11 +189,56 @@ void MenuTab::RenderUndoRedoMenu()
     {
         if (ImGui::MenuItem("Spawn Cube"))
         {
-            CubeObject* cube = new CubeObject("cube", false);
-            cube->GetTransform()->Position = Vector3(0.f, 0.9f, 0.f);
+            CubeObject* cube = new CubeObject("cube", true);
+            cube->GetTransform()->Position = Vector3(0.f, 0.f, 0.f);
             GameObjectManager::GetInstance()->AddRootObject(cube);
         }
-
+        if (ImGui::MenuItem("Spawn Sphere"))
+        {
+            SphereObject* cube = new SphereObject("sphere", true);
+            cube->GetTransform()->Position = Vector3(0.f, 0.f, 0.f);
+            GameObjectManager::GetInstance()->AddRootObject(cube);
+        }
+        if (ImGui::MenuItem("Spawn Cylinder"))
+        {
+            CylinderObject* cube = new CylinderObject("cylinder", true);
+            cube->GetTransform()->Position = Vector3(0.f, 0.f, 0.f);
+            GameObjectManager::GetInstance()->AddRootObject(cube);
+        }
+        if (ImGui::MenuItem("Spawn Cone"))
+        {
+            ConeObject* cube = new ConeObject("cone", true);
+            cube->GetTransform()->Position = Vector3(0.f, 0.f, 0.f);
+            GameObjectManager::GetInstance()->AddRootObject(cube);
+        }
+        if (ImGui::MenuItem("Spawn Teapot"))
+        {
+            ModelObject* model = new ModelObject("teapot3.obj", "brick.png");
+            model->GetTransform()->ScaleUniformly(0.35f);
+            GameObjectManager::GetInstance()->AddRootObject(model);
+        }
+        if (ImGui::MenuItem("Spawn 100RB Cubes"))
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                PhysicsObject* phy1 = new PhysicsObject(EPrimitiveMeshTypes::Cube);
+                phy1->GetTransform()->Position = Vector3(
+                    MathUtils::RandFloatWithRange(-5.f, 5.f),
+                    30.f,
+                    MathUtils::RandFloatWithRange(-5.f, 5.f)
+                );
+                GameObjectManager::GetInstance()->AddRootObject(phy1);
+                phy1->GetRB()->BodyType = rp3d::BodyType::DYNAMIC;
+            }
+        }
+        if (ImGui::MenuItem("Spawn P6 Plane"))
+        {
+            PhysicsObject* phy1 = new PhysicsObject(EPrimitiveMeshTypes::Plane);
+            phy1->GetTransform()->Position = Vector3(0.0f, 0.0f, 0.0f);
+            phy1->GetTransform()->LocalScale = Vector3(7.0f, 1.0f, 7.0f);
+            GameObjectManager::GetInstance()->AddRootObject(phy1);
+            phy1->GetRB()->BodyType = rp3d::BodyType::STATIC;
+        }
         ImGui::EndMenu();
     }
 }
