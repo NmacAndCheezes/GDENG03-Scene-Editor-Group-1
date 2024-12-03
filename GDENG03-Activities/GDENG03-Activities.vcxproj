@@ -81,7 +81,7 @@
     <ClCompile Include="Code\GameEngine\GameObjects\PhysicsObject.cpp" />
     <ClCompile Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.cpp" />
     <ClCompile Include="Code\GameEngine\Managers\SceneManager.cpp" />
-    <ClCompile Include="Code\GameEngine\UnityParser.cpp" />
+    <ClCompile Include="Code\GameEngine\Managers\UnityParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\EditorGUI\AUITab.h" />
@@ -170,7 +170,7 @@
     <ClInclude Include="Code\GameEngine\GameObjects\PhysicsObject.h" />
     <ClInclude Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.h" />
     <ClInclude Include="Code\GameEngine\Managers\SceneManager.h" />
-    <ClInclude Include="Code\GameEngine\UnityParser.h" />
+    <ClInclude Include="Code\GameEngine\Managers\UnityParser.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Code\Shaders\PLitTextureShader.hlsl">
@@ -277,16 +277,26 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>packages\yaml\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>packages\yaml\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Nathan\Documents\GitHub\GDENG03-Scene-Editor-Group-1\GDENG03-Activities\packages\yaml\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>yaml-cppd.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -311,13 +321,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_USE_MATH_DEFINES;NOMINMAX;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)/packages/DearIMGUI;$(ProjectDir)/Code;$(ProjectDir)/packages/OpenAssetImporter/include;$(ProjectDir)/packages/ReactPhysics3D/include;$(ProjectDir)/packages/rapidjson/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Nathan\Documents\GitHub\GDENG03-Scene-Editor-Group-1\GDENG03-Activities\packages\yaml\include;$(ProjectDir)/packages/DearIMGUI;$(ProjectDir)/Code;$(ProjectDir)/packages/OpenAssetImporter/include;$(ProjectDir)/packages/ReactPhysics3D/include;$(ProjectDir)/packages/rapidjson/include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;winmm.lib;dxguid.lib;assimp-vc143-mt.lib;reactphysics3d-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>yaml-cppd.lib;d3d11.lib;dxgi.lib;d3dcompiler.lib;winmm.lib;dxguid.lib;assimp-vc143-mt.lib;reactphysics3d-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(ProjectDir)/packages/OpenAssetImporter/lib/x64;$(ProjectDir)/packages/ReactPhysics3D</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>

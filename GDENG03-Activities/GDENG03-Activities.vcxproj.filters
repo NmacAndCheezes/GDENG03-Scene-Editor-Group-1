@@ -246,7 +246,7 @@
     <ClCompile Include="Code\EditorStates\EditorBackend.cpp">
       <Filter>EditorActions</Filter>
     </ClCompile>
-    <ClCompile Include="Code\GameEngine\UnityParser.cpp" />
+    <ClCompile Include="Code\GameEngine\Managers\UnityParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\WindowsMessageMap.h" />
@@ -501,7 +501,7 @@
     <ClInclude Include="Code\EditorStates\EditorActions\EditorActionHistory.h">
       <Filter>EditorActions</Filter>
     </ClInclude>
-    <ClInclude Include="Code\GameEngine\UnityParser.h" />
+    <ClInclude Include="Code\GameEngine\Managers\UnityParser.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Code\Shaders\VLitTextureShader.hlsl">
