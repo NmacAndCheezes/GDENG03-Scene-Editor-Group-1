@@ -81,6 +81,7 @@
     <ClCompile Include="Code\GameEngine\GameObjects\PhysicsObject.cpp" />
     <ClCompile Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.cpp" />
     <ClCompile Include="Code\GameEngine\Managers\SceneManager.cpp" />
+    <ClCompile Include="Code\GameEngine\UnityParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\EditorGUI\AUITab.h" />
@@ -169,6 +170,7 @@
     <ClInclude Include="Code\GameEngine\GameObjects\PhysicsObject.h" />
     <ClInclude Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.h" />
     <ClInclude Include="Code\GameEngine\Managers\SceneManager.h" />
+    <ClInclude Include="Code\GameEngine\UnityParser.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Code\Shaders\PLitTextureShader.hlsl">
