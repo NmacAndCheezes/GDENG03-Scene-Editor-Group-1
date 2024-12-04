@@ -262,6 +262,37 @@ void SceneManager::OpenScene(std::string scenePath)
 	}
 }
 
+void SceneManager::OpenSimpleScene(std::string scenePath)
+{
+	if (scenePath == "") return;
+
+	UpdateActiveScene(scenePath);
+
+	GameObjectManager::DeleteScene();
+	PhysicsEngine::GetInstance()->Release();
+	PhysicsEngine::GetInstance()->Init();
+
+	FILE* inFile = fopen(scenePath.c_str(), "rb");
+	assert(inFile != NULL);
+
+	char readBuffer[16384];
+	rapidjson::FileReadStream jsonFile(inFile, readBuffer, sizeof(readBuffer));
+	rapidjson::Document doc;
+
+	doc.ParseStream(jsonFile);
+	fclose(inFile);
+
+	activeScene = doc["sceneName"].GetString();
+	for (rapidjson::Value::ConstValueIterator itr = doc["GameObjects"].Begin();
+		itr != doc["GameObjects"].End(); ++itr)
+	{
+		AGameObject* obj = new AGameObject(itr->GetObj()["Name"].GetString());
+		MeshRenderer* rend = new MeshRenderer();
+
+		GameObjectManager::GetInstance()->AddRootObject(obj);
+	}
+}
+
 void SceneManager::InitializeObj(rapidjson::Value::ConstValueIterator& obj_itr, AGameObject* parent)
 {
 	EmptyGameObject* newObj = new EmptyGameObject(obj_itr->GetObj()["ObjName"].GetString());

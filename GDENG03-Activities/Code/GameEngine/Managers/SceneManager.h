@@ -14,6 +14,7 @@ public:
 
 	void SaveScene(std::string scenePath);
 	void OpenScene(std::string scenePath); 
+	void OpenSimpleScene(std::string scenePath);
 
 	std::string GetActiveSceneName();
 	bool IsSceneLoaded(std::string sceneName);

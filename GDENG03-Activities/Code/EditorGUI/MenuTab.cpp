@@ -64,6 +64,15 @@ void MenuTab::RenderFilesMenu()
             SceneManager::GetInstance()->OpenScene(scenePath);
         }
 
+        if (ImGui::MenuItem("Open Simple", "Ctrl+O"))
+        {
+            const char* filters =
+                "Level (*.level)\0*.level\0"
+                ;
+            std::string scenePath = FileDialogs::OpenFile(filters);
+            SceneManager::GetInstance()->OpenSimpleScene(scenePath);
+        }
+
         if (ImGui::MenuItem("Save", "Ctrl+S"))
         {
             std::string scenePath = "";
