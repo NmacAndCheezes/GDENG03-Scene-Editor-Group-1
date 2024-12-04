@@ -72,7 +72,7 @@ void MenuTab::RenderFilesMenu()
             std::string scenePath = FileDialogs::OpenFile(filters);
             SceneManager::GetInstance()->OpenSimpleScene(scenePath);
         }
-
+#if 0
         if (ImGui::MenuItem("Save", "Ctrl+S"))
         {
             std::string scenePath = "";
@@ -85,7 +85,16 @@ void MenuTab::RenderFilesMenu()
             }
             SceneManager::GetInstance()->SaveScene(scenePath);
         }
-
+#endif
+        if (ImGui::MenuItem("Save Simple", "Ctrl+S"))
+        {
+            const char* filters =
+                "Level (*.level)\0*.level\0"
+                ;
+            std::string scenePath = FileDialogs::SaveFile(filters);
+            SceneManager::GetInstance()->SaveSimpleScene(scenePath);
+        }
+#if 0
         if (ImGui::MenuItem("Save As.."))
         {
             const char* filters =
@@ -94,7 +103,7 @@ void MenuTab::RenderFilesMenu()
             std::string scenePath = FileDialogs::SaveFile(filters);
             SceneManager::GetInstance()->SaveScene(scenePath); 
         }
-
+#endif
         ImGui::EndMenu();
     }
 }

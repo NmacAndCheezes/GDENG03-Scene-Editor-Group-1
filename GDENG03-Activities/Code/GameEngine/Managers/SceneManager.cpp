@@ -96,6 +96,74 @@ void SceneManager::SaveObject(AGameObject* obj, rapidjson::Value& parentObjList,
 	parentObjList.PushBack(jsonObj, allocator);
 }
 
+void SceneManager::SaveObjectSimple(AGameObject* obj, rapidjson::Value& parentObjList, rapidjson::Document::AllocatorType& allocator)
+{
+	rapidjson::Value jsonObj = rapidjson::Value(rapidjson::kObjectType);
+
+	rapidjson::Value jsonObjName;
+	jsonObjName.SetString(obj->Name.c_str(), obj->Name.length(), allocator);
+	jsonObj.AddMember("Name", jsonObjName, allocator);
+
+	rapidjson::Value jsonObjEnabled = rapidjson::Value(obj->Enabled);
+	jsonObj.AddMember("IsEnabled", jsonObjEnabled, allocator);
+
+#pragma region Transform
+	rapidjson::Value pos = rapidjson::Value(rapidjson::kObjectType);
+	rapidjson::Value euler = rapidjson::Value(rapidjson::kObjectType);
+	rapidjson::Value scale = rapidjson::Value(rapidjson::kObjectType);
+
+	rapidjson::Value posX = rapidjson::Value(obj->GetTransform()->Position.x);
+	rapidjson::Value posY = rapidjson::Value(obj->GetTransform()->Position.y);
+	rapidjson::Value posZ = rapidjson::Value(obj->GetTransform()->Position.z);
+	rapidjson::Value eulerX = rapidjson::Value(obj->GetTransform()->GetEulerAngles().x);
+	rapidjson::Value eulerY = rapidjson::Value(obj->GetTransform()->GetEulerAngles().y);
+	rapidjson::Value eulerZ = rapidjson::Value(obj->GetTransform()->GetEulerAngles().z);
+	rapidjson::Value scaleX = rapidjson::Value(obj->GetTransform()->LocalScale.x);
+	rapidjson::Value scaleY = rapidjson::Value(obj->GetTransform()->LocalScale.y);
+	rapidjson::Value scaleZ = rapidjson::Value(obj->GetTransform()->LocalScale.z);
+
+	pos.AddMember("x", posX, allocator);
+	pos.AddMember("y", posY, allocator);
+	pos.AddMember("z", posZ, allocator);
+	euler.AddMember("x", eulerX, allocator);
+	euler.AddMember("y", eulerY, allocator);
+	euler.AddMember("z", eulerZ, allocator);
+	scale.AddMember("x", scaleX, allocator);
+	scale.AddMember("y", scaleY, allocator);
+	scale.AddMember("z", scaleZ, allocator);
+
+	jsonObj.AddMember("Position", pos, allocator);
+	jsonObj.AddMember("Rotation", euler, allocator);
+	jsonObj.AddMember("Scale", scale, allocator);
+#pragma endregion
+
+	rapidjson::Value jsonVertices = rapidjson::Value(rapidjson::kArrayType);
+	MeshRenderer* meshRend = (MeshRenderer*)obj->FindComponentByType(EComponentTypes::Renderer, "MeshRenderer");
+	
+	for (auto v : meshRend->GetGenericMesh()->GetVertexPositions())
+	{
+		rapidjson::Value vPos = rapidjson::Value(rapidjson::kObjectType);
+		rapidjson::Value posX = rapidjson::Value(v.x);
+		rapidjson::Value posY = rapidjson::Value(v.y);
+		rapidjson::Value posZ = rapidjson::Value(v.z);
+		vPos.AddMember("x", posX, allocator);
+		vPos.AddMember("y", posY, allocator);
+		vPos.AddMember("z", posZ, allocator);
+		jsonVertices.PushBack(vPos, allocator);
+	}
+
+	jsonObj.AddMember("vertices", jsonVertices, allocator);
+
+	rapidjson::Value jsonIndices = rapidjson::Value(rapidjson::kArrayType);
+	for (auto i : meshRend->GetGenericMesh()->GetIndices())
+	{
+		jsonIndices.PushBack(i, allocator);
+	}
+	jsonObj.AddMember("indices", jsonIndices, allocator);
+
+	parentObjList.PushBack(jsonObj, allocator);
+}
+
 void SceneManager::SaveComponent(AComponent* comp, rapidjson::Value& compList, rapidjson::Document::AllocatorType& allocator)
 {
 	rapidjson::Value jsonComp = rapidjson::Value(rapidjson::kObjectType);
@@ -155,7 +223,7 @@ void SceneManager::SaveTransform(Transform* t, rapidjson::Value& jsonComp, rapid
 
 	jsonComp.AddMember("Position", pos, allocator); 
 	jsonComp.AddMember("Rotation", euler, allocator); 
-	jsonComp.AddMember("Scale", scale, allocator); 
+	jsonComp.AddMember("Scale", scale, allocator);
 }
 
 void SceneManager::SaveMeshRenderer(MeshRenderer* mr, rapidjson::Value& jsonComp, rapidjson::Document::AllocatorType& allocator)
@@ -277,13 +345,13 @@ void SceneManager::SaveSimpleScene(std::string scenePath)
 	doc.SetObject();
 	rapidjson::Value sceneName;
 	sceneName.SetString(activeScene.c_str(), activeScene.length(), allocator);
-	doc.AddMember("SceneName", sceneName, allocator);
+	doc.AddMember("sceneName", sceneName, allocator);
 
 	rapidjson::Value objJSONList = rapidjson::Value(rapidjson::kArrayType);
 	std::vector<AGameObject*> rootObjsList = GameObjectManager::GetInstance()->GetAllGameObjects();
 	for (auto& rootObj : rootObjsList)
 	{
-		if (!rootObj->IsEditorObject()) SaveObject(rootObj, objJSONList, allocator);
+		if (!rootObj->IsEditorObject()) SaveObjectSimple(rootObj, objJSONList, allocator);
 	}
 	doc.AddMember("GameObjects", objJSONList, allocator);
 

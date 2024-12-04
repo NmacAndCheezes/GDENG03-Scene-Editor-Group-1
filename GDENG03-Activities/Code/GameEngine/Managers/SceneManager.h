@@ -26,6 +26,7 @@ private:
 	void UpdateActiveScene(std::string scenePath);
 
 	void SaveObject(AGameObject* obj, rapidjson::Value& parentObjList, rapidjson::Document::AllocatorType& allocator);
+	void SaveObjectSimple(AGameObject* obj, rapidjson::Value& parentObjList, rapidjson::Document::AllocatorType& allocator);
 	void SaveComponent(AComponent* comp, rapidjson::Value& compList, rapidjson::Document::AllocatorType& allocator);
 	void SaveTransform(Transform* t, rapidjson::Value& jsonComp, rapidjson::Document::AllocatorType& allocator);
 	void SaveMeshRenderer(MeshRenderer* mr, rapidjson::Value& jsonComp, rapidjson::Document::AllocatorType& allocator);

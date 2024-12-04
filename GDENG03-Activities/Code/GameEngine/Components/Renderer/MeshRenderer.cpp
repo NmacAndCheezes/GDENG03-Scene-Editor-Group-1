@@ -3,6 +3,7 @@
 #include "DirectXClasses/Buffers/VertexBuffer.cpp"
 #include "GameEngine/Graphics/Materials/UnlitColorMaterial.h"
 #include "GameEngine/Graphics/Materials/UnlitRainbowMaterial.h"
+#include <GameEngine/Debug.h>
 
 
 MeshRenderer::MeshRenderer() : ARenderer("MeshRenderer")
@@ -55,6 +56,7 @@ void MeshRenderer::LoadPrimitive(EPrimitiveMeshTypes type, bool isRainbowed)
 			vWithColor.pos = v.pos;
 			vWithColor.vColor = Vector3(MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange());
 			verticesWithColor.push_back(vWithColor);
+			Debug::Log(std::to_string(vWithColor.pos.x));
 		}
 
 		VertexBuffer<VUnlitRainbowData>* vb = new VertexBuffer<VUnlitRainbowData>(GraphicsEngine::GetInstance(), verticesWithColor);
@@ -71,6 +73,7 @@ void MeshRenderer::LoadPrimitive(EPrimitiveMeshTypes type, bool isRainbowed)
 			VUnlitColorData vWithColor;
 			vWithColor.pos = v.pos;
 			verticesWithColor.push_back(vWithColor);
+			Debug::Log(std::to_string(vWithColor.pos.x));
 		}
 
 		VertexBuffer<VUnlitColorData>* vb = new VertexBuffer<VUnlitColorData>(GraphicsEngine::GetInstance(), verticesWithColor);
@@ -79,7 +82,9 @@ void MeshRenderer::LoadPrimitive(EPrimitiveMeshTypes type, bool isRainbowed)
 	}
 
 	indexBuffer = new IndexBuffer(GraphicsEngine::GetInstance(), indices);
-	indexBuffer->Init(); 
+	indexBuffer->Init();
+
+	mesh = new GenericMesh(vertices, indices);
 }
 
 void MeshRenderer::LoadNonPrimitive(std::string modelName, bool isRainbowed)
@@ -103,7 +108,8 @@ void MeshRenderer::LoadNonPrimitive(std::string modelName, bool isRainbowed)
 			VUnlitRainbowData vWithColor; 
 			vWithColor.pos = v.pos;  
 			vWithColor.vColor = Vector3(MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange());   
-			verticesWithColor.push_back(vWithColor);  
+			verticesWithColor.push_back(vWithColor);
+			Debug::Log(std::to_string(vWithColor.pos.x));
 		}
 
 		VertexBuffer<VUnlitRainbowData>* vb = new VertexBuffer<VUnlitRainbowData>(GraphicsEngine::GetInstance(), verticesWithColor); 
@@ -120,6 +126,7 @@ void MeshRenderer::LoadNonPrimitive(std::string modelName, bool isRainbowed)
 			vWithUV.normals = v.normals; 
 			vWithUV.uv = v.uv;
 			verticesWithUV.push_back(vWithUV); 
+			Debug::Log(std::to_string(vWithUV.pos.x));
 		}
 
 		VertexBuffer<VLitTextureData>* vb = new VertexBuffer<VLitTextureData>(GraphicsEngine::GetInstance(), verticesWithUV);
@@ -129,6 +136,8 @@ void MeshRenderer::LoadNonPrimitive(std::string modelName, bool isRainbowed)
 
 	indexBuffer = new IndexBuffer(GraphicsEngine::GetInstance(), indices); 
 	indexBuffer->Init(); 
+
+	mesh = new GenericMesh(vertices, indices);
 }
 
 void MeshRenderer::LoadMeshWithVertexAndIndices(std::vector<GenericVertexData> vertices, std::vector<unsigned short> indices)
@@ -146,6 +155,7 @@ void MeshRenderer::LoadMeshWithVertexAndIndices(std::vector<GenericVertexData> v
 		vWithColor.pos = v.pos;
 		vWithColor.vColor = Vector3(MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange());
 		verticesWithColor.push_back(vWithColor);
+		Debug::Log(std::to_string(vWithColor.pos.x));
 	}
 
 	VertexBuffer<VUnlitRainbowData>* vb = new VertexBuffer<VUnlitRainbowData>(GraphicsEngine::GetInstance(), verticesWithColor);
@@ -154,6 +164,8 @@ void MeshRenderer::LoadMeshWithVertexAndIndices(std::vector<GenericVertexData> v
 
 	indexBuffer = new IndexBuffer(GraphicsEngine::GetInstance(), indices);
 	indexBuffer->Init();
+
+	mesh = new GenericMesh(vertices, indices);
 }
 
 std::string MeshRenderer::GetModelName()
@@ -164,6 +176,11 @@ std::string MeshRenderer::GetModelName()
 EPrimitiveMeshTypes MeshRenderer::GetMeshType()
 {
 	return type;
+}
+
+GenericMesh* MeshRenderer::GetGenericMesh()
+{
+	return mesh;
 }
 
 bool MeshRenderer::IsRainbowed()

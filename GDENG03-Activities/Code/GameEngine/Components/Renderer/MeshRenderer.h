@@ -1,6 +1,7 @@
 #pragma once
 #include "ARenderer.h"
 #include "GameEngine/Meshes/EPrimitiveMeshTypes.h"
+#include <GameEngine/Meshes/GenericMesh.h>
 
 class MeshRenderer : public ARenderer
 {
@@ -17,6 +18,7 @@ public:
 	void LoadMeshWithVertexAndIndices(std::vector<GenericVertexData> vertices, std::vector<unsigned short> indicies);
 	std::string GetModelName();
 	EPrimitiveMeshTypes GetMeshType();
+	GenericMesh* GetGenericMesh();
 	bool IsRainbowed();
 
 
@@ -25,5 +27,6 @@ private:
 	EPrimitiveMeshTypes type;
 	std::string modelName;
 	std::string textureName;
+	GenericMesh* mesh;
 	bool isRainbowed;
 };

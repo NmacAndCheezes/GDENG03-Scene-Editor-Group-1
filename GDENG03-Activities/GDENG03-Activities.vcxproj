@@ -81,7 +81,6 @@
     <ClCompile Include="Code\GameEngine\GameObjects\PhysicsObject.cpp" />
     <ClCompile Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.cpp" />
     <ClCompile Include="Code\GameEngine\Managers\SceneManager.cpp" />
-    <ClCompile Include="Code\GameEngine\Managers\UnityParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\EditorGUI\AUITab.h" />
@@ -119,6 +118,7 @@
     <ClInclude Include="Code\GameEngine\Meshes\AMesh.h" />
     <ClInclude Include="Code\GameEngine\Meshes\CubeMesh.h" />
     <ClInclude Include="Code\GameEngine\Meshes\EPrimitiveMeshTypes.h" />
+    <ClInclude Include="Code\GameEngine\Meshes\GenericMesh.h" />
     <ClInclude Include="Code\GameEngine\Meshes\QuadMesh.h" />
     <ClInclude Include="Code\stb_image.h" />
     <ClInclude Include="Code\tiny_obj_loader.h" />
@@ -170,7 +170,6 @@
     <ClInclude Include="Code\GameEngine\GameObjects\PhysicsObject.h" />
     <ClInclude Include="Code\GameEngine\Graphics\Materials\UnlitRainbowMaterial.h" />
     <ClInclude Include="Code\GameEngine\Managers\SceneManager.h" />
-    <ClInclude Include="Code\GameEngine\Managers\UnityParser.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Code\Shaders\PLitTextureShader.hlsl">
