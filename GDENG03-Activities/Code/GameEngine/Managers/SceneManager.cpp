@@ -263,6 +263,10 @@ void SceneManager::OpenScene(std::string scenePath)
 	}
 }
 
+void SceneManager::SaveScene()
+{
+}
+
 void SceneManager::OpenSimpleScene(std::string scenePath)
 {
 	if (scenePath == "") return;
@@ -291,7 +295,7 @@ void SceneManager::OpenSimpleScene(std::string scenePath)
 		AGameObject* obj = new AGameObject(itr->GetObj()["Name"].GetString());
 		MeshRenderer* rend = new MeshRenderer();
 
-		std::vector<Vector3> vertices;  // Store vertices
+		std::vector<GenericVertexData> vertices;  // Store vertices
 		std::vector<unsigned short> indices;  // Store indices (if any)
 
 		// Check if the "vertices" key exists for the current GameObject
@@ -301,7 +305,9 @@ void SceneManager::OpenSimpleScene(std::string scenePath)
 			float x = vertex["x"].GetFloat();
 			float y = vertex["y"].GetFloat();
 			float z = vertex["z"].GetFloat();
-			vertices.push_back(Vector3(x, y, z));
+			GenericVertexData vertexData = GenericVertexData();
+			vertexData.pos = Vector3(x, y, z);
+			vertices.push_back(vertexData);
 
 			// Optionally log each vertex
 			Debug::Log(std::to_string(x) + " " +
@@ -317,6 +323,12 @@ void SceneManager::OpenSimpleScene(std::string scenePath)
 		// For example:
 		rend->LoadUnityMesh(vertices, indices);
 		obj->AttachComponent(rend);
+		GameObjectManager::GetInstance()->BindRendererToShader(rend);
+
+		float x = itr->GetObj()["Position"].GetObj()["x"].GetFloat();
+		float y = itr->GetObj()["Position"].GetObj()["y"].GetFloat();
+		float z = itr->GetObj()["Position"].GetObj()["z"].GetFloat();
+		obj->GetTransform()->SetLocalPosition(Vector3(x,y,z));
 		// Add the object to the GameObjectManager
 		GameObjectManager::GetInstance()->AddRootObject(obj);
 	}
