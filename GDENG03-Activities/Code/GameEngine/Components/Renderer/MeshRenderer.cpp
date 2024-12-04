@@ -131,7 +131,7 @@ void MeshRenderer::LoadNonPrimitive(std::string modelName, bool isRainbowed)
 	indexBuffer->Init(); 
 }
 
-void MeshRenderer::LoadUnityMesh(std::vector<GenericVertexData> vertices, std::vector<unsigned short> indices)
+void MeshRenderer::LoadMeshWithVertexAndIndices(std::vector<GenericVertexData> vertices, std::vector<unsigned short> indices)
 {
 	this->type = EPrimitiveMeshTypes::Unknown;
 

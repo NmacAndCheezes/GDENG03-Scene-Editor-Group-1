@@ -263,8 +263,39 @@ void SceneManager::OpenScene(std::string scenePath)
 	}
 }
 
-void SceneManager::SaveScene()
+void SceneManager::SaveSimpleScene(std::string scenePath)
 {
+	if (scenePath == "") scenePath = activeScenePath;
+
+	if (scenePath.empty()) return;
+
+	UpdateActiveScene(scenePath);
+
+	rapidjson::Document doc;
+	rapidjson::Document::AllocatorType& allocator = doc.GetAllocator();
+
+	doc.SetObject();
+	rapidjson::Value sceneName;
+	sceneName.SetString(activeScene.c_str(), activeScene.length(), allocator);
+	doc.AddMember("SceneName", sceneName, allocator);
+
+	rapidjson::Value objJSONList = rapidjson::Value(rapidjson::kArrayType);
+	std::vector<AGameObject*> rootObjsList = GameObjectManager::GetInstance()->GetAllGameObjects();
+	for (auto& rootObj : rootObjsList)
+	{
+		if (!rootObj->IsEditorObject()) SaveObject(rootObj, objJSONList, allocator);
+	}
+	doc.AddMember("GameObjects", objJSONList, allocator);
+
+	FILE* file = fopen(scenePath.c_str(), "wb");
+	assert(file != NULL);
+
+	char writeBuffer[16384];
+	rapidjson::FileWriteStream os(file, writeBuffer, sizeof(writeBuffer));
+	rapidjson::PrettyWriter<rapidjson::FileWriteStream> writer(os);
+
+	doc.Accept(writer);
+	fclose(file);
 }
 
 void SceneManager::OpenSimpleScene(std::string scenePath)
@@ -280,7 +311,7 @@ void SceneManager::OpenSimpleScene(std::string scenePath)
 	FILE* inFile = fopen(scenePath.c_str(), "rb");
 	assert(inFile != NULL);
 
-	char readBuffer[16384];
+	char* readBuffer = new char[16384];
 	rapidjson::FileReadStream jsonFile(inFile, readBuffer, sizeof(readBuffer));
 	rapidjson::Document doc;
 
@@ -321,7 +352,7 @@ void SceneManager::OpenSimpleScene(std::string scenePath)
 
 		// You can now load mesh data, render it, or process the vertices further
 		// For example:
-		rend->LoadUnityMesh(vertices, indices);
+		rend->LoadMeshWithVertexAndIndices(vertices, indices);
 		obj->AttachComponent(rend);
 		GameObjectManager::GetInstance()->BindRendererToShader(rend);
 
@@ -329,9 +360,25 @@ void SceneManager::OpenSimpleScene(std::string scenePath)
 		float y = itr->GetObj()["Position"].GetObj()["y"].GetFloat();
 		float z = itr->GetObj()["Position"].GetObj()["z"].GetFloat();
 		obj->GetTransform()->SetLocalPosition(Vector3(x,y,z));
+
+		x = itr->GetObj()["Rotation"].GetObj()["x"].GetFloat();
+		y = itr->GetObj()["Rotation"].GetObj()["y"].GetFloat();
+		z = itr->GetObj()["Rotation"].GetObj()["z"].GetFloat();
+
+		//new - old;
+		Vector3 diffEuler = Vector3(x,y,z) - obj->GetTransform()->GetLocalEulerAngles();
+		obj->GetTransform()->Rotate(diffEuler);
+
+		x = itr->GetObj()["Scale"].GetObj()["x"].GetFloat();
+		y = itr->GetObj()["Scale"].GetObj()["y"].GetFloat();
+		z = itr->GetObj()["Scale"].GetObj()["z"].GetFloat();
+		obj->GetTransform()->SetLocalScale(Vector3(x, y, z));
+
+
 		// Add the object to the GameObjectManager
 		GameObjectManager::GetInstance()->AddRootObject(obj);
 	}
+	delete[] readBuffer;
 }
 
 void SceneManager::InitializeObj(rapidjson::Value::ConstValueIterator& obj_itr, AGameObject* parent)
