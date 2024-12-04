@@ -12,6 +12,7 @@
 #include "GameEngine/Graphics/Materials/UnlitColorMaterial.h"
 #include "GameEngine/Graphics/Materials/LitTextureMaterial.h"
 #include "GameEngine/GameObjects/EmptyGameObject.h"
+#include <GameEngine/Debug.h>
 
 
 #pragma region Singleton
@@ -286,9 +287,37 @@ void SceneManager::OpenSimpleScene(std::string scenePath)
 	for (rapidjson::Value::ConstValueIterator itr = doc["GameObjects"].Begin();
 		itr != doc["GameObjects"].End(); ++itr)
 	{
+		// Create a new game object with the name from the JSON
 		AGameObject* obj = new AGameObject(itr->GetObj()["Name"].GetString());
 		MeshRenderer* rend = new MeshRenderer();
 
+		std::vector<Vector3> vertices;  // Store vertices
+		std::vector<unsigned short> indices;  // Store indices (if any)
+
+		// Check if the "vertices" key exists for the current GameObject
+		// Iterate over the vertices array of the current GameObject
+		for (const auto& vertex : itr->GetObj()["Mesh"].GetObj()["vertices"].GetArray()) {
+			// Extract x, y, z components for each vertex
+			float x = vertex["x"].GetFloat();
+			float y = vertex["y"].GetFloat();
+			float z = vertex["z"].GetFloat();
+			vertices.push_back(Vector3(x, y, z));
+
+			// Optionally log each vertex
+			Debug::Log(std::to_string(x) + " " +
+				std::to_string(y) + " " +
+				std::to_string(z) + " ");
+		}
+
+		for (const auto& index : itr->GetObj()["Mesh"].GetObj()["triangles"].GetArray()) {
+			indices.push_back(index.GetInt());
+		}
+
+		// You can now load mesh data, render it, or process the vertices further
+		// For example:
+		rend->LoadUnityMesh(vertices, indices);
+		obj->AttachComponent(rend);
+		// Add the object to the GameObjectManager
 		GameObjectManager::GetInstance()->AddRootObject(obj);
 	}
 }

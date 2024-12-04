@@ -131,6 +131,34 @@ void MeshRenderer::LoadNonPrimitive(std::string modelName, bool isRainbowed)
 	indexBuffer->Init(); 
 }
 
+void MeshRenderer::LoadUnityMesh(std::vector<Vector3> vertices, std::vector<unsigned short> indices)
+{
+	this->type = EPrimitiveMeshTypes::Unknown;
+
+	if (vertices.size() == 0) return;
+
+	InitRenderer();
+
+	if (isRainbowed)
+	{
+		std::vector<VUnlitRainbowData> verticesWithColor;
+		for (auto& v : vertices)
+		{
+			VUnlitRainbowData vWithColor;
+			vWithColor.pos = v;
+			vWithColor.vColor = Vector3(MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange(), MathUtils::RandFloatWithRange());
+			verticesWithColor.push_back(vWithColor);
+		}
+
+		VertexBuffer<VUnlitRainbowData>* vb = new VertexBuffer<VUnlitRainbowData>(GraphicsEngine::GetInstance(), verticesWithColor);
+		vb->Init();
+		vertexBuffer = vb;
+	}
+
+	indexBuffer = new IndexBuffer(GraphicsEngine::GetInstance(), indices);
+	indexBuffer->Init();
+}
+
 std::string MeshRenderer::GetModelName()
 {
 	return modelName;

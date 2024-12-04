@@ -14,7 +14,7 @@ public:
 	void RenderUI() override;
 	void LoadPrimitive(EPrimitiveMeshTypes type, bool isRainbowed = false);
 	void LoadNonPrimitive(std::string modelName, bool isRainbowed = false);
-
+	void LoadUnityMesh(std::vector<Vector3> vertices, std::vector<unsigned short> indicies);
 	std::string GetModelName();
 	EPrimitiveMeshTypes GetMeshType();
 	bool IsRainbowed();
