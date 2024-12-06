@@ -1,4 +1,6 @@
-Developers: Aamir Akim, Nathan Macabanti
+Developers: Aamir Akim, Nathan Macabanti of engine
+
+Parser: created by Nathan Macabanti
 
 Main: $(ProjectDir)/Code/WinMain.cpp
 
